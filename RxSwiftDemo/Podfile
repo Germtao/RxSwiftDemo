@@ -1,0 +1,17 @@
+# Uncomment the next line to define a global platform for your project
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '11.0'
+
+target 'RxSwiftDemo' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5'
+
+  target 'RxSwiftDemoTests' do
+    pod 'RxBlocking', '~> 5'
+    pod 'RxTest', '~> 5'
+  end
+
+end

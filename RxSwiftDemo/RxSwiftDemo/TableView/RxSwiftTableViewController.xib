@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RxSwiftTableViewController" customModule="RxSwiftDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="42F-z7-Fo4" id="tPU-ZS-c4O"/>
+                <outlet property="view" destination="iN0-l3-epB" id="zxH-ju-A9T"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="42F-z7-Fo4">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="BTI-2x-ZC1"/>
+                        <outlet property="delegate" destination="-1" id="BU0-RE-Vi2"/>
+                    </connections>
+                </tableView>
+                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="h0x-7c-udN">
+                    <rect key="frame" x="0.0" y="61" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h0x-7c-udN" id="Z2q-Fj-BGP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tableViewCellContentView>
+                </tableViewCell>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="42F-z7-Fo4" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="AgS-2P-19K"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="42F-z7-Fo4" secondAttribute="trailing" id="Hn0-LM-UWy"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="42F-z7-Fo4" secondAttribute="bottom" id="Szy-Vm-Xt6"/>
+                <constraint firstItem="42F-z7-Fo4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="U7X-YI-dLW"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+</document>
