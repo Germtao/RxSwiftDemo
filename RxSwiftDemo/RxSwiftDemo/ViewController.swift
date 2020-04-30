@@ -43,8 +43,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             present(observableVc, animated: true)
         case 1:
             let vc = RxSwiftUIViewController()
-            vc.title = titles[indexPath.row]
-            present(vc, animated: true)
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .currentContext
+            nav.modalTransitionStyle = .flipHorizontal
+            nav.title = titles[indexPath.row]
+            present(nav, animated: true)
         default:
             break
         }

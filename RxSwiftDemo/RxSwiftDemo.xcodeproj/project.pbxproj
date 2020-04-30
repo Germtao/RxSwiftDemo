@@ -20,8 +20,6 @@
 		3BB464E824598B20007DD2FE /* RxSwiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB464E724598B20007DD2FE /* RxSwiftTableViewController.swift */; };
 		3BB464EB24598BB1007DD2FE /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB464EA24598BB1007DD2FE /* Music.swift */; };
 		3BB464ED24598C38007DD2FE /* RxSwiftTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB464EC24598C38007DD2FE /* RxSwiftTableViewController.xib */; };
-		3BB464F024598DE6007DD2FE /* RxSwiftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB464EE24598DE6007DD2FE /* RxSwiftTableViewCell.swift */; };
-		3BB464F124598DE6007DD2FE /* RxSwiftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB464EF24598DE6007DD2FE /* RxSwiftTableViewCell.xib */; };
 		F499D152A55BFB861E4837EC /* Pods_RxSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51814B6D018A5AEB876D6A1B /* Pods_RxSwiftDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,8 +52,6 @@
 		3BB464E724598B20007DD2FE /* RxSwiftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftTableViewController.swift; sourceTree = "<group>"; };
 		3BB464EA24598BB1007DD2FE /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		3BB464EC24598C38007DD2FE /* RxSwiftTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftTableViewController.xib; sourceTree = "<group>"; };
-		3BB464EE24598DE6007DD2FE /* RxSwiftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftTableViewCell.swift; sourceTree = "<group>"; };
-		3BB464EF24598DE6007DD2FE /* RxSwiftTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftTableViewCell.xib; sourceTree = "<group>"; };
 		51814B6D018A5AEB876D6A1B /* Pods_RxSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BA25C2821235F0D28DB76DB /* Pods-RxSwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemoTests.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemoTests/Pods-RxSwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA16F1C0FA777D40F366CC22 /* Pods-RxSwiftDemo-RxSwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo-RxSwiftDemoTests.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo-RxSwiftDemoTests/Pods-RxSwiftDemo-RxSwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,8 +140,6 @@
 			children = (
 				3BB464E724598B20007DD2FE /* RxSwiftTableViewController.swift */,
 				3BB464EC24598C38007DD2FE /* RxSwiftTableViewController.xib */,
-				3BB464EE24598DE6007DD2FE /* RxSwiftTableViewCell.swift */,
-				3BB464EF24598DE6007DD2FE /* RxSwiftTableViewCell.xib */,
 				3BB464EA24598BB1007DD2FE /* Music.swift */,
 			);
 			path = TableView;
@@ -250,7 +244,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B5BD84824556F290022DF94 /* LaunchScreen.storyboard in Resources */,
-				3BB464F124598DE6007DD2FE /* RxSwiftTableViewCell.xib in Resources */,
 				3BB464ED24598C38007DD2FE /* RxSwiftTableViewController.xib in Resources */,
 				3B5BD84524556F290022DF94 /* Assets.xcassets in Resources */,
 				3B5BD84324556F260022DF94 /* Main.storyboard in Resources */,
@@ -359,7 +352,6 @@
 				3BB464EB24598BB1007DD2FE /* Music.swift in Sources */,
 				3BB464E824598B20007DD2FE /* RxSwiftTableViewController.swift in Sources */,
 				3BB464E62459514F007DD2FE /* RxSwiftUIViewController.swift in Sources */,
-				3BB464F024598DE6007DD2FE /* RxSwiftTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

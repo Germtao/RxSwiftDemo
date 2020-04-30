@@ -17,22 +17,32 @@ class RxSwiftUIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
+        let backItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(back))
+        navigationItem.leftBarButtonItem = backItem
+        
         setupUILabel()
         setupUIButton()
         setupUISwitch()
         setupSegmentedControl()
         setupUITextField()
         setupUITextView()
+        setupUITableView()
+        setupUISliderAndUIStepper()
+    }
+    
+    @objc private func back() {
+        dismiss(animated: true)
     }
 }
 
 // MARK: - UILabel
 extension RxSwiftUIViewController {
     private func setupUILabel() {
-        let label_1 = UILabel(frame: CGRect(x: 20, y: 40, width: 150, height: 30))
+        let label_1 = UILabel(frame: CGRect(x: 20, y: 100, width: 150, height: 30))
         view.addSubview(label_1)
         
-        let label_2 = UILabel(frame: CGRect(x: label_1.frame.maxX + 20, y: 40, width: 150, height: 30))
+        let label_2 = UILabel(frame: CGRect(x: label_1.frame.maxX + 20, y: label_1.frame.minY, width: 150, height: 30))
         label_2.textColor = .red
         view.addSubview(label_2)
         
@@ -74,7 +84,7 @@ extension RxSwiftUIViewController {
 // MARK: - UIButton
 extension RxSwiftUIViewController {
     private func setupUIButton() {
-        let button = UIButton(frame: CGRect(x: 20, y: 100, width: 100, height: 40))
+        let button = UIButton(frame: CGRect(x: 20, y: 150, width: 100, height: 40))
         button.setTitle("按钮响应1", for: .normal)
         button.setTitleColor(.black, for: .normal)
         view.addSubview(button)
@@ -135,7 +145,7 @@ extension RxSwiftUIViewController {
 // MARK: - UISwitch
 extension RxSwiftUIViewController {
     private func setupUISwitch() {
-        let switch1 = UISwitch(frame: CGRect(x: 20, y: 220, width: 80, height: 30))
+        let switch1 = UISwitch(frame: CGRect(x: 20, y: 270, width: 80, height: 30))
         switch1.isOn = false
         view.addSubview(switch1)
         
@@ -155,6 +165,19 @@ extension RxSwiftUIViewController {
         switch1.rx.isOn
             .bind(to: button.rx.isEnabled)
             .disposed(by: disposeBag)
+        
+        let activity = UIActivityIndicatorView(style: .large)
+        activity.frame = CGRect(x: button.frame.maxX + 20, y: button.frame.minY, width: 30, height: 30)
+        activity.hidesWhenStopped = true
+        view.addSubview(activity)
+        
+        switch1.rx.value
+            .bind(to: activity.rx.isAnimating)
+            .disposed(by: disposeBag)
+        
+        switch1.rx.value
+            .bind(to: UIApplication.shared.rx.isNetworkActivityIndicatorVisible)
+            .disposed(by: disposeBag)
     }
 }
 
@@ -163,7 +186,7 @@ extension RxSwiftUIViewController {
     private func setupSegmentedControl() {
         let titles = ["1", "2", "3"]
         let segmented = UISegmentedControl(items: titles)
-        segmented.frame = CGRect(x: 20, y: 270, width: 200, height: 30)
+        segmented.frame = CGRect(x: 20, y: 320, width: 200, height: 30)
         segmented.selectedSegmentIndex = 0
         view.addSubview(segmented)
         
@@ -185,7 +208,7 @@ extension RxSwiftUIViewController {
 extension RxSwiftUIViewController {
     private func setupUITextField() {
         // 输入框
-        let inputTF = UITextField(frame: CGRect(x: 20, y: 320, width: 100, height: 30))
+        let inputTF = UITextField(frame: CGRect(x: 20, y: 370, width: 100, height: 30))
         inputTF.borderStyle = .roundedRect
         inputTF.placeholder = "输入"
         view.addSubview(inputTF)
@@ -232,7 +255,7 @@ extension RxSwiftUIViewController {
 // MARK: - UITextView
 extension RxSwiftUIViewController {
     private func setupUITextView() {
-        let textView = UITextView(frame: CGRect(x: 20, y: 400, width: 200, height: 100))
+        let textView = UITextView(frame: CGRect(x: 20, y: 450, width: 200, height: 100))
         textView.text = "UITextView"
         view.addSubview(textView)
         
@@ -261,7 +284,7 @@ extension RxSwiftUIViewController {
 extension RxSwiftUIViewController {
     private func setupUITableView() {
         let button_1 = UIButton(type: .system)
-        button_1.frame = CGRect(x: 20, y: 520, width: 100, height: 30)
+        button_1.frame = CGRect(x: 20, y: 570, width: 100, height: 30)
         button_1.setTitle("传统方式", for: .normal)
         button_1.setTitleColor(.white, for: .normal)
         button_1.setTitleColor(.lightGray, for: .highlighted)
@@ -269,7 +292,7 @@ extension RxSwiftUIViewController {
         view.addSubview(button_1)
         
         let button_2 = UIButton(type: .system)
-        button_2.frame = CGRect(x: button_1.frame.maxX + 20, y: 520, width: 100, height: 30)
+        button_2.frame = CGRect(x: button_1.frame.maxX + 20, y: button_1.frame.minY, width: 100, height: 30)
         button_2.setTitle("RxSwift方式", for: .normal)
         button_2.setTitleColor(.white, for: .normal)
         button_2.setTitleColor(.lightGray, for: .highlighted)
@@ -277,12 +300,12 @@ extension RxSwiftUIViewController {
         view.addSubview(button_2)
         
         button_1.rx.tap.subscribe(onNext: {
-                
+            self.presentTableVc(false)
         })
         .disposed(by: disposeBag)
         
         button_2.rx.tap.subscribe(onNext: {
-            
+            self.presentTableVc(true)
         })
         .disposed(by: disposeBag)
     }
@@ -290,5 +313,41 @@ extension RxSwiftUIViewController {
     private func presentTableVc(_ isRx: Bool) {
         let rxVc = RxSwiftTableViewController(isRx: isRx)
         present(rxVc, animated: true)
+    }
+}
+
+// MARK: - UISlider & UIStepper
+extension RxSwiftUIViewController {
+    private func setupUISliderAndUIStepper() {
+        let slider = UISlider(frame: CGRect(x: 20, y: 620, width: 150, height: 20))
+        slider.value = 0.5
+        slider.minimumValue = 0.1
+        view.addSubview(slider)
+        
+        let stepper = UIStepper(frame: CGRect(x: slider.frame.maxX + 20, y: 620, width: 150, height: 20))
+        view.addSubview(stepper)
+        
+        let label = UILabel(frame: CGRect(x: stepper.frame.maxX + 10, y: slider.frame.minY, width: 100, height: 20))
+        view.addSubview(label)
+        
+        slider.rx.value
+            .asObservable()
+            .subscribe(onNext: { print("slider value: \($0)")})
+            .disposed(by: disposeBag)
+        
+        stepper.rx.value
+            .asObservable()
+            .subscribe(onNext: { print("stepper value: \($0)") })
+            .disposed(by: disposeBag)
+        
+        slider.rx.value
+            .map { Double($0) }
+            .bind(to: stepper.rx.stepValue)
+            .disposed(by: disposeBag)
+        
+        stepper.rx.value
+            .map { "\($0)" }
+            .bind(to: label.rx.text)
+            .disposed(by: disposeBag)
     }
 }
