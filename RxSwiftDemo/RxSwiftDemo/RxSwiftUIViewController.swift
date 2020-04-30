@@ -21,6 +21,8 @@ class RxSwiftUIViewController: UIViewController {
         let backItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(back))
         navigationItem.leftBarButtonItem = backItem
         
+        endEditing()
+        
         setupUILabel()
         setupUIButton()
         setupUISwitch()
@@ -32,6 +34,8 @@ class RxSwiftUIViewController: UIViewController {
         
         // MARK: - 双向绑定
         simpleTwowayBinding()
+        
+        setupGesture()
     }
     
     @objc private func back() {
@@ -381,5 +385,50 @@ extension RxSwiftUIViewController {
         
         // 将用户信息绑定到label上
         userVm.userInfo.bind(to: label.rx.text).disposed(by: disposeBag)
+    }
+}
+
+// MARK: - 手势
+extension RxSwiftUIViewController {
+    private func setupGesture() {
+        // 添加一个上滑手势
+        let swipe = UISwipeGestureRecognizer()
+        swipe.direction = .up
+        view.addGestureRecognizer(swipe)
+        
+        // 手势响应
+        // 1. subscribe
+//        swipe.rx.event
+//            .subscribe(onNext: { [weak self] gesture in
+//                let point = gesture.location(in: gesture.view)
+//                self?.showAlert(title: "向上滑动", message: "\(point.x) - \(point.y)")
+//            })
+//            .disposed(by: disposeBag)
+        
+        // 2. bind
+        swipe.rx.event
+            .bind { [weak self] gesture in
+                let point = gesture.location(in: gesture.view)
+                self?.showAlert(title: "向上滑动", message: "\(point.x) - \(point.y)")
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    /// 显示消息框
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "确定", style: .cancel))
+        present(alert, animated: true)
+    }
+    
+    private func endEditing() {
+        let tap = UITapGestureRecognizer()
+        view.addGestureRecognizer(tap)
+        
+        tap.rx.event
+            .subscribe(onNext: { [weak self] _ in
+                self?.view.endEditing(true)
+            })
+            .disposed(by: disposeBag)
     }
 }
