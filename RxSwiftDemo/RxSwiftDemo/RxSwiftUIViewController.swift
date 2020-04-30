@@ -29,11 +29,16 @@ class RxSwiftUIViewController: UIViewController {
         setupUITextView()
         setupUITableView()
         setupUISliderAndUIStepper()
+        
+        // MARK: - 双向绑定
+        simpleTwowayBinding()
     }
     
     @objc private func back() {
         dismiss(animated: true)
     }
+    
+    private var userVm = UserViewModel()
 }
 
 // MARK: - UILabel
@@ -349,5 +354,32 @@ extension RxSwiftUIViewController {
             .map { "\($0)" }
             .bind(to: label.rx.text)
             .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - 双向绑定
+extension RxSwiftUIViewController {
+    /// 简单的双向绑定
+    private func simpleTwowayBinding() {
+        let textField = UITextField(frame: CGRect(x: 20, y: 660, width: 150, height: 30))
+        textField.borderStyle = .roundedRect
+        view.addSubview(textField)
+        
+        let label = UILabel(frame: CGRect(x: textField.frame.maxX + 20, y: textField.frame.minY, width: 150, height: 20))
+        view.addSubview(label)
+        
+        textField.rx.controlEvent(.editingDidEnd)
+            .subscribe(onNext: { textField.resignFirstResponder() })
+            .disposed(by: disposeBag)
+        
+        // 将用户名与textField做双向绑定
+//        userVm.username.asObservable().bind(to: textField.rx.text).disposed(by: disposeBag)
+//        textField.rx.text.orEmpty.bind(to: userVm.username).disposed(by: disposeBag)
+        
+        // 自定义双向绑定 operator
+        _ = textField.rx.textInput <-> userVm.username
+        
+        // 将用户信息绑定到label上
+        userVm.userInfo.bind(to: label.rx.text).disposed(by: disposeBag)
     }
 }

@@ -20,6 +20,8 @@
 		3BB464E824598B20007DD2FE /* RxSwiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB464E724598B20007DD2FE /* RxSwiftTableViewController.swift */; };
 		3BB464EB24598BB1007DD2FE /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB464EA24598BB1007DD2FE /* Music.swift */; };
 		3BB464ED24598C38007DD2FE /* RxSwiftTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB464EC24598C38007DD2FE /* RxSwiftTableViewController.xib */; };
+		3BB464F4245AB6B9007DD2FE /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB464F3245AB6B9007DD2FE /* UserViewModel.swift */; };
+		3BB464F6245AC2B3007DD2FE /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB464F5245AC2B3007DD2FE /* Operators.swift */; };
 		F499D152A55BFB861E4837EC /* Pods_RxSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51814B6D018A5AEB876D6A1B /* Pods_RxSwiftDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		3BB464E724598B20007DD2FE /* RxSwiftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftTableViewController.swift; sourceTree = "<group>"; };
 		3BB464EA24598BB1007DD2FE /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		3BB464EC24598C38007DD2FE /* RxSwiftTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftTableViewController.xib; sourceTree = "<group>"; };
+		3BB464F3245AB6B9007DD2FE /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		3BB464F5245AC2B3007DD2FE /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		51814B6D018A5AEB876D6A1B /* Pods_RxSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BA25C2821235F0D28DB76DB /* Pods-RxSwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemoTests.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemoTests/Pods-RxSwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA16F1C0FA777D40F366CC22 /* Pods-RxSwiftDemo-RxSwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo-RxSwiftDemoTests.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo-RxSwiftDemoTests/Pods-RxSwiftDemo-RxSwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				3B5BD83F24556F260022DF94 /* ViewController.swift */,
 				3BB464E32455977B007DD2FE /* CustomViewController.swift */,
 				3BB464E52459514F007DD2FE /* RxSwiftUIViewController.swift */,
+				3BB464F2245AB69B007DD2FE /* TwowayBinding */,
 				3BB464E924598B97007DD2FE /* TableView */,
 				3B5BD84124556F260022DF94 /* Main.storyboard */,
 				3B5BD84424556F290022DF94 /* Assets.xcassets */,
@@ -143,6 +148,15 @@
 				3BB464EA24598BB1007DD2FE /* Music.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		3BB464F2245AB69B007DD2FE /* TwowayBinding */ = {
+			isa = PBXGroup;
+			children = (
+				3BB464F3245AB6B9007DD2FE /* UserViewModel.swift */,
+				3BB464F5245AC2B3007DD2FE /* Operators.swift */,
+			);
+			path = TwowayBinding;
 			sourceTree = "<group>";
 		};
 		593EABD3A9DDE0B15721BAAC /* Pods */ = {
@@ -346,12 +360,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B5BD84024556F260022DF94 /* ViewController.swift in Sources */,
+				3BB464F4245AB6B9007DD2FE /* UserViewModel.swift in Sources */,
 				3B5BD83C24556F260022DF94 /* AppDelegate.swift in Sources */,
 				3B5BD83E24556F260022DF94 /* SceneDelegate.swift in Sources */,
 				3BB464E42455977B007DD2FE /* CustomViewController.swift in Sources */,
 				3BB464EB24598BB1007DD2FE /* Music.swift in Sources */,
 				3BB464E824598B20007DD2FE /* RxSwiftTableViewController.swift in Sources */,
 				3BB464E62459514F007DD2FE /* RxSwiftUIViewController.swift in Sources */,
+				3BB464F6245AC2B3007DD2FE /* Operators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
