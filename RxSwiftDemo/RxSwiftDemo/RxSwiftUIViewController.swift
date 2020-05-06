@@ -10,6 +10,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+let screenW = UIScreen.main.bounds.width
+let screenH = UIScreen.main.bounds.height
+
 class RxSwiftUIViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
@@ -36,6 +39,10 @@ class RxSwiftUIViewController: UIViewController {
         simpleTwowayBinding()
         
         setupGesture()
+        
+        setupDatePicker()
+        
+        setupCountDown()
     }
     
     @objc private func back() {
@@ -43,6 +50,11 @@ class RxSwiftUIViewController: UIViewController {
     }
     
     private var userVm = UserViewModel()
+    
+    /// 剩余时间（必须为 60 的整数倍，比如设置为100，值自动变为 60）
+    private let leftTime = BehaviorRelay(value: TimeInterval(180))
+    /// 当前倒计时是否结束
+    private let countDownStopped = BehaviorRelay(value: true)
 }
 
 // MARK: - UILabel
@@ -429,6 +441,152 @@ extension RxSwiftUIViewController {
             .subscribe(onNext: { [weak self] _ in
                 self?.view.endEditing(true)
             })
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - 日期选择器
+extension RxSwiftUIViewController {
+    private func setupDatePicker() {
+        let button = UIButton(type: .system)
+        button.setTitle("日期选择器", for: .normal)
+        button.frame = CGRect(x: 20, y: 700, width: 100, height: 30)
+        view.addSubview(button)
+        
+        let label = UILabel(frame: CGRect(x: button.frame.maxX + 20, y: button.frame.minY, width: 200, height: 20))
+        view.addSubview(label)
+        
+        button.rx.tap
+            .subscribe(onNext: {
+                self.showDatePicker(label)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func showDatePicker(_ label: UILabel) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy年MM月dd日 HH:mm"
+        
+        let mainView = UIView(frame: CGRect(x: 0, y: 0, width: screenW, height: screenH))
+        mainView.backgroundColor = UIColor.black.withAlphaComponent(0.36)
+        view.addSubview(mainView)
+        
+        let showView = UIView(frame: CGRect(x: 50, y: (screenH - 300) / 2, width: screenW - 100, height: 300))
+        showView.backgroundColor = .white
+        showView.layer.cornerRadius = 10
+        showView.layer.masksToBounds = true
+        mainView.addSubview(showView)
+        
+        let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: showView.bounds.width, height: 250))
+        showView.addSubview(datePicker)
+        
+        let cancelBtn = UIButton(type: .system)
+        cancelBtn.frame = CGRect(x: (showView.bounds.width - 160) / 2,
+                                 y: (showView.bounds.height - 30 - 10), width: 160, height: 30)
+        cancelBtn.setTitle("关闭", for: .normal)
+        showView.addSubview(cancelBtn)
+        
+        cancelBtn.rx.tap
+            .subscribe(onNext: {
+                mainView.removeFromSuperview()
+            })
+            .disposed(by: disposeBag)
+        
+        datePicker.rx.date
+            .map { dateFormatter.string(from: $0) }
+            .bind(to: label.rx.text)
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - 倒计时
+extension RxSwiftUIViewController {
+    private func setupCountDown() {
+        let button = UIButton(type: .system)
+        button.setTitle("倒计时", for: .normal)
+        button.frame = CGRect(x: 20, y: 740, width: 100, height: 30)
+        view.addSubview(button)
+        
+        button.rx.tap
+            .subscribe(onNext: {
+                self.showCountDown()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func showCountDown() {
+        let mainView = UIView(frame: CGRect(x: 0, y: 0, width: screenW, height: screenH))
+        mainView.backgroundColor = UIColor.black.withAlphaComponent(0.36)
+        view.addSubview(mainView)
+        
+        let showView = UIView(frame: CGRect(x: 50, y: (screenH - 300) / 2, width: screenW - 100, height: 300))
+        showView.backgroundColor = .white
+        showView.layer.cornerRadius = 10
+        showView.layer.masksToBounds = true
+        mainView.addSubview(showView)
+        
+        let cdTimer = UIDatePicker(frame: CGRect(x: 0, y: 0, width: showView.bounds.width, height: 250))
+        cdTimer.datePickerMode = .countDownTimer
+        showView.addSubview(cdTimer)
+        
+        let startBtn = UIButton(type: .system)
+        startBtn.frame = CGRect(x: (showView.bounds.width - 320) / 2,
+                                y: showView.bounds.height - 30 - 10,
+                                width: 320, height: 30)
+        startBtn.setTitleColor(.red, for: .normal)
+        startBtn.setTitleColor(.gray, for: .disabled)
+        showView.addSubview(startBtn)
+        
+        // 剩余时间与datepicker做双向绑定
+//        DispatchQueue.main.async { //加 DispatchQueue.main.async 是为了解决第一次拨动表盘不触发值改变事件的问题
+//            _ = cdTimer.rx.countDownDuration <-> self.leftTime
+//        }
+        
+        leftTime.asObservable().bind(to: cdTimer.rx.countDownDuration).disposed(by: disposeBag)
+        cdTimer.rx.countDownDuration.bind(to: leftTime).disposed(by: disposeBag)
+        
+        // 绑定button标题
+        Observable.combineLatest(leftTime.asObservable(), countDownStopped.asObservable()) { (leftTimeValue, countDownStoppedValue) in
+            // 根据当前的状态设置按钮的标题
+            return countDownStoppedValue ? "开始" : "倒计时开始，还有\(leftTimeValue)秒..."
+        }
+        .bind(to: startBtn.rx.title())
+        .disposed(by: disposeBag)
+        
+        // 绑定button和datepicker状态（在倒计过程中，按钮和时间选择组件不可用）
+        countDownStopped.asDriver().drive(cdTimer.rx.isEnabled).disposed(by: disposeBag)
+        countDownStopped.asDriver().drive(startBtn.rx.isEnabled).disposed(by: disposeBag)
+        
+        // 按钮点击响应
+        startBtn.rx.tap
+            .bind {
+                self.startCountDown()
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func startCountDown() {
+        countDownStopped.accept(false)
+        
+        var value = self.leftTime.value
+        
+        // 创建一个计时器
+        Observable<Int>.interval(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+            .takeUntil(countDownStopped.asObservable().filter { $0 }) // 倒计时结束时停止计时器
+            .subscribe { event in
+                // 每次剩余时间减1
+                value -= 1
+                self.leftTime.accept(value)
+                
+                if self.leftTime.value == 0 {
+                    print("倒计时结束")
+                    
+                    self.countDownStopped.accept(true)
+                    
+                    // 重置时间
+                    self.leftTime.accept(180)
+                }
+            }
             .disposed(by: disposeBag)
     }
 }
