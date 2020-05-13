@@ -1,0 +1,64 @@
+PODS:
+  - Alamofire (5.1.0)
+  - KafkaRefresh (1.4.8):
+    - KafkaRefresh/Category (= 1.4.8)
+    - KafkaRefresh/Configuration (= 1.4.8)
+    - KafkaRefresh/Core (= 1.4.8)
+    - KafkaRefresh/Default (= 1.4.8)
+    - KafkaRefresh/Style (= 1.4.8)
+    - KafkaRefresh/UIKit (= 1.4.8)
+  - KafkaRefresh/Category (1.4.8)
+  - KafkaRefresh/Configuration (1.4.8):
+    - KafkaRefresh/UIKit/FootKit
+    - KafkaRefresh/UIKit/HeadKit
+  - KafkaRefresh/Core (1.4.8):
+    - KafkaRefresh/Category
+  - KafkaRefresh/Default (1.4.8):
+    - KafkaRefresh/Style
+  - KafkaRefresh/Style (1.4.8)
+  - KafkaRefresh/UIKit (1.4.8):
+    - KafkaRefresh/UIKit/FootKit (= 1.4.8)
+    - KafkaRefresh/UIKit/HeadKit (= 1.4.8)
+    - KafkaRefresh/UIKit/LayerKit (= 1.4.8)
+  - KafkaRefresh/UIKit/FootKit (1.4.8):
+    - KafkaRefresh/Category
+    - KafkaRefresh/Core
+    - KafkaRefresh/Default
+    - KafkaRefresh/Style
+    - KafkaRefresh/UIKit/LayerKit
+  - KafkaRefresh/UIKit/HeadKit (1.4.8):
+    - KafkaRefresh/Category
+    - KafkaRefresh/Core
+    - KafkaRefresh/Default
+    - KafkaRefresh/Style
+    - KafkaRefresh/UIKit/LayerKit
+  - KafkaRefresh/UIKit/LayerKit (1.4.8):
+    - KafkaRefresh/Category
+    - KafkaRefresh/Default
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
+    - Moya/Core
+    - RxSwift (~> 5.0)
+  - RxSwift (5.1.1)
+
+DEPENDENCIES:
+  - KafkaRefresh
+  - Moya/RxSwift
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - KafkaRefresh
+    - Moya
+    - RxSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  KafkaRefresh: aaae4ff23197f2ef38b6b22ca320740beac4bbb4
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+
+PODFILE CHECKSUM: 868e382503adac346fa127f23a4582d561c650a8
+
+COCOAPODS: 1.9.1

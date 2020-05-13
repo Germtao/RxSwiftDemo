@@ -537,6 +537,19 @@ extension RxSwiftUIViewController {
         startBtn.setTitleColor(.gray, for: .disabled)
         showView.addSubview(startBtn)
         
+        let tap = UITapGestureRecognizer()
+        mainView.addGestureRecognizer(tap)
+        
+        tap.rx.event
+            .bind { gesture in
+                if gesture.view != showView {
+                    self.countDownStopped.accept(true)
+                    self.leftTime.accept(180)
+                    mainView.removeFromSuperview()
+                }
+            }
+            .disposed(by: disposeBag)
+        
         // 剩余时间与datepicker做双向绑定
 //        DispatchQueue.main.async { //加 DispatchQueue.main.async 是为了解决第一次拨动表盘不触发值改变事件的问题
 //            _ = cdTimer.rx.countDownDuration <-> self.leftTime
