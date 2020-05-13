@@ -16,7 +16,10 @@
 		3BCF3391246BDAE400591DEF /* TTSwiftHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3390246BDAE400591DEF /* TTSwiftHubTests.swift */; };
 		3BCF339C246BDAE400591DEF /* TTSwiftHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF339B246BDAE400591DEF /* TTSwiftHubUITests.swift */; };
 		3BCF33AF246BE36900591DEF /* TTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF33AE246BE36900591DEF /* TTTableViewController.swift */; };
-		3BCF33B3246BE59700591DEF /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF33B2246BE59700591DEF /* Common.swift */; };
+		3BCF33B5246BEC4E00591DEF /* TTTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF33B4246BEC4E00591DEF /* TTTableView.swift */; };
+		3BCF33B8246BF19800591DEF /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF33B7246BF19800591DEF /* Configs.swift */; };
+		3BCF33BB246BFD0900591DEF /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF33BA246BFD0900591DEF /* UIView+Layout.swift */; };
+		3BCF33BD246BFDAD00591DEF /* TTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF33BC246BFDAD00591DEF /* TTView.swift */; };
 		96662B8D1C85BE3578F9D71B /* Pods_TTSwiftHub_TTSwiftHubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20186349C22BEC120A0FE23A /* Pods_TTSwiftHub_TTSwiftHubUITests.framework */; };
 		9D75D815D8090737348F9954 /* Pods_TTSwiftHubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D9D6227B1B3571B1B91CA9 /* Pods_TTSwiftHubTests.framework */; };
 		DADD46D597C363EC8CBDC599 /* Pods_TTSwiftHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D78F151FB87D972037E314 /* Pods_TTSwiftHub.framework */; };
@@ -59,7 +62,10 @@
 		3BCF339B246BDAE400591DEF /* TTSwiftHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSwiftHubUITests.swift; sourceTree = "<group>"; };
 		3BCF339D246BDAE400591DEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BCF33AE246BE36900591DEF /* TTTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTableViewController.swift; sourceTree = "<group>"; };
-		3BCF33B2246BE59700591DEF /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		3BCF33B4246BEC4E00591DEF /* TTTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTableView.swift; sourceTree = "<group>"; };
+		3BCF33B7246BF19800591DEF /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
+		3BCF33BA246BFD0900591DEF /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		3BCF33BC246BFDAD00591DEF /* TTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTView.swift; sourceTree = "<group>"; };
 		425C402F9ACCFAF983F3BC59 /* Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig"; path = "Target Support Files/Pods-TTSwiftHub-TTSwiftHubUITests/Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		47D78F151FB87D972037E314 /* Pods_TTSwiftHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTSwiftHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D9D6227B1B3571B1B91CA9 /* Pods_TTSwiftHubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTSwiftHubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +129,8 @@
 				3BCF33A9246BE09700591DEF /* Application */,
 				3BCF33AB246BE27300591DEF /* Modules */,
 				3BCF33AD246BE33100591DEF /* Common */,
+				3BCF33B6246BEDF200591DEF /* Configs */,
+				3BCF33B9246BFCC800591DEF /* Extension */,
 				3BCF33AA246BE24200591DEF /* Resources */,
 			);
 			path = TTSwiftHub;
@@ -186,9 +194,26 @@
 			isa = PBXGroup;
 			children = (
 				3BCF33AE246BE36900591DEF /* TTTableViewController.swift */,
-				3BCF33B2246BE59700591DEF /* Common.swift */,
+				3BCF33B4246BEC4E00591DEF /* TTTableView.swift */,
+				3BCF33BC246BFDAD00591DEF /* TTView.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		3BCF33B6246BEDF200591DEF /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				3BCF33B7246BF19800591DEF /* Configs.swift */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		3BCF33B9246BFCC800591DEF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3BCF33BA246BFD0900591DEF /* UIView+Layout.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		4B72D7C11BD04939EEF6CD6E /* Pods */ = {
@@ -456,9 +481,12 @@
 			files = (
 				3BCF337E246BDADD00591DEF /* InitialSplitViewController.swift in Sources */,
 				3BCF33AF246BE36900591DEF /* TTTableViewController.swift in Sources */,
+				3BCF33BD246BFDAD00591DEF /* TTView.swift in Sources */,
 				3BCF337A246BDADD00591DEF /* AppDelegate.swift in Sources */,
-				3BCF33B3246BE59700591DEF /* Common.swift in Sources */,
+				3BCF33B5246BEC4E00591DEF /* TTTableView.swift in Sources */,
 				3BCF337C246BDADD00591DEF /* SceneDelegate.swift in Sources */,
+				3BCF33BB246BFD0900591DEF /* UIView+Layout.swift in Sources */,
+				3BCF33B8246BF19800591DEF /* Configs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

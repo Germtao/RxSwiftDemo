@@ -11,9 +11,24 @@ target 'TTSwiftHub' do
   
   # Networking
   pod 'Moya/RxSwift'  # https://github.com/Moya/Moya
+  
+  # Rx Extensions
+  pod 'RxDataSources', '~> 4.0'  # https://github.com/RxSwiftCommunity/RxDataSources
+  pod 'RxSwiftExt', '~> 5.0'  # https://github.com/RxSwiftCommunity/RxSwiftExt
+  pod 'NSObject+Rx', '~> 5.0'  # https://github.com/RxSwiftCommunity/NSObject-Rx
+  pod 'RxViewController', '~> 1.0'  # https://github.com/devxoul/RxViewController
+  pod 'RxGesture', '~> 3.0'  # https://github.com/RxSwiftCommunity/RxGesture
+  pod 'RxOptional', '~> 4.0'  # https://github.com/RxSwiftCommunity/RxOptional
+  pod 'RxTheme', '~> 4.0'  # https://github.com/RxSwiftCommunity/RxTheme
 
   # UI
   pod 'KafkaRefresh'  # https://github.com/OpenFeyn/KafkaRefresh
+  
+  # Auto Layout
+  pod 'SnapKit'  # https://github.com/SnapKit/SnapKit
+  
+  # Tools
+  pod 'R.swift'  # https://github.com/mac-cain13/R.swift
 
   target 'TTSwiftHubTests' do
     inherit! :search_paths
