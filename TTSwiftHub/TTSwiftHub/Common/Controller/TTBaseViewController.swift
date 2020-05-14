@@ -11,8 +11,9 @@ import RxSwift
 import RxCocoa
 import Localize_Swift
 import GoogleMobileAds
+import DZNEmptyDataSet
 
-class TTBaseViewController: UIViewController {
+class TTBaseViewController: UIViewController, Navigatable {
     
     var viewModel: TTViewModel?
     var navigator: Navigator!
@@ -104,7 +105,7 @@ class TTBaseViewController: UIViewController {
         
         closeBarItem.rx.tap
             .subscribe(onNext: { [weak self] in
-                
+                self?.navigator.dismiss(current: self)
             })
             .disposed(by: rx.disposeBag)
         
@@ -249,6 +250,14 @@ extension TTBaseViewController {
 }
 
 extension TTBaseViewController {
+    func emptyView(with height: CGFloat) -> TTView {
+        let view = TTView()
+        view.snp.makeConstraints { (make) in
+            make.height.equalTo(height)
+        }
+        return view
+    }
+    
     @objc func handleOneFingerSwipe(_ gesture: UISwipeGestureRecognizer) {
         if gesture.state == .recognized, canOpenFlex {
             
@@ -259,5 +268,54 @@ extension TTBaseViewController {
         if gesture.state == .recognized {
 //            HeroDe
         }
+    }
+}
+
+extension Reactive where Base: TTBaseViewController {
+    /// “ backgroundColor”属性的可绑定接收器
+    var emptyDataSetImageTintColorBinder: Binder<UIColor?> {
+        return Binder(self.base) { (view, attr) in
+            view.emptyDataSetImageTintColor.accept(attr)
+        }
+    }
+}
+
+extension TTBaseViewController: DZNEmptyDataSetSource {
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: emptyDataSetTitle)
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: emptyDataSetDescription)
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return emptyDataSetImage
+    }
+    
+    func imageTintColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return emptyDataSetImageTintColor.value
+    }
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return .clear
+    }
+    
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        return -60
+    }
+}
+
+extension TTBaseViewController: DZNEmptyDataSetDelegate {
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        return !isLoading.value
+    }
+    
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+    
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        emptyDataSetButtonTap.onNext(())
     }
 }
