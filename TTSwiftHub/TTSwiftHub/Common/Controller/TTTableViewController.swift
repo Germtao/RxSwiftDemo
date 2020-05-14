@@ -9,8 +9,9 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import KafkaRefresh
 
-class TTTableViewController: UIViewController, UIScrollViewDelegate {
+class TTTableViewController: TTBaseViewController, UIScrollViewDelegate {
     
     /// PublishSubject: 既是可观察对象同时也是观察者, 初始化时并不包含数据，并且只会给订阅者发送后续数据
     let headerRefreshTrigger = PublishSubject<Void>()
@@ -39,7 +40,41 @@ class TTTableViewController: UIViewController, UIScrollViewDelegate {
         super.viewWillAppear(animated)
         
         if clearsSelectionOnViewWillAppear {
-            <#code#>
+            deselectSelectedRow()
+        }
+    }
+    
+    override func setupUI() {
+        super.setupUI()
+        
+        stackView.spacing = 0
+        stackView.insertArrangedSubview(tableView, at: 0)
+        
+        tableView.bindGlobalStyle(forHeadRefreshHandler: { [weak self] in
+            self?.headerRefreshTrigger.onNext(())
+        })
+        
+        tableView.bindGlobalStyle(forFootRefreshHandler: { [weak self] in
+            self?.footerRefreshTrigger.onNext(())
+        })
+        
+//        isHeaderLoading
+//            .bind(to: tableView.headRefreshControl.rx.isAnimating)
+//        isFooterLoading
+//            .bind(to: tableView.footRefreshControl.rx.isAnimating)
+    }
+    
+    override func updateUI() {
+        super.updateUI()
+    }
+}
+
+extension TTTableViewController {
+    func deselectSelectedRow() {
+        if let selectedIndexPaths = tableView.indexPathsForSelectedRows {
+            selectedIndexPaths.forEach {
+                tableView.deselectRow(at: $0, animated: false)
+            }
         }
     }
 }

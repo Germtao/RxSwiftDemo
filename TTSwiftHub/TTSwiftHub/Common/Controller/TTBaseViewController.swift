@@ -185,9 +185,7 @@ class TTBaseViewController: UIViewController, Navigatable {
             motionShakeEvent.onNext(())
         }
     }
-}
-
-extension TTBaseViewController {
+    
     func setupUI() {
         hero.isEnabled = true
         navigationItem.backBarButtonItem = backBarItem
@@ -226,7 +224,9 @@ extension TTBaseViewController {
     func updateUI() {
         
     }
-    
+}
+
+extension TTBaseViewController {
     /// 方向改变
     func orientationChanged() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
