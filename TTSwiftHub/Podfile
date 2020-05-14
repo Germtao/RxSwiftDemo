@@ -12,6 +12,9 @@ target 'TTSwiftHub' do
   # Networking
   pod 'Moya/RxSwift'  # https://github.com/Moya/Moya
   
+  # JSON Mapping
+  pod 'Moya-ObjectMapper/RxSwift'  # https://github.com/ivanbruel/Moya-ObjectMapper
+  
   # Rx Extensions
   pod 'RxDataSources', '~> 4.0'  # https://github.com/RxSwiftCommunity/RxDataSources
   pod 'RxSwiftExt', '~> 5.0'  # https://github.com/RxSwiftCommunity/RxSwiftExt
@@ -23,12 +26,22 @@ target 'TTSwiftHub' do
 
   # UI
   pod 'KafkaRefresh'  # https://github.com/OpenFeyn/KafkaRefresh
+  pod 'DZNEmptyDataSet'  # https://github.com/dzenbot/DZNEmptyDataSet
+  pod 'Localize-Swift'  # https://github.com/marmelroy/Localize-Swift
+  pod 'Hero', :git => 'https://github.com/HeroTransitions/Hero.git', :branch => 'develop'  # https://github.com/lkzhao/Hero
   
   # Auto Layout
   pod 'SnapKit'  # https://github.com/SnapKit/SnapKit
   
   # Tools
   pod 'R.swift'  # https://github.com/mac-cain13/R.swift
+#  pod 'SwiftLint', '0.39.2'  # https://github.com/realm/SwiftLint
+  
+  # Logging
+  pod 'CocoaLumberjack/Swift'  # https://github.com/CocoaLumberjack/CocoaLumberjack
+  
+  # Ads
+  pod 'Google-Mobile-Ads-SDK'
 
   target 'TTSwiftHubTests' do
     inherit! :search_paths

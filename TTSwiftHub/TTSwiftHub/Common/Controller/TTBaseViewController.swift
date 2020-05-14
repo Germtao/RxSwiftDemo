@@ -1,0 +1,263 @@
+//
+//  TTBaseViewController.swift
+//  TTSwiftHub
+//
+//  Created by QDSG on 2020/5/14.
+//  Copyright © 2020 tTao. All rights reserved.
+//
+
+import UIKit
+import RxSwift
+import RxCocoa
+import Localize_Swift
+import GoogleMobileAds
+
+class TTBaseViewController: UIViewController {
+    
+    var viewModel: TTViewModel?
+    var navigator: Navigator!
+    
+    init(viewModel: TTViewModel?, navigator: Navigator) {
+        self.viewModel = viewModel
+        self.navigator = navigator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    let isLoading = BehaviorRelay(value: false)
+    let error = PublishSubject<ApiError>()
+    
+    var automaticallyAdjustsLeftBarButtonItem = true
+    var canOpenFlex = true
+    
+    var navigationTitle: String = "" {
+        didSet {
+            navigationItem.title = navigationTitle
+        }
+    }
+    
+    let spaceBarItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+    
+    let emptyDataSetButtonTap = PublishSubject<Void>()
+    var emptyDataSetTitle = R.string.localizable.commonNoResults.key.localized()
+    var emptyDataSetDescription = ""
+    var emptyDataSetImage = R.image.image_no_result()
+    var emptyDataSetImageTintColor = BehaviorRelay<UIColor?>(value: nil)
+    
+    let languageChanged = BehaviorRelay<Void>(value: ())
+    
+    let motionShakeEvent = PublishSubject<Void>()
+    
+    lazy var searchBar = UISearchBar()
+    
+    lazy var backBarItem: TTBarButtonItem = {
+        let item = TTBarButtonItem()
+        item.title = ""
+        return item
+    }()
+    
+    lazy var closeBarItem: TTBarButtonItem = {
+        let item = TTBarButtonItem(image: R.image.icon_navigation_close(),
+                                   style: .plain,
+                                   target: self,
+                                   action: nil)
+        return item
+    }()
+    
+    lazy var bannerView: GADBannerView = {
+        let banner = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        banner.rootViewController = self
+//        banner.adUnitID = Keys.adMob.apiKey
+        banner.hero.id = "BannerView"
+        return banner
+    }()
+    
+    lazy var contentView: UIView = {
+        let content = UIView()
+//        content.hero.id = "ContentView"
+        self.view.addSubview(content)
+        content.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.view.safeAreaLayoutGuide)
+        }
+        return content
+    }()
+    
+    lazy var stackView: TTStackView = {
+        let subviews: [UIView] = []
+        let stack = TTStackView(arrangedSubviews: subviews)
+        stack.spacing = 0
+        self.contentView.addSubview(stack)
+        stack.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        return stack
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupUI()
+        bindViewModel()
+        
+        closeBarItem.rx.tap
+            .subscribe(onNext: { [weak self] in
+                
+            })
+            .disposed(by: rx.disposeBag)
+        
+        // 监听设备方向
+        NotificationCenter.default
+            .rx.notification(UIDevice.orientationDidChangeNotification)
+            .subscribe(onNext: { [weak self] event in
+                self?.orientationChanged()
+            })
+            .disposed(by: rx.disposeBag)
+        
+        // 监听应用激活
+        NotificationCenter.default
+            .rx.notification(UIApplication.didBecomeActiveNotification)
+            .subscribe(onNext: { [weak self] event in
+                self?.didBecomeActive()
+            })
+            .disposed(by: rx.disposeBag)
+        
+        NotificationCenter.default
+            .rx.notification(UIAccessibility.reduceMotionStatusDidChangeNotification)
+            .subscribe(onNext: { event in
+                logDebug("Motion Status changed")
+            })
+            .disposed(by: rx.disposeBag)
+        
+        // 监听应用更换了语言
+        NotificationCenter.default
+            .rx.notification(NSNotification.Name(LCLLanguageChangeNotification))
+            .subscribe(onNext: { [weak self] event in
+                self?.languageChanged.accept(())
+            })
+            .disposed(by: rx.disposeBag)
+        
+        // 一根手指轻扫打开Flex
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleOneFingerSwipe(_:)))
+        swipeGesture.numberOfTouchesRequired = 1
+        view.addGestureRecognizer(swipeGesture)
+        
+        // 两指轻扫打开Flex和Hero调试
+        let twoSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleTwoFingerSwipe(_:)))
+        swipeGesture.numberOfTouchesRequired = 2
+        view.addGestureRecognizer(twoSwipeGesture)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if automaticallyAdjustsLeftBarButtonItem {
+            adjustLeftBarButtonItem()
+        }
+        
+        updateUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        updateUI()
+        
+        logResourcesCount()
+    }
+    
+    deinit {
+        logDebug("\(type(of: self)): Deinited")
+        logResourcesCount()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
+        logDebug("\(type(of: self)): Received Memory Warning")
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            motionShakeEvent.onNext(())
+        }
+    }
+}
+
+extension TTBaseViewController {
+    func setupUI() {
+        hero.isEnabled = true
+        navigationItem.backBarButtonItem = backBarItem
+        
+        bannerView.load(GADRequest())
+        TTLibsManager.shared.bannersEnabled
+            .asDriver() // Driver序列不允许发出error, Driver序列的监听只会在主线程中
+            .drive(onNext: { [weak self] enabled in
+                guard let _self = self else { return }
+                _self.bannerView.removeFromSuperview()
+                _self.stackView.removeArrangedSubview(_self.bannerView)
+                if enabled {
+                    _self.stackView.addArrangedSubview(_self.bannerView)
+                }
+            })
+            .disposed(by: rx.disposeBag)
+        
+        languageChanged
+            .subscribe(onNext: { [weak self] in
+                self?.emptyDataSetTitle = R.string.localizable.commonNoResults.key.localized()
+            })
+            .disposed(by: rx.disposeBag)
+        
+//        motionShakeEvent
+//            .subscribe(onNext: {
+//                let theme = theme
+//            })
+        
+        updateUI()
+    }
+    
+    func bindViewModel() {
+        
+    }
+    
+    func updateUI() {
+        
+    }
+    
+    /// 方向改变
+    func orientationChanged() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.updateUI()
+        }
+    }
+    
+    /// 应用激活
+    func didBecomeActive() {
+        updateUI()
+    }
+    
+    /// 适配导航item
+    func adjustLeftBarButtonItem() {
+        if navigationController?.viewControllers.count ?? 0 > 1 { // pushed
+            navigationItem.leftBarButtonItem = nil
+        } else if presentingViewController != nil { // presented
+            navigationItem.leftBarButtonItem = closeBarItem
+        }
+    }
+}
+
+extension TTBaseViewController {
+    @objc func handleOneFingerSwipe(_ gesture: UISwipeGestureRecognizer) {
+        if gesture.state == .recognized, canOpenFlex {
+            
+        }
+    }
+    
+    @objc func handleTwoFingerSwipe(_ gesture: UISwipeGestureRecognizer) {
+        if gesture.state == .recognized {
+//            HeroDe
+        }
+    }
+}

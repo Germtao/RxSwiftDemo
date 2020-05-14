@@ -27,8 +27,23 @@ class TTTableViewController: UIViewController, UIScrollViewDelegate {
     
     lazy var tableView: TTTableView = {
         let tableView = TTTableView(frame: CGRect(), style: .plain)
-        tableView.rx.setDelegate(self).disposed(by: )
-        return <#value#>
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.rx.setDelegate(self).disposed(by: self.rx.disposeBag)
+        return tableView
     }()
+    
+    var clearsSelectionOnViewWillAppear = true
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if clearsSelectionOnViewWillAppear {
+            <#code#>
+        }
+    }
+}
 
+extension TTTableViewController: UITableViewDelegate {
+    
 }
