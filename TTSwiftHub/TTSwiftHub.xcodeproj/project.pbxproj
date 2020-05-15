@@ -37,6 +37,27 @@
 		3BCF340D246D2DBB00591DEF /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BCF340C246D2DBB00591DEF /* Icons.xcassets */; };
 		3BCF340F246D37C400591DEF /* TTStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF340E246D37C400591DEF /* TTStackView.swift */; };
 		3BCF3411246D395200591DEF /* TTLibsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3410246D395200591DEF /* TTLibsManager.swift */; };
+		3BCF3414246E28B200591DEF /* TTMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3413246E28B200591DEF /* TTMainViewController.swift */; };
+		3BCF3417246E29EC00591DEF /* TTSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3416246E29EC00591DEF /* TTSearchViewController.swift */; };
+		3BCF3419246E2A5F00591DEF /* TTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3418246E2A5F00591DEF /* TTNavigationController.swift */; };
+		3BCF341C246E2BFF00591DEF /* TTEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF341B246E2BFF00591DEF /* TTEventsViewController.swift */; };
+		3BCF341F246E2C5A00591DEF /* TTNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF341E246E2C5A00591DEF /* TTNotificationsViewController.swift */; };
+		3BCF3422246E2CA300591DEF /* TTSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3421246E2CA300591DEF /* TTSettingsViewController.swift */; };
+		3BCF3425246E2CED00591DEF /* TTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3424246E2CED00591DEF /* TTLoginViewController.swift */; };
+		3BCF3427246E31CD00591DEF /* TTMainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3426246E31CD00591DEF /* TTMainTabBarViewModel.swift */; };
+		3BCF3429246E394800591DEF /* TTSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3428246E394800591DEF /* TTSearchViewModel.swift */; };
+		3BCF342C246E3A8100591DEF /* TTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF342B246E3A8100591DEF /* TTUser.swift */; };
+		3BCF342E246E3BDE00591DEF /* TTRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF342D246E3BDE00591DEF /* TTRepository.swift */; };
+		3BCF3430246E41BB00591DEF /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF342F246E41BA00591DEF /* ISO8601DateTransform.swift */; };
+		3BCF3432246E445600591DEF /* TTLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3431246E445600591DEF /* TTLanguage.swift */; };
+		3BCF3436246E5F2900591DEF /* KafkaRefresh+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3435246E5F2900591DEF /* KafkaRefresh+Rx.swift */; };
+		3BCF3439246E609B00591DEF /* Observable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3438246E609B00591DEF /* Observable+Operators.swift */; };
+		3BCF343B246E694900591DEF /* TTApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF343A246E694900591DEF /* TTApplication.swift */; };
+		3BCF343D246E6B5A00591DEF /* TTGithubApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF343C246E6B5A00591DEF /* TTGithubApi.swift */; };
+		3BCF343F246E770E00591DEF /* TTSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF343E246E770E00591DEF /* TTSplitViewController.swift */; };
+		3BCF3441246E77DE00591DEF /* TTThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3440246E77DE00591DEF /* TTThemeManager.swift */; };
+		3BCF3445246E9D1B00591DEF /* TTAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3444246E9D1B00591DEF /* TTAuthManager.swift */; };
+		3BCF3448246EA06500591DEF /* TTToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3447246EA06500591DEF /* TTToken.swift */; };
 		96662B8D1C85BE3578F9D71B /* Pods_TTSwiftHub_TTSwiftHubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20186349C22BEC120A0FE23A /* Pods_TTSwiftHub_TTSwiftHubUITests.framework */; };
 		9D75D815D8090737348F9954 /* Pods_TTSwiftHubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D9D6227B1B3571B1B91CA9 /* Pods_TTSwiftHubTests.framework */; };
 		DADD46D597C363EC8CBDC599 /* Pods_TTSwiftHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D78F151FB87D972037E314 /* Pods_TTSwiftHub.framework */; };
@@ -101,6 +122,27 @@
 		3BCF340C246D2DBB00591DEF /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		3BCF340E246D37C400591DEF /* TTStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTStackView.swift; sourceTree = "<group>"; };
 		3BCF3410246D395200591DEF /* TTLibsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLibsManager.swift; sourceTree = "<group>"; };
+		3BCF3413246E28B200591DEF /* TTMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMainViewController.swift; sourceTree = "<group>"; };
+		3BCF3416246E29EC00591DEF /* TTSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSearchViewController.swift; sourceTree = "<group>"; };
+		3BCF3418246E2A5F00591DEF /* TTNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTNavigationController.swift; sourceTree = "<group>"; };
+		3BCF341B246E2BFF00591DEF /* TTEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTEventsViewController.swift; sourceTree = "<group>"; };
+		3BCF341E246E2C5A00591DEF /* TTNotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTNotificationsViewController.swift; sourceTree = "<group>"; };
+		3BCF3421246E2CA300591DEF /* TTSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSettingsViewController.swift; sourceTree = "<group>"; };
+		3BCF3424246E2CED00591DEF /* TTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLoginViewController.swift; sourceTree = "<group>"; };
+		3BCF3426246E31CD00591DEF /* TTMainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMainTabBarViewModel.swift; sourceTree = "<group>"; };
+		3BCF3428246E394800591DEF /* TTSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSearchViewModel.swift; sourceTree = "<group>"; };
+		3BCF342B246E3A8100591DEF /* TTUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTUser.swift; sourceTree = "<group>"; };
+		3BCF342D246E3BDE00591DEF /* TTRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTRepository.swift; sourceTree = "<group>"; };
+		3BCF342F246E41BA00591DEF /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISO8601DateTransform.swift; sourceTree = "<group>"; };
+		3BCF3431246E445600591DEF /* TTLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLanguage.swift; sourceTree = "<group>"; };
+		3BCF3435246E5F2900591DEF /* KafkaRefresh+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KafkaRefresh+Rx.swift"; sourceTree = "<group>"; };
+		3BCF3438246E609B00591DEF /* Observable+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Operators.swift"; sourceTree = "<group>"; };
+		3BCF343A246E694900591DEF /* TTApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTApplication.swift; sourceTree = "<group>"; };
+		3BCF343C246E6B5A00591DEF /* TTGithubApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTGithubApi.swift; sourceTree = "<group>"; };
+		3BCF343E246E770E00591DEF /* TTSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSplitViewController.swift; sourceTree = "<group>"; };
+		3BCF3440246E77DE00591DEF /* TTThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTThemeManager.swift; sourceTree = "<group>"; };
+		3BCF3444246E9D1B00591DEF /* TTAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAuthManager.swift; sourceTree = "<group>"; };
+		3BCF3447246EA06500591DEF /* TTToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTToken.swift; sourceTree = "<group>"; };
 		425C402F9ACCFAF983F3BC59 /* Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig"; path = "Target Support Files/Pods-TTSwiftHub-TTSwiftHubUITests/Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		47D78F151FB87D972037E314 /* Pods_TTSwiftHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTSwiftHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D9D6227B1B3571B1B91CA9 /* Pods_TTSwiftHubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTSwiftHubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +205,7 @@
 			children = (
 				3BCF33A9246BE09700591DEF /* Application */,
 				3BCF33AB246BE27300591DEF /* Modules */,
+				3BCF342A246E3A6300591DEF /* Models */,
 				3BCF33AD246BE33100591DEF /* Common */,
 				3BCF33B6246BEDF200591DEF /* Configs */,
 				3BCF33B9246BFCC800591DEF /* Extension */,
@@ -198,6 +241,7 @@
 				3BCF3379246BDADD00591DEF /* AppDelegate.swift */,
 				3BCF337B246BDADD00591DEF /* SceneDelegate.swift */,
 				3BCF33D8246D11DD00591DEF /* Navigator.swift */,
+				3BCF343A246E694900591DEF /* TTApplication.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -218,6 +262,11 @@
 			isa = PBXGroup;
 			children = (
 				3BCF33AC246BE28200591DEF /* Main */,
+				3BCF3415246E29C600591DEF /* Search */,
+				3BCF341A246E2BE300591DEF /* Events */,
+				3BCF341D246E2C3700591DEF /* Notifications */,
+				3BCF3420246E2C8A00591DEF /* Settings */,
+				3BCF3423246E2CDC00591DEF /* Login */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -228,6 +277,8 @@
 				3BCF337D246BDADD00591DEF /* InitialSplitViewController.swift */,
 				3BCF337F246BDADD00591DEF /* Main.storyboard */,
 				3BCF3384246BDAE100591DEF /* LaunchScreen.storyboard */,
+				3BCF3413246E28B200591DEF /* TTMainViewController.swift */,
+				3BCF3426246E31CD00591DEF /* TTMainTabBarViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -237,7 +288,7 @@
 			children = (
 				3BCF3409246D2D2000591DEF /* Controller */,
 				3BCF3408246D2D1700591DEF /* View */,
-				3BCF33C0246CE26500591DEF /* TTViewModelType.swift */,
+				3BCF3446246EA04700591DEF /* ViewModel */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -254,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				3BCF33BA246BFD0900591DEF /* UIView+Layout.swift */,
+				3BCF3437246E606600591DEF /* RxSwift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -262,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				3BCF33C3246CE38300591DEF /* Api.swift */,
+				3BCF3434246E586500591DEF /* GraphQL */,
 				3BCF33CC246CE6D800591DEF /* Rest */,
 			);
 			path = Networking;
@@ -298,6 +351,7 @@
 				3BCF33CD246CE70D00591DEF /* TTRestApi.swift */,
 				3BCF33CF246CE80E00591DEF /* ErrorResponse.swift */,
 				3BCF33D1246CEA7300591DEF /* TTNetworking.swift */,
+				3BCF343C246E6B5A00591DEF /* TTGithubApi.swift */,
 			);
 			path = Rest;
 			sourceTree = "<group>";
@@ -308,6 +362,8 @@
 				3BCF33D4246CEE3000591DEF /* TTReachabilityManager.swift */,
 				3BCF33D6246CFC5200591DEF /* TTLogManager.swift */,
 				3BCF3410246D395200591DEF /* TTLibsManager.swift */,
+				3BCF3440246E77DE00591DEF /* TTThemeManager.swift */,
+				3BCF3444246E9D1B00591DEF /* TTAuthManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -328,8 +384,87 @@
 			children = (
 				3BCF33BE246CDED500591DEF /* TTBaseViewController.swift */,
 				3BCF33AE246BE36900591DEF /* TTTableViewController.swift */,
+				3BCF3418246E2A5F00591DEF /* TTNavigationController.swift */,
+				3BCF343E246E770E00591DEF /* TTSplitViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		3BCF3415246E29C600591DEF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				3BCF3416246E29EC00591DEF /* TTSearchViewController.swift */,
+				3BCF3428246E394800591DEF /* TTSearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		3BCF341A246E2BE300591DEF /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				3BCF341B246E2BFF00591DEF /* TTEventsViewController.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		3BCF341D246E2C3700591DEF /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				3BCF341E246E2C5A00591DEF /* TTNotificationsViewController.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		3BCF3420246E2C8A00591DEF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3BCF3421246E2CA300591DEF /* TTSettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		3BCF3423246E2CDC00591DEF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3BCF3424246E2CED00591DEF /* TTLoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3BCF342A246E3A6300591DEF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3BCF342B246E3A8100591DEF /* TTUser.swift */,
+				3BCF342D246E3BDE00591DEF /* TTRepository.swift */,
+				3BCF342F246E41BA00591DEF /* ISO8601DateTransform.swift */,
+				3BCF3431246E445600591DEF /* TTLanguage.swift */,
+				3BCF3447246EA06500591DEF /* TTToken.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3BCF3434246E586500591DEF /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		3BCF3437246E606600591DEF /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				3BCF3435246E5F2900591DEF /* KafkaRefresh+Rx.swift */,
+				3BCF3438246E609B00591DEF /* Observable+Operators.swift */,
+			);
+			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		3BCF3446246EA04700591DEF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3BCF33C0246CE26500591DEF /* TTViewModelType.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4B72D7C11BD04939EEF6CD6E /* Pods */ = {
@@ -364,6 +499,7 @@
 			buildPhases = (
 				E4A252396B40A24195C7A880 /* [CP] Check Pods Manifest.lock */,
 				3BCF33DB246D202600591DEF /* R.swift */,
+				3BCF3433246E555000591DEF /* GraphQL */,
 				3BCF3372246BDADC00591DEF /* Sources */,
 				3BCF3373246BDADC00591DEF /* Frameworks */,
 				3BCF3374246BDADC00591DEF /* Resources */,
@@ -515,6 +651,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/TTSwiftHub/Resources/R.generated.swift\"\n";
 		};
+		3BCF3433246E555000591DEF /* GraphQL */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = GraphQL;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"Networking/GraphQL/schema.json\" Networking/GraphQL/API.swift\n";
+		};
 		8DC4652A583B1DB8751FA678 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -623,25 +777,46 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BCF33D0246CE80E00591DEF /* ErrorResponse.swift in Sources */,
+				3BCF3427246E31CD00591DEF /* TTMainTabBarViewModel.swift in Sources */,
+				3BCF3445246E9D1B00591DEF /* TTAuthManager.swift in Sources */,
 				3BCF33CE246CE70D00591DEF /* TTRestApi.swift in Sources */,
+				3BCF3436246E5F2900591DEF /* KafkaRefresh+Rx.swift in Sources */,
 				3BCF33D9246D11DD00591DEF /* Navigator.swift in Sources */,
+				3BCF341C246E2BFF00591DEF /* TTEventsViewController.swift in Sources */,
+				3BCF343F246E770E00591DEF /* TTSplitViewController.swift in Sources */,
+				3BCF3419246E2A5F00591DEF /* TTNavigationController.swift in Sources */,
 				3BCF337E246BDADD00591DEF /* InitialSplitViewController.swift in Sources */,
+				3BCF3425246E2CED00591DEF /* TTLoginViewController.swift in Sources */,
 				3BCF33AF246BE36900591DEF /* TTTableViewController.swift in Sources */,
+				3BCF343B246E694900591DEF /* TTApplication.swift in Sources */,
 				3BCF33BD246BFDAD00591DEF /* TTView.swift in Sources */,
 				3BCF337A246BDADD00591DEF /* AppDelegate.swift in Sources */,
+				3BCF3432246E445600591DEF /* TTLanguage.swift in Sources */,
 				3BCF33DD246D253D00591DEF /* R.generated.swift in Sources */,
 				3BCF33C8246CE55800591DEF /* ActivityIndicator.swift in Sources */,
 				3BCF33CB246CE5DD00591DEF /* ErrorTracker.swift in Sources */,
 				3BCF33C1246CE26500591DEF /* TTViewModelType.swift in Sources */,
+				3BCF3430246E41BB00591DEF /* ISO8601DateTransform.swift in Sources */,
+				3BCF3448246EA06500591DEF /* TTToken.swift in Sources */,
 				3BCF340B246D2D4900591DEF /* TTBarButtonItem.swift in Sources */,
 				3BCF33D5246CEE3000591DEF /* TTReachabilityManager.swift in Sources */,
 				3BCF33C4246CE38300591DEF /* Api.swift in Sources */,
 				3BCF33B5246BEC4E00591DEF /* TTTableView.swift in Sources */,
 				3BCF33BF246CDED500591DEF /* TTBaseViewController.swift in Sources */,
 				3BCF337C246BDADD00591DEF /* SceneDelegate.swift in Sources */,
+				3BCF343D246E6B5A00591DEF /* TTGithubApi.swift in Sources */,
+				3BCF3439246E609B00591DEF /* Observable+Operators.swift in Sources */,
+				3BCF3414246E28B200591DEF /* TTMainViewController.swift in Sources */,
+				3BCF3422246E2CA300591DEF /* TTSettingsViewController.swift in Sources */,
+				3BCF342C246E3A8100591DEF /* TTUser.swift in Sources */,
 				3BCF33D2246CEA7300591DEF /* TTNetworking.swift in Sources */,
 				3BCF33BB246BFD0900591DEF /* UIView+Layout.swift in Sources */,
 				3BCF33D7246CFC5200591DEF /* TTLogManager.swift in Sources */,
+				3BCF342E246E3BDE00591DEF /* TTRepository.swift in Sources */,
+				3BCF341F246E2C5A00591DEF /* TTNotificationsViewController.swift in Sources */,
+				3BCF3417246E29EC00591DEF /* TTSearchViewController.swift in Sources */,
+				3BCF3441246E77DE00591DEF /* TTThemeManager.swift in Sources */,
+				3BCF3429246E394800591DEF /* TTSearchViewModel.swift in Sources */,
 				3BCF33B8246BF19800591DEF /* Configs.swift in Sources */,
 				3BCF3411246D395200591DEF /* TTLibsManager.swift in Sources */,
 				3BCF340F246D37C400591DEF /* TTStackView.swift in Sources */,
@@ -828,6 +1003,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4UW8B3X7J9;
 				INFOPLIST_FILE = TTSwiftHub/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -847,6 +1023,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4UW8B3X7J9;
 				INFOPLIST_FILE = TTSwiftHub/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
