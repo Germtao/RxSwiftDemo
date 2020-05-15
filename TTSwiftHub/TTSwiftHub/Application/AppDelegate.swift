@@ -11,10 +11,29 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        if Configs.Network.useStaging {
+            
+        } else {
+            connectedToInternet()
+                .skip(1)
+                .subscribe(onNext: { [weak self] connected in
+                    var style = ToastManager.shared.style
+                    style.backgroundColor = connected ? UIColor.Material.green : UIColor.Material.red
+                    let message = connected ? R.string.localizable.toastConnectionBackMessage.key.localized() : R.string.localizable.toastConnectionLostMessage.key.localized()
+                    let image = connected ? R.image.icon_toast_success() : R.image.icon_toast_warning()
+                    if let view = self?.window?.rootViewController?.view {
+                        view.makeToast(message, position: .bottom, image: image, style: style)
+                    }
+                })
+                .disposed(by: rx.disposeBag)
+        }
+        
+        TTApplication.shared.presentInitialScreen(in: window)
+        
         return true
     }
 

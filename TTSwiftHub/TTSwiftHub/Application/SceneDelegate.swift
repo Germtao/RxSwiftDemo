@@ -22,10 +22,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
-        // Called as the scene is being released by the system.
-        // This occurs shortly after the scene enters the background, or when its session is discarded.
-        // Release any resources associated with this scene that can be re-created the next time the scene connects.
-        // The scene may re-connect later, as its session was not neccessarily discarded (see `application:didDiscardSceneSessions` instead).
+        if Configs.Network.useStaging {
+            
+        } else {
+            connectedToInternet()
+                .skip(1)
+                .subscribe(onNext: { [weak self] connected in
+                    var style = ToastManager.shared.style
+                    style.backgroundColor = connected ? UIColor.Material.green : UIColor.Material.red
+                    let message = connected ? R.string.localizable.toastConnectionBackMessage.key.localized() : R.string.localizable.toastConnectionLostMessage.key.localized()
+                    let image = connected ? R.image.icon_toast_success() : R.image.icon_toast_warning()
+                    if let view = self?.window?.rootViewController?.view {
+                        view.makeToast(message, position: .bottom, image: image, style: style)
+                    }
+                })
+                .disposed(by: rx.disposeBag)
+        }
+        
+        TTApplication.shared.presentInitialScreen(in: window)
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
