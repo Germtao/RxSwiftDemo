@@ -59,3 +59,15 @@ class TTOnlineProvider<Target> where Target: Moya.TargetType {
             }
     }
 }
+
+protocol TTNetworkingType {
+    associatedtype T: TargetType
+    var provider: TTOnlineProvider<T> { get }
+    
+    static func defaultNetworking() -> Self
+    static func stubbingNetworking() -> Self
+}
+
+struct TTGithubNetworking/*: TTNetworkingType*/ {
+//    typealias T = TTgithubA
+}

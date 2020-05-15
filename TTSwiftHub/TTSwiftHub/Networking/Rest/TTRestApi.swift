@@ -20,6 +20,6 @@ enum ApiError: Error {
 
 class TTRestApi: TTSwiftHubAPI {
     
-    let githubProvider: 
+//    let githubProvider: 
     
 }
