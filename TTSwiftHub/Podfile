@@ -11,9 +11,13 @@ target 'TTSwiftHub' do
   
   # Networking
   pod 'Moya/RxSwift'  # https://github.com/Moya/Moya
+  pod 'Apollo', "0.25.0"  # https://github.com/apollographql/apollo-ios
   
   # JSON Mapping
   pod 'Moya-ObjectMapper/RxSwift'  # https://github.com/ivanbruel/Moya-ObjectMapper
+  
+  # Date
+  pod 'SwiftDate', '~> 6.0'  # https://github.com/malcommac/SwiftDate
   
   # Rx Extensions
   pod 'RxDataSources', '~> 4.0'  # https://github.com/RxSwiftCommunity/RxDataSources
@@ -29,6 +33,8 @@ target 'TTSwiftHub' do
   pod 'DZNEmptyDataSet'  # https://github.com/dzenbot/DZNEmptyDataSet
   pod 'Localize-Swift'  # https://github.com/marmelroy/Localize-Swift
   pod 'Hero', :git => 'https://github.com/HeroTransitions/Hero.git', :branch => 'develop'  # https://github.com/lkzhao/Hero
+  pod 'RAMAnimatedTabBarController'  # https://github.com/Ramotion/animated-tab-bar
+  pod 'Toast-Swift', '~> 5.0'  # https://github.com/scalessec/Toast-Swift
   
   # Auto Layout
   pod 'SnapKit'  # https://github.com/SnapKit/SnapKit
@@ -36,6 +42,11 @@ target 'TTSwiftHub' do
   # Tools
   pod 'R.swift'  # https://github.com/mac-cain13/R.swift
 #  pod 'SwiftLint', '0.39.2'  # https://github.com/realm/SwiftLint
+
+  # Code Quality
+  pod 'FLEX', '~> 4.0', :configurations => ['Debug']  # https://github.com/Flipboard/FLEX
+  pod 'SwifterSwift', '~> 5.0'  # https://github.com/SwifterSwift/SwifterSwift
+  pod 'BonMot', '~> 5.0'  # https://github.com/Rightpoint/BonMot
   
   # Logging
   pod 'CocoaLumberjack/Swift'  # https://github.com/CocoaLumberjack/CocoaLumberjack
