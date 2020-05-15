@@ -48,7 +48,7 @@ class TTViewModel: NSObject {
                 }
                 return nil
             }
-            .unwrap()
+            .filterNil()
             .bind(to: parsedError)
             .disposed(by: rx.disposeBag)
         
