@@ -58,10 +58,12 @@ class TTTableViewController: TTBaseViewController, UIScrollViewDelegate {
             self?.footerRefreshTrigger.onNext(())
         })
         
-//        isHeaderLoading
-//            .bind(to: tableView.headRefreshControl.rx.isAnimating)
-//        isFooterLoading
-//            .bind(to: tableView.footRefreshControl.rx.isAnimating)
+        isHeaderLoading
+            .bind(to: tableView.headRefreshControl.rx.isAnimating)
+            .disposed(by: rx.disposeBag)
+        isFooterLoading
+            .bind(to: tableView.footRefreshControl.rx.isAnimating)
+            .disposed(by: rx.disposeBag)
     }
     
     override func updateUI() {
@@ -80,5 +82,10 @@ extension TTTableViewController {
 }
 
 extension TTTableViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let header = view as? UITableViewHeaderFooterView {
+            header.textLabel?.font = UIFont(name: ".SFUIText-Bold", size: 15.0)
+            // TODO: theme service
+        }
+    }
 }
