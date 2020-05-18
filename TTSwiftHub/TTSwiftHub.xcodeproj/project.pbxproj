@@ -58,6 +58,7 @@
 		3BCF3441246E77DE00591DEF /* TTThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3440246E77DE00591DEF /* TTThemeManager.swift */; };
 		3BCF3445246E9D1B00591DEF /* TTAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3444246E9D1B00591DEF /* TTAuthManager.swift */; };
 		3BCF3448246EA06500591DEF /* TTToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3447246EA06500591DEF /* TTToken.swift */; };
+		3BF2FDCE2472292D0007C202 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BF2FDCD2472292D0007C202 /* GoogleService-Info.plist */; };
 		96662B8D1C85BE3578F9D71B /* Pods_TTSwiftHub_TTSwiftHubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20186349C22BEC120A0FE23A /* Pods_TTSwiftHub_TTSwiftHubUITests.framework */; };
 		9D75D815D8090737348F9954 /* Pods_TTSwiftHubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D9D6227B1B3571B1B91CA9 /* Pods_TTSwiftHubTests.framework */; };
 		DADD46D597C363EC8CBDC599 /* Pods_TTSwiftHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D78F151FB87D972037E314 /* Pods_TTSwiftHub.framework */; };
@@ -143,6 +144,7 @@
 		3BCF3440246E77DE00591DEF /* TTThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTThemeManager.swift; sourceTree = "<group>"; };
 		3BCF3444246E9D1B00591DEF /* TTAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAuthManager.swift; sourceTree = "<group>"; };
 		3BCF3447246EA06500591DEF /* TTToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTToken.swift; sourceTree = "<group>"; };
+		3BF2FDCD2472292D0007C202 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		425C402F9ACCFAF983F3BC59 /* Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig"; path = "Target Support Files/Pods-TTSwiftHub-TTSwiftHubUITests/Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		47D78F151FB87D972037E314 /* Pods_TTSwiftHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTSwiftHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D9D6227B1B3571B1B91CA9 /* Pods_TTSwiftHubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTSwiftHubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,6 +254,7 @@
 				3BCF3382246BDAE100591DEF /* Assets.xcassets */,
 				3BCF340C246D2DBB00591DEF /* Icons.xcassets */,
 				3BCF3387246BDAE100591DEF /* Info.plist */,
+				3BF2FDCD2472292D0007C202 /* GoogleService-Info.plist */,
 				3BCF3403246D290300591DEF /* Localizable.strings */,
 				3BCF33DC246D253D00591DEF /* R.generated.swift */,
 			);
@@ -611,6 +614,7 @@
 				3BCF3383246BDAE100591DEF /* Assets.xcassets in Resources */,
 				3BCF3381246BDADD00591DEF /* Main.storyboard in Resources */,
 				3BCF340D246D2DBB00591DEF /* Icons.xcassets in Resources */,
+				3BF2FDCE2472292D0007C202 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

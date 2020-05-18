@@ -71,7 +71,7 @@ class TTBaseViewController: UIViewController, Navigatable {
     lazy var bannerView: GADBannerView = {
         let banner = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         banner.rootViewController = self
-//        banner.adUnitID = Keys.adMob.apiKey
+        banner.adUnitID = Keys.adMob.apiKey
         banner.hero.id = "BannerView"
         return banner
     }()

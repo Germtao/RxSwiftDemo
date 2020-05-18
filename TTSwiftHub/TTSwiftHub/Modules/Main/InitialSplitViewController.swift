@@ -15,6 +15,16 @@ class InitialSplitViewController: TTTableViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    override func setupUI() {
+        super.setupUI()
+        
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = false
+        }
+        
+        emptyDataSetTitle = R.string.localizable.initialNoResults.key.localized()
+        tableView.headRefreshControl = nil
+        tableView.footRefreshControl = nil
+    }
 }
 
