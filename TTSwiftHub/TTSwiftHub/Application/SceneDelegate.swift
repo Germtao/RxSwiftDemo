@@ -15,13 +15,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
-    }
-
-    func sceneDidDisconnect(_ scene: UIScene) {
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        if windowScene.activationState == .foregroundActive {
+            window = windowScene.windows.first
+        }
+        
         if Configs.Network.useStaging {
             
         } else {
@@ -40,6 +38,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         TTApplication.shared.presentInitialScreen(in: window)
+    }
+
+    func sceneDidDisconnect(_ scene: UIScene) {
+        
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {

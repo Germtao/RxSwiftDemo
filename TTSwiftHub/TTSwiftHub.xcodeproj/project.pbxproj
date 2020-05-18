@@ -59,6 +59,7 @@
 		3BCF3445246E9D1B00591DEF /* TTAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3444246E9D1B00591DEF /* TTAuthManager.swift */; };
 		3BCF3448246EA06500591DEF /* TTToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3447246EA06500591DEF /* TTToken.swift */; };
 		3BF2FDCE2472292D0007C202 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BF2FDCD2472292D0007C202 /* GoogleService-Info.plist */; };
+		3BF2FDD0247267590007C202 /* TTEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF2FDCF247267590007C202 /* TTEventsViewModel.swift */; };
 		96662B8D1C85BE3578F9D71B /* Pods_TTSwiftHub_TTSwiftHubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20186349C22BEC120A0FE23A /* Pods_TTSwiftHub_TTSwiftHubUITests.framework */; };
 		9D75D815D8090737348F9954 /* Pods_TTSwiftHubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D9D6227B1B3571B1B91CA9 /* Pods_TTSwiftHubTests.framework */; };
 		DADD46D597C363EC8CBDC599 /* Pods_TTSwiftHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D78F151FB87D972037E314 /* Pods_TTSwiftHub.framework */; };
@@ -145,6 +146,7 @@
 		3BCF3444246E9D1B00591DEF /* TTAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAuthManager.swift; sourceTree = "<group>"; };
 		3BCF3447246EA06500591DEF /* TTToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTToken.swift; sourceTree = "<group>"; };
 		3BF2FDCD2472292D0007C202 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3BF2FDCF247267590007C202 /* TTEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTEventsViewModel.swift; sourceTree = "<group>"; };
 		425C402F9ACCFAF983F3BC59 /* Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig"; path = "Target Support Files/Pods-TTSwiftHub-TTSwiftHubUITests/Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		47D78F151FB87D972037E314 /* Pods_TTSwiftHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTSwiftHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D9D6227B1B3571B1B91CA9 /* Pods_TTSwiftHubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTSwiftHubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -406,6 +408,7 @@
 			isa = PBXGroup;
 			children = (
 				3BCF341B246E2BFF00591DEF /* TTEventsViewController.swift */,
+				3BF2FDCF247267590007C202 /* TTEventsViewModel.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -795,6 +798,7 @@
 				3BCF343B246E694900591DEF /* TTApplication.swift in Sources */,
 				3BCF33BD246BFDAD00591DEF /* TTView.swift in Sources */,
 				3BCF337A246BDADD00591DEF /* AppDelegate.swift in Sources */,
+				3BF2FDD0247267590007C202 /* TTEventsViewModel.swift in Sources */,
 				3BCF3432246E445600591DEF /* TTLanguage.swift in Sources */,
 				3BCF33DD246D253D00591DEF /* R.generated.swift in Sources */,
 				3BCF33C8246CE55800591DEF /* ActivityIndicator.swift in Sources */,

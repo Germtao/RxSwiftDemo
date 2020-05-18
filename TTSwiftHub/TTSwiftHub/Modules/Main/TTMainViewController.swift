@@ -127,7 +127,7 @@ class TTMainViewController: RAMAnimatedTabBarController, Navigatable {
     func bindViewModel() {
         guard let vm = viewModel else { return }
         
-        let input = TTMainTabBarViewModel.Input(whatNewsTrigger: rx.viewDidAppear.mapTo(()))
+        let input = TTMainTabBarViewModel.Input(whatsNewTrigger: rx.viewDidAppear.mapToVoid())
         let output = vm.transform(input: input)
         
         output.tabBarItems

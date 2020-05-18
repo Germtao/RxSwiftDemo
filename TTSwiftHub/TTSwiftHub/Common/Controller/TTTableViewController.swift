@@ -64,6 +64,33 @@ class TTTableViewController: TTBaseViewController, UIScrollViewDelegate {
         isFooterLoading
             .bind(to: tableView.footRefreshControl.rx.isAnimating)
             .disposed(by: rx.disposeBag)
+        
+        // 更新空数据
+        let updateEmptyDataSet =
+            Observable
+                .of(isLoading.mapToVoid().asObservable(),
+                    emptyDataSetImageTintColor.mapToVoid(),
+                    languageChanged.asObservable())
+                .merge()
+        updateEmptyDataSet
+            .subscribe(onNext: { [weak self] in
+                self?.tableView.reloadEmptyDataSet()
+            })
+            .disposed(by: rx.disposeBag)
+        
+        // 错误监听
+        error.subscribe(onNext: { [weak self] error in
+            var title = ""
+            var description = ""
+            let image = R.image.icon_toast_warning()
+            switch error {
+            case .serverError(let response):
+                title = response.message ?? ""
+                description = response.detail()
+            }
+            self?.tableView.makeToast(description, title: title, image: image)
+        })
+        .disposed(by: rx.disposeBag)
     }
     
     override func updateUI() {

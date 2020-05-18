@@ -14,11 +14,11 @@ class TTApplication: NSObject {
     var window: UIWindow?
     
     var provider: TTSwiftHubAPI?
-    
+    let authManager: TTAuthManager
     let navigator: Navigator
     
     private override init() {
-        
+        authManager = TTAuthManager.shared
         navigator = Navigator.default
         super.init()
         updateProvider()
@@ -26,7 +26,8 @@ class TTApplication: NSObject {
     
     private func updateProvider() {
         let useStaging = Configs.Network.useStaging
-//        let githubProvider = useStaging ? GithubNet
+//        let githubProvider = useStaging ? TTGithubNetworking
+        provider = TTRestApi()
     }
     
     func presentInitialScreen(in window: UIWindow?) {

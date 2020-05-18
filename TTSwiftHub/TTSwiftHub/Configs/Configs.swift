@@ -45,6 +45,11 @@ enum Keys {
 
 struct Configs {
     
+    struct App {
+        static let githubUrl = "https://github.com/khoren93/SwiftHub"
+        static let bundleIdentifier = "com.public.SwiftHub"
+    }
+    
     struct Network {
         static let useStaging = false  // set true for tests and generating screenshots with fastlane
         static let loggingEnabled = false

@@ -22,6 +22,10 @@ struct ErrorResponse: Mappable {
         errors           <- map["errors"]
         documentationUrl <- map["documentation_url"]
     }
+    
+    func detail() -> String {
+        return errors.map { $0.message ?? "" }.joined(separator: "\n")
+    }
 }
 
 struct ErrorModel: Mappable {

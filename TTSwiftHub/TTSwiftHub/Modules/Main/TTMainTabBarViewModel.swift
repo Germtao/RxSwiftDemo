@@ -13,12 +13,12 @@ import RxCocoa
 class TTMainTabBarViewModel: TTViewModel, TTViewModelType {
     
     struct Input {
-        let whatNewsTrigger: Observable<Void>
+        let whatsNewTrigger: Observable<Void>
     }
     
     struct Output {
         let tabBarItems: Driver<[MainTabBarItem]>
-//        let openWhatNews: Driver<What>
+//        let openWhatsNew: Driver<What>
     }
     
     override init(provider: TTSwiftHubAPI) {
@@ -26,7 +26,16 @@ class TTMainTabBarViewModel: TTViewModel, TTViewModelType {
     }
     
     func transform(input: Input) -> Output {
-        let tabBarItems = logged
+        let tabBarItems = loggedIn.map { loggedIn -> [MainTabBarItem] in
+            if loggedIn {
+                return [.events, .search, .notifications, .settings]
+            } else {
+                return [.search, .notifications, .settings]
+            }
+        }
+        .asDriver(onErrorJustReturn: [])
+        
+        return Output(tabBarItems: tabBarItems)
     }
     
     func viewModel(for tabBarItem: MainTabBarItem) -> TTViewModel {

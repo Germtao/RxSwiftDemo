@@ -8,6 +8,10 @@
 
 import Foundation
 import ObjectMapper
+import KeychainAccess
+
+private let userKey = "CurrentUserKey"
+private let keychain = Keychain(service: Configs.App.bundleIdentifier)
 
 enum TTUserType: String {
     case user = "User"
@@ -98,6 +102,32 @@ struct TTUser: Mappable {
         bio <- map["bio"]
     }
     
+}
+
+extension TTUser {
+    func isMine() -> Bool {
+        if let isViewer = isViewer {
+            return isViewer
+        }
+        return self == TTUser.currentUser()
+    }
+    
+    static func currentUser() -> TTUser? {
+        if let jsonStr = keychain[userKey], let user = TTUser(JSONString: jsonStr) {
+            return user
+        }
+        return nil
+    }
+    
+    static func removeCurrentUser() {
+        keychain[userKey] = nil
+    }
+}
+
+extension TTUser: Equatable {
+    static func ==(lhs: TTUser, rhs: TTUser) -> Bool {
+        return lhs.login == rhs.login
+    }
 }
 
 // MARK: - 热门用户

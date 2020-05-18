@@ -40,8 +40,6 @@ class Navigator {
             let splitVc = TTSplitViewController()
             splitVc.viewControllers = [rootVc, detailNavVc]
             return splitVc
-        default:
-            return nil
         }
     }
     
