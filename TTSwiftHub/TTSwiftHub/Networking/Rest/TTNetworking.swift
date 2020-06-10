@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 import RxSwift
-import RxCocoa
+import Alamofire
 
 class TTOnlineProvider<Target> where Target: Moya.TargetType {
     fileprivate let online: Observable<Bool>
@@ -60,14 +60,101 @@ class TTOnlineProvider<Target> where Target: Moya.TargetType {
     }
 }
 
+// MARK: - Protocol TTNetworkingType
 protocol TTNetworkingType {
-    associatedtype T: TargetType
+    associatedtype T: TargetType, TTProductAPIType
     var provider: TTOnlineProvider<T> { get }
     
     static func defaultNetworking() -> Self
     static func stubbingNetworking() -> Self
 }
 
-struct TTGithubNetworking/*: TTNetworkingType*/ {
-//    typealias T = TTgithubA
+extension TTNetworkingType {
+    static func endpointsClosure<T>(_ xAccessToken: String? = nil) -> (T) -> Endpoint where T: TargetType, T: TTProductAPIType {
+        return { target in
+            let endpoint = MoyaProvider.defaultEndpointMapping(for: target)
+            
+            // 签署所有非XApp，非XAuth令牌请求
+            return endpoint
+        }
+    }
+    
+    static func APIKeysBasedStubBehaviour<T>(_: T) -> Moya.StubBehavior {
+        return .never
+    }
+    
+    static var plugins: [PluginType] {
+        var plugins: [PluginType] = []
+        if Configs.Network.loggingEnabled {
+            plugins.append(NetworkLoggerPlugin())
+        }
+        return plugins
+    }
+    
+    /// 终点解析器
+    /// (Endpoint<Target>, NSURLRequest -> Void) -> Void
+    static func endpointResolver() -> MoyaProvider<T>.RequestClosure {
+        return { (endpoint, closure) in
+            do {
+                var request = try endpoint.urlRequest()
+                request.httpShouldHandleCookies = false
+                closure(.success(request))
+            } catch {
+                logError(error.localizedDescription)
+            }
+        }
+    }
+}
+
+// MARK: - TTGithubNetworking
+struct TTGithubNetworking: TTNetworkingType {
+    typealias T = TTGithubAPI
+    let provider: TTOnlineProvider<T>
+    
+    static func defaultNetworking() -> Self {
+        return TTGithubNetworking(provider: newProvider(plugins))
+    }
+    
+    static func stubbingNetworking() -> Self {
+        return TTGithubNetworking(provider: TTOnlineProvider(endpointClosure: TTGithubNetworking.endpointsClosure(),
+                                                             requestClosure: TTGithubNetworking.endpointResolver(),
+                                                             stubClosure: MoyaProvider.immediatelyStub,
+                                                             online: .just(true)))
+    }
+    
+    func request(_ token: T) -> Observable<Moya.Response> {
+        let actualRequest = provider.request(token)
+        return actualRequest
+    }
+}
+
+// MARK: - TTTrendingGithubNetworking
+struct TTTrendingGithubNetworking: TTNetworkingType {
+    typealias T = TTTrendingGithubAPI
+    let provider: TTOnlineProvider<T>
+    
+    static func defaultNetworking() -> TTTrendingGithubNetworking {
+        return TTTrendingGithubNetworking(provider: newProvider(plugins))
+    }
+    
+    static func stubbingNetworking() -> TTTrendingGithubNetworking {
+        return TTTrendingGithubNetworking(provider:
+            TTOnlineProvider(endpointClosure: TTTrendingGithubNetworking.endpointsClosure(),
+                             requestClosure: TTTrendingGithubNetworking.endpointResolver(),
+                             stubClosure: MoyaProvider.immediatelyStub,
+                             online: .just(true)))
+    }
+    
+    func request(_ token: T) -> Observable<Moya.Response> {
+        let actualRequest = provider.request(token)
+        return actualRequest
+    }
+}
+
+// MARK: - 新建provider
+private func newProvider<T>(_ plugins: [PluginType], xAccessToken: String? = nil) -> TTOnlineProvider<T> where T: TTProductAPIType {
+    return TTOnlineProvider(endpointClosure: TTGithubNetworking.endpointsClosure(xAccessToken),
+                            requestClosure: TTGithubNetworking.endpointResolver(),
+                            stubClosure: TTGithubNetworking.APIKeysBasedStubBehaviour,
+                            plugins: plugins)
 }

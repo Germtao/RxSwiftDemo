@@ -26,7 +26,8 @@ class TTApplication: NSObject {
     
     private func updateProvider() {
         let useStaging = Configs.Network.useStaging
-//        let githubProvider = useStaging ? TTGithubNetworking
+        let githubProvider = useStaging ? TTGithubNetworking.stubbingNetworking() : TTGithubNetworking.defaultNetworking()
+        
         provider = TTRestApi()
     }
     

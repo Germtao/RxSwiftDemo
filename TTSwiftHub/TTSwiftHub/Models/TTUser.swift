@@ -54,6 +54,7 @@ struct TTUser: Mappable {
     var displayName: String { return login ?? "" }
     
     init?(map: Map) {}
+    init() {}
     
     init(login: String?,
          name: String?,
@@ -112,6 +113,14 @@ extension TTUser {
         return self == TTUser.currentUser()
     }
     
+    func save() {
+        if let json = self.toJSONString() {
+            keychain[userKey] = json
+        } else {
+            logError("User can't be saved")
+        }
+    }
+    
     static func currentUser() -> TTUser? {
         if let jsonStr = keychain[userKey], let user = TTUser(JSONString: jsonStr) {
             return user
@@ -127,6 +136,27 @@ extension TTUser {
 extension TTUser: Equatable {
     static func ==(lhs: TTUser, rhs: TTUser) -> Bool {
         return lhs.login == rhs.login
+    }
+}
+
+// MARK: - 搜索用户
+
+struct TTUserSearch: Mappable {
+    var items: [TTUser] = []
+    var totalCount: Int = 0
+    var incompleteResults: Bool = false
+    var hasNextPage: Bool = false
+    var endCursor: String?
+
+    init?(map: Map) {}
+    init() {}
+
+    mutating func mapping(map: Map) {
+        items             <- map["items"]
+        totalCount        <- map["total_count"]
+        incompleteResults <- map["incomplete_results"]
+        
+        hasNextPage = items.isNotEmpty
     }
 }
 
@@ -148,7 +178,7 @@ struct TTTrendingUser: Mappable {
         repo     <- map["repo"]
         type     <- map["type"]
         
-//        repo.au
+        repo?.author = username
     }
     
     var username: String?

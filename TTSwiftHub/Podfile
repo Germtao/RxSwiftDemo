@@ -51,6 +51,11 @@ target 'TTSwiftHub' do
   pod 'SwifterSwift', '~> 5.0'  # https://github.com/SwifterSwift/SwifterSwift
   pod 'BonMot', '~> 5.0'  # https://github.com/Rightpoint/BonMot
   
+  # Analytics 分析工具
+  # 数据埋点库 https://github.com/devxoul/Umbrella
+  pod 'Mixpanel'
+  pod 'Firebase/Analytics'
+  
   # Logging
   pod 'CocoaLumberjack/Swift'  # https://github.com/CocoaLumberjack/CocoaLumberjack
   

@@ -10,6 +10,10 @@ import Foundation
 import RxSwift
 import Moya
 
+protocol TTProductAPIType {
+    var addXAuth: Bool { get }
+}
+
 enum TTGithubAPI {
     case download(url: URL, fileName: String?)
     
@@ -20,7 +24,8 @@ enum TTGithubAPI {
     
 }
 
-extension TTGithubAPI: TargetType {
+extension TTGithubAPI: TargetType, TTProductAPIType {
+    
     var baseURL: URL {
         switch self {
         case .download(let url, _): return url
@@ -56,5 +61,8 @@ extension TTGithubAPI: TargetType {
         return nil
     }
     
+    var addXAuth: Bool {
+        return true
+    }
     
 }

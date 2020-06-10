@@ -10,6 +10,12 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+//extension Reactive where Base: UIView {
+//    func tap() -> Observable<Void> {
+//        return tapge
+//    }
+//}
+
 protocol OptionalType {
     associatedtype Wrapped
     
@@ -51,6 +57,38 @@ extension Observable where Element: OptionalType {
     }
 }
 
+protocol BooleanType {
+    var boolValue: Bool { get }
+}
+
+extension Bool: BooleanType {
+    var boolValue: Bool { return self }
+}
+
+// MARK: - 将true映射为false，反之亦然
+extension Observable where Element: BooleanType {
+    func not() -> Observable<Bool> {
+        return map { input in
+            return !input.boolValue
+        }
+    }
+}
+
+extension Observable where Element: Equatable {
+    func ignore(value: Element) -> Observable<Element> {
+        return filter { (selfE) -> Bool in
+            return value != selfE
+        }
+    }
+}
+
+extension ObservableType where Element == Bool {
+    /// 布尔非运算符
+    public func not() -> Observable<Bool> {
+        return map(!)
+    }
+}
+
 extension ObservableType {
     func catchErrorJustComplete() -> Observable<Element> {
         return catchError { _ in
@@ -66,6 +104,12 @@ extension ObservableType {
     }
     
     func mapToVoid() -> Observable<Void> {
+        return map { _ in }
+    }
+}
+
+extension SharedSequenceConvertibleType {
+    func mapToVoid() -> SharedSequence<SharingStrategy, Void> {
         return map { _ in }
     }
 }

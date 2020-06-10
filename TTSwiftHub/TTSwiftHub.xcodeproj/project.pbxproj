@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B0D0D10248F768C0092EB54 /* TTTrendingUserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D0F248F768C0092EB54 /* TTTrendingUserCellViewModel.swift */; };
+		3B0D0D12248F780B0092EB54 /* TTRepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D11248F780B0092EB54 /* TTRepositoryCellViewModel.swift */; };
+		3B0D0D17248F7D420092EB54 /* TTUsersCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D16248F7D420092EB54 /* TTUsersCellViewModel.swift */; };
+		3B0D0D1A248F88FA0092EB54 /* TTRepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D19248F88FA0092EB54 /* TTRepositoryViewModel.swift */; };
+		3B0D0D1C248F92520092EB54 /* TTUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D1B248F92520092EB54 /* TTUsersViewModel.swift */; };
+		3B0D0D1F24908C4C0092EB54 /* TTUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D1E24908C4C0092EB54 /* TTUserViewModel.swift */; };
+		3B0D0D2124908CB00092EB54 /* TTUserSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D2024908CB00092EB54 /* TTUserSection.swift */; };
+		3B0D0D2324908DC00092EB54 /* TTUserDetailCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D2224908DC00092EB54 /* TTUserDetailCellViewModel.swift */; };
+		3B0D0D262490B7140092EB54 /* TTAnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D252490B7140092EB54 /* TTAnalyticsManager.swift */; };
+		3B67553F247B5C06009973B6 /* RepositoryTrendings.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B67553E247B5C06009973B6 /* RepositoryTrendings.json */; };
+		3B675541247B63EC009973B6 /* UserTrendings.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B675540247B63EC009973B6 /* UserTrendings.json */; };
+		3B675543247B664A009973B6 /* Languages.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B675542247B664A009973B6 /* Languages.json */; };
+		3B675545247B7847009973B6 /* TTSearchSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B675544247B7847009973B6 /* TTSearchSection.swift */; };
+		3B675548247B7974009973B6 /* TTDefaultTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B675547247B7974009973B6 /* TTDefaultTableViewCellViewModel.swift */; };
+		3B67554A247B955B009973B6 /* TTTrendingRepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B675549247B955B009973B6 /* TTTrendingRepositoryCellViewModel.swift */; };
+		3B67554C247B9E82009973B6 /* UIColor+SwiftHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B67554B247B9E82009973B6 /* UIColor+SwiftHub.swift */; };
+		3B67554F247CB0A2009973B6 /* TTRepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B67554E247CB0A2009973B6 /* TTRepositoriesViewModel.swift */; };
 		3BCF337A246BDADD00591DEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3379246BDADD00591DEF /* AppDelegate.swift */; };
 		3BCF337C246BDADD00591DEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337B246BDADD00591DEF /* SceneDelegate.swift */; };
 		3BCF337E246BDADD00591DEF /* InitialSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337D246BDADD00591DEF /* InitialSplitViewController.swift */; };
@@ -60,6 +77,8 @@
 		3BCF3448246EA06500591DEF /* TTToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3447246EA06500591DEF /* TTToken.swift */; };
 		3BF2FDCE2472292D0007C202 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BF2FDCD2472292D0007C202 /* GoogleService-Info.plist */; };
 		3BF2FDD0247267590007C202 /* TTEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF2FDCF247267590007C202 /* TTEventsViewModel.swift */; };
+		3BF2FDD22473822B0007C202 /* TTCodetabsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF2FDD12473822B0007C202 /* TTCodetabsApi.swift */; };
+		3BF2FDD4247382C10007C202 /* TTTrendingGithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF2FDD3247382C10007C202 /* TTTrendingGithubAPI.swift */; };
 		96662B8D1C85BE3578F9D71B /* Pods_TTSwiftHub_TTSwiftHubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20186349C22BEC120A0FE23A /* Pods_TTSwiftHub_TTSwiftHubUITests.framework */; };
 		9D75D815D8090737348F9954 /* Pods_TTSwiftHubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D9D6227B1B3571B1B91CA9 /* Pods_TTSwiftHubTests.framework */; };
 		DADD46D597C363EC8CBDC599 /* Pods_TTSwiftHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D78F151FB87D972037E314 /* Pods_TTSwiftHub.framework */; };
@@ -87,6 +106,23 @@
 		20186349C22BEC120A0FE23A /* Pods_TTSwiftHub_TTSwiftHubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTSwiftHub_TTSwiftHubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		234E234DB262EA97601B4834 /* Pods-TTSwiftHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTSwiftHub.release.xcconfig"; path = "Target Support Files/Pods-TTSwiftHub/Pods-TTSwiftHub.release.xcconfig"; sourceTree = "<group>"; };
 		240A76CBED1F791CD1133D33 /* Pods-TTSwiftHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTSwiftHub.debug.xcconfig"; path = "Target Support Files/Pods-TTSwiftHub/Pods-TTSwiftHub.debug.xcconfig"; sourceTree = "<group>"; };
+		3B0D0D0F248F768C0092EB54 /* TTTrendingUserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTrendingUserCellViewModel.swift; sourceTree = "<group>"; };
+		3B0D0D11248F780B0092EB54 /* TTRepositoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTRepositoryCellViewModel.swift; sourceTree = "<group>"; };
+		3B0D0D16248F7D420092EB54 /* TTUsersCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTUsersCellViewModel.swift; sourceTree = "<group>"; };
+		3B0D0D19248F88FA0092EB54 /* TTRepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTRepositoryViewModel.swift; sourceTree = "<group>"; };
+		3B0D0D1B248F92520092EB54 /* TTUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTUsersViewModel.swift; sourceTree = "<group>"; };
+		3B0D0D1E24908C4C0092EB54 /* TTUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTUserViewModel.swift; sourceTree = "<group>"; };
+		3B0D0D2024908CB00092EB54 /* TTUserSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTUserSection.swift; sourceTree = "<group>"; };
+		3B0D0D2224908DC00092EB54 /* TTUserDetailCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTUserDetailCellViewModel.swift; sourceTree = "<group>"; };
+		3B0D0D252490B7140092EB54 /* TTAnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAnalyticsManager.swift; sourceTree = "<group>"; };
+		3B67553E247B5C06009973B6 /* RepositoryTrendings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryTrendings.json; sourceTree = "<group>"; };
+		3B675540247B63EC009973B6 /* UserTrendings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserTrendings.json; sourceTree = "<group>"; };
+		3B675542247B664A009973B6 /* Languages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Languages.json; sourceTree = "<group>"; };
+		3B675544247B7847009973B6 /* TTSearchSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSearchSection.swift; sourceTree = "<group>"; };
+		3B675547247B7974009973B6 /* TTDefaultTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDefaultTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		3B675549247B955B009973B6 /* TTTrendingRepositoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTrendingRepositoryCellViewModel.swift; sourceTree = "<group>"; };
+		3B67554B247B9E82009973B6 /* UIColor+SwiftHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+SwiftHub.swift"; sourceTree = "<group>"; };
+		3B67554E247CB0A2009973B6 /* TTRepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTRepositoriesViewModel.swift; sourceTree = "<group>"; };
 		3BCF3376246BDADD00591DEF /* TTSwiftHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTSwiftHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCF3379246BDADD00591DEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BCF337B246BDADD00591DEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +183,8 @@
 		3BCF3447246EA06500591DEF /* TTToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTToken.swift; sourceTree = "<group>"; };
 		3BF2FDCD2472292D0007C202 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BF2FDCF247267590007C202 /* TTEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTEventsViewModel.swift; sourceTree = "<group>"; };
+		3BF2FDD12473822B0007C202 /* TTCodetabsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCodetabsApi.swift; sourceTree = "<group>"; };
+		3BF2FDD3247382C10007C202 /* TTTrendingGithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTrendingGithubAPI.swift; sourceTree = "<group>"; };
 		425C402F9ACCFAF983F3BC59 /* Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig"; path = "Target Support Files/Pods-TTSwiftHub-TTSwiftHubUITests/Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		47D78F151FB87D972037E314 /* Pods_TTSwiftHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTSwiftHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D9D6227B1B3571B1B91CA9 /* Pods_TTSwiftHubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTSwiftHubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +220,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B0D0D13248F7D030092EB54 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				3B0D0D16248F7D420092EB54 /* TTUsersCellViewModel.swift */,
+				3B0D0D1B248F92520092EB54 /* TTUsersViewModel.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		3B0D0D18248F88E10092EB54 /* RepositoryDetails */ = {
+			isa = PBXGroup;
+			children = (
+				3B0D0D19248F88FA0092EB54 /* TTRepositoryViewModel.swift */,
+			);
+			path = RepositoryDetails;
+			sourceTree = "<group>";
+		};
+		3B0D0D1D24908C310092EB54 /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				3B0D0D1E24908C4C0092EB54 /* TTUserViewModel.swift */,
+				3B0D0D2024908CB00092EB54 /* TTUserSection.swift */,
+				3B0D0D2224908DC00092EB54 /* TTUserDetailCellViewModel.swift */,
+			);
+			path = UserDetails;
+			sourceTree = "<group>";
+		};
+		3B67553D247B5BBE009973B6 /* Stubbed Responses */ = {
+			isa = PBXGroup;
+			children = (
+				3B67553E247B5C06009973B6 /* RepositoryTrendings.json */,
+				3B675540247B63EC009973B6 /* UserTrendings.json */,
+				3B675542247B664A009973B6 /* Languages.json */,
+			);
+			path = "Stubbed Responses";
+			sourceTree = "<group>";
+		};
+		3B675546247B7915009973B6 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3B675547247B7974009973B6 /* TTDefaultTableViewCellViewModel.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		3B67554D247CB068009973B6 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				3B67554E247CB0A2009973B6 /* TTRepositoriesViewModel.swift */,
+				3B0D0D11248F780B0092EB54 /* TTRepositoryCellViewModel.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		3BCF336D246BDADC00591DEF = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +350,7 @@
 				3BCF3387246BDAE100591DEF /* Info.plist */,
 				3BF2FDCD2472292D0007C202 /* GoogleService-Info.plist */,
 				3BCF3403246D290300591DEF /* Localizable.strings */,
+				3B67553D247B5BBE009973B6 /* Stubbed Responses */,
 				3BCF33DC246D253D00591DEF /* R.generated.swift */,
 			);
 			path = Resources;
@@ -272,6 +365,10 @@
 				3BCF341D246E2C3700591DEF /* Notifications */,
 				3BCF3420246E2C8A00591DEF /* Settings */,
 				3BCF3423246E2CDC00591DEF /* Login */,
+				3B67554D247CB068009973B6 /* Repositories */,
+				3B0D0D18248F88E10092EB54 /* RepositoryDetails */,
+				3B0D0D13248F7D030092EB54 /* Users */,
+				3B0D0D1D24908C310092EB54 /* UserDetails */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -310,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				3BCF33BA246BFD0900591DEF /* UIView+Layout.swift */,
+				3B67554B247B9E82009973B6 /* UIColor+SwiftHub.swift */,
 				3BCF3437246E606600591DEF /* RxSwift */,
 			);
 			path = Extension;
@@ -354,9 +452,11 @@
 			isa = PBXGroup;
 			children = (
 				3BCF33CD246CE70D00591DEF /* TTRestApi.swift */,
+				3BCF343C246E6B5A00591DEF /* TTGithubApi.swift */,
+				3BF2FDD3247382C10007C202 /* TTTrendingGithubAPI.swift */,
+				3BF2FDD12473822B0007C202 /* TTCodetabsApi.swift */,
 				3BCF33CF246CE80E00591DEF /* ErrorResponse.swift */,
 				3BCF33D1246CEA7300591DEF /* TTNetworking.swift */,
-				3BCF343C246E6B5A00591DEF /* TTGithubApi.swift */,
 			);
 			path = Rest;
 			sourceTree = "<group>";
@@ -369,6 +469,7 @@
 				3BCF3410246D395200591DEF /* TTLibsManager.swift */,
 				3BCF3440246E77DE00591DEF /* TTThemeManager.swift */,
 				3BCF3444246E9D1B00591DEF /* TTAuthManager.swift */,
+				3B0D0D252490B7140092EB54 /* TTAnalyticsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -376,6 +477,7 @@
 		3BCF3408246D2D1700591DEF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3B675546247B7915009973B6 /* TableViewCell */,
 				3BCF33B4246BEC4E00591DEF /* TTTableView.swift */,
 				3BCF33BC246BFDAD00591DEF /* TTView.swift */,
 				3BCF340A246D2D4800591DEF /* TTBarButtonItem.swift */,
@@ -400,6 +502,9 @@
 			children = (
 				3BCF3416246E29EC00591DEF /* TTSearchViewController.swift */,
 				3BCF3428246E394800591DEF /* TTSearchViewModel.swift */,
+				3B675544247B7847009973B6 /* TTSearchSection.swift */,
+				3B675549247B955B009973B6 /* TTTrendingRepositoryCellViewModel.swift */,
+				3B0D0D0F248F768C0092EB54 /* TTTrendingUserCellViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -612,12 +717,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B67553F247B5C06009973B6 /* RepositoryTrendings.json in Resources */,
 				3BCF3386246BDAE100591DEF /* LaunchScreen.storyboard in Resources */,
 				3BCF3401246D290300591DEF /* Localizable.strings in Resources */,
 				3BCF3383246BDAE100591DEF /* Assets.xcassets in Resources */,
+				3B675543247B664A009973B6 /* Languages.json in Resources */,
 				3BCF3381246BDADD00591DEF /* Main.storyboard in Resources */,
 				3BCF340D246D2DBB00591DEF /* Icons.xcassets in Resources */,
 				3BF2FDCE2472292D0007C202 /* GoogleService-Info.plist in Resources */,
+				3B675541247B63EC009973B6 /* UserTrendings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,20 +894,32 @@
 				3BCF33D0246CE80E00591DEF /* ErrorResponse.swift in Sources */,
 				3BCF3427246E31CD00591DEF /* TTMainTabBarViewModel.swift in Sources */,
 				3BCF3445246E9D1B00591DEF /* TTAuthManager.swift in Sources */,
+				3BF2FDD22473822B0007C202 /* TTCodetabsApi.swift in Sources */,
 				3BCF33CE246CE70D00591DEF /* TTRestApi.swift in Sources */,
 				3BCF3436246E5F2900591DEF /* KafkaRefresh+Rx.swift in Sources */,
+				3B0D0D10248F768C0092EB54 /* TTTrendingUserCellViewModel.swift in Sources */,
+				3BF2FDD4247382C10007C202 /* TTTrendingGithubAPI.swift in Sources */,
 				3BCF33D9246D11DD00591DEF /* Navigator.swift in Sources */,
 				3BCF341C246E2BFF00591DEF /* TTEventsViewController.swift in Sources */,
+				3B0D0D12248F780B0092EB54 /* TTRepositoryCellViewModel.swift in Sources */,
 				3BCF343F246E770E00591DEF /* TTSplitViewController.swift in Sources */,
 				3BCF3419246E2A5F00591DEF /* TTNavigationController.swift in Sources */,
 				3BCF337E246BDADD00591DEF /* InitialSplitViewController.swift in Sources */,
 				3BCF3425246E2CED00591DEF /* TTLoginViewController.swift in Sources */,
 				3BCF33AF246BE36900591DEF /* TTTableViewController.swift in Sources */,
 				3BCF343B246E694900591DEF /* TTApplication.swift in Sources */,
+				3B67554A247B955B009973B6 /* TTTrendingRepositoryCellViewModel.swift in Sources */,
+				3B67554F247CB0A2009973B6 /* TTRepositoriesViewModel.swift in Sources */,
+				3B675548247B7974009973B6 /* TTDefaultTableViewCellViewModel.swift in Sources */,
 				3BCF33BD246BFDAD00591DEF /* TTView.swift in Sources */,
+				3B0D0D2124908CB00092EB54 /* TTUserSection.swift in Sources */,
 				3BCF337A246BDADD00591DEF /* AppDelegate.swift in Sources */,
 				3BF2FDD0247267590007C202 /* TTEventsViewModel.swift in Sources */,
+				3B0D0D2324908DC00092EB54 /* TTUserDetailCellViewModel.swift in Sources */,
 				3BCF3432246E445600591DEF /* TTLanguage.swift in Sources */,
+				3B675545247B7847009973B6 /* TTSearchSection.swift in Sources */,
+				3B0D0D17248F7D420092EB54 /* TTUsersCellViewModel.swift in Sources */,
+				3B0D0D1A248F88FA0092EB54 /* TTRepositoryViewModel.swift in Sources */,
 				3BCF33DD246D253D00591DEF /* R.generated.swift in Sources */,
 				3BCF33C8246CE55800591DEF /* ActivityIndicator.swift in Sources */,
 				3BCF33CB246CE5DD00591DEF /* ErrorTracker.swift in Sources */,
@@ -809,11 +929,14 @@
 				3BCF340B246D2D4900591DEF /* TTBarButtonItem.swift in Sources */,
 				3BCF33D5246CEE3000591DEF /* TTReachabilityManager.swift in Sources */,
 				3BCF33C4246CE38300591DEF /* Api.swift in Sources */,
+				3B0D0D262490B7140092EB54 /* TTAnalyticsManager.swift in Sources */,
 				3BCF33B5246BEC4E00591DEF /* TTTableView.swift in Sources */,
+				3B67554C247B9E82009973B6 /* UIColor+SwiftHub.swift in Sources */,
 				3BCF33BF246CDED500591DEF /* TTBaseViewController.swift in Sources */,
 				3BCF337C246BDADD00591DEF /* SceneDelegate.swift in Sources */,
 				3BCF343D246E6B5A00591DEF /* TTGithubApi.swift in Sources */,
 				3BCF3439246E609B00591DEF /* Observable+Operators.swift in Sources */,
+				3B0D0D1C248F92520092EB54 /* TTUsersViewModel.swift in Sources */,
 				3BCF3414246E28B200591DEF /* TTMainViewController.swift in Sources */,
 				3BCF3422246E2CA300591DEF /* TTSettingsViewController.swift in Sources */,
 				3BCF342C246E3A8100591DEF /* TTUser.swift in Sources */,
@@ -822,6 +945,7 @@
 				3BCF33D7246CFC5200591DEF /* TTLogManager.swift in Sources */,
 				3BCF342E246E3BDE00591DEF /* TTRepository.swift in Sources */,
 				3BCF341F246E2C5A00591DEF /* TTNotificationsViewController.swift in Sources */,
+				3B0D0D1F24908C4C0092EB54 /* TTUserViewModel.swift in Sources */,
 				3BCF3417246E29EC00591DEF /* TTSearchViewController.swift in Sources */,
 				3BCF3441246E77DE00591DEF /* TTThemeManager.swift in Sources */,
 				3BCF3429246E394800591DEF /* TTSearchViewModel.swift in Sources */,

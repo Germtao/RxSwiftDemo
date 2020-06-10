@@ -9,6 +9,52 @@
 import Foundation
 import ObjectMapper
 
+private let languageKey = "CurrentLanguageKey"
+
+struct TTLanguage: Mappable {
+    var urlParam: String?
+    var name: String?
+    
+    init?(map: Map) {}
+    
+    mutating func mapping(map: Map) {
+        urlParam <- map["urlParam"]
+        name     <- map["name"]
+    }
+    
+    func displayName() -> String {
+        return (name.isNilOrEmpty == false ? name : urlParam) ?? ""
+    }
+}
+
+extension TTLanguage {
+    func save() {
+        if let json = toJSONString() {
+            UserDefaults.standard.set(json, forKey: languageKey)
+        } else {
+            logError("Language can't be saved")
+        }
+    }
+    
+    static var currentLanguage: TTLanguage? {
+        if let json = UserDefaults.standard.string(forKey: languageKey),
+            let language = TTLanguage(JSONString: json) {
+            return language
+        }
+        return nil
+    }
+    
+    static func removeCurrentLanguage() {
+        UserDefaults.standard.removeObject(forKey: languageKey)
+    }
+}
+
+extension TTLanguage: Equatable {
+    static func ==(lhs: TTLanguage, rhs: TTLanguage) -> Bool {
+        return lhs.urlParam == rhs.urlParam
+    }
+}
+
 struct TTLanguages {
     var totalCount: Int = 0
     var totalSize: Int = 0
