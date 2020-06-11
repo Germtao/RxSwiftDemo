@@ -9,6 +9,7 @@
 import Foundation
 import ObjectMapper
 import KeychainAccess
+import MessageKit
 
 private let userKey = "CurrentUserKey"
 private let keychain = Keychain(service: Configs.App.bundleIdentifier)
@@ -18,7 +19,7 @@ enum TTUserType: String {
     case organization = "Organization"
 }
 
-struct TTUser: Mappable {
+struct TTUser: Mappable, SenderType {
     var avatarUrl: String?
     var blog: String?
     var company: String?

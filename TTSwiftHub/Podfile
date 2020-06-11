@@ -38,6 +38,7 @@ target 'TTSwiftHub' do
   pod 'Hero', :git => 'https://github.com/HeroTransitions/Hero.git', :branch => 'develop'  # https://github.com/lkzhao/Hero
   pod 'RAMAnimatedTabBarController'  # https://github.com/Ramotion/animated-tab-bar
   pod 'Toast-Swift', '~> 5.0'  # https://github.com/scalessec/Toast-Swift
+  pod 'MessageKit'  # https://github.com/MessageKit/MessageKit
   
   # Auto Layout
   pod 'SnapKit'  # https://github.com/SnapKit/SnapKit
