@@ -26,11 +26,28 @@ protocol TTSwiftHubAPI {
     func user(owner: String) -> Single<TTUser>
     func organization(owner: String) -> Single<TTUser>
     
+    func repository(fullname: String, qualifiedName: String) -> Single<TTRepository>
+    func readme(fullname: String, ref: String?) -> Single<TTContent>
+    func issues(fullname: String, state: String, page: Int) -> Single<[TTIssue]>
+    func issueComments(fullname: String, number: Int, page: Int) -> Single<[TTComment]>
+    
+    func commits(fullname: String, page: Int) -> Single<[TTCommit]>
+    
+    func branches(fullname: String, page: Int) -> Single<[TTBranch]>
+    
+    func repositoryEvents(owner: String, repo: String, page: Int) -> Single<[TTEvent]>
+    func userPerformedEvents(username: String, page: Int) -> Single<[TTEvent]>
+    func userReceivedEvents(username: String, page: Int) -> Single<[TTEvent]>
+    func organizationEvents(username: String, page: Int) -> Single<[TTEvent]>
+    
     // MARK: - 需要授权
     func profile() -> Single<TTUser>
     func followUser(username: String) -> Single<Void>
     func unfollowUser(username: String) -> Single<Void>
     func checkFollowing(username: String) -> Single<Void>
+    func starRepository(fullname: String) -> Single<Void>
+    func unstarRepository(fullname: String) -> Single<Void>
+    func checkStarring(fullname: String) -> Single<Void>
     
     // MARK: - Trending 趋向
     func trendingRepositories(language: String, since: String) -> Single<[TTTrendingRepository]>
