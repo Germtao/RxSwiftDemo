@@ -25,6 +25,20 @@
 		3B0D0D342491D0E40092EB54 /* TTComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D332491D0E40092EB54 /* TTComment.swift */; };
 		3B0D0D362491D5650092EB54 /* TTCommit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D352491D5650092EB54 /* TTCommit.swift */; };
 		3B0D0D382491D6670092EB54 /* TTRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D372491D6670092EB54 /* TTRelease.swift */; };
+		3B0D0D3A249207710092EB54 /* TTRepositorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D39249207710092EB54 /* TTRepositorySection.swift */; };
+		3B0D0D3C249207B90092EB54 /* TTRepositoryDetailCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D3B249207B90092EB54 /* TTRepositoryDetailCellViewModel.swift */; };
+		3B0D0D3E24920BEA0092EB54 /* TTContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D3D24920BEA0092EB54 /* TTContent.swift */; };
+		3B46937E24932A8C00D64E73 /* TTLanguagesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46937D24932A8C00D64E73 /* TTLanguagesCellViewModel.swift */; };
+		3B46938024932C1400D64E73 /* Foundation+SwiftHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46937F24932C1400D64E73 /* Foundation+SwiftHub.swift */; };
+		3B46938324935C6800D64E73 /* TTIssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46938224935C6800D64E73 /* TTIssuesViewModel.swift */; };
+		3B46938524935E3000D64E73 /* TTIssueCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46938424935E3000D64E73 /* TTIssueCellViewModel.swift */; };
+		3B46938824936BB600D64E73 /* TTIssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46938724936BB600D64E73 /* TTIssueViewModel.swift */; };
+		3B46938A249371A500D64E73 /* TTIssueCommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B469389249371A500D64E73 /* TTIssueCommentsViewModel.swift */; };
+		3B46938D2493763300D64E73 /* TTCommitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46938C2493763300D64E73 /* TTCommitsViewModel.swift */; };
+		3B46938F249376D400D64E73 /* TTCommitCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46938E249376D400D64E73 /* TTCommitCellViewModel.swift */; };
+		3B46939224937B8B00D64E73 /* TTBranchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46939124937B8B00D64E73 /* TTBranchCellViewModel.swift */; };
+		3B46939424937BB700D64E73 /* TTBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46939324937BB700D64E73 /* TTBranch.swift */; };
+		3B46939624937C7500D64E73 /* TTBranchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46939524937C7500D64E73 /* TTBranchesViewModel.swift */; };
 		3B67553F247B5C06009973B6 /* RepositoryTrendings.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B67553E247B5C06009973B6 /* RepositoryTrendings.json */; };
 		3B675541247B63EC009973B6 /* UserTrendings.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B675540247B63EC009973B6 /* UserTrendings.json */; };
 		3B675543247B664A009973B6 /* Languages.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B675542247B664A009973B6 /* Languages.json */; };
@@ -133,6 +147,20 @@
 		3B0D0D332491D0E40092EB54 /* TTComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTComment.swift; sourceTree = "<group>"; };
 		3B0D0D352491D5650092EB54 /* TTCommit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCommit.swift; sourceTree = "<group>"; };
 		3B0D0D372491D6670092EB54 /* TTRelease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTRelease.swift; sourceTree = "<group>"; };
+		3B0D0D39249207710092EB54 /* TTRepositorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTRepositorySection.swift; sourceTree = "<group>"; };
+		3B0D0D3B249207B90092EB54 /* TTRepositoryDetailCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTRepositoryDetailCellViewModel.swift; sourceTree = "<group>"; };
+		3B0D0D3D24920BEA0092EB54 /* TTContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTContent.swift; sourceTree = "<group>"; };
+		3B46937D24932A8C00D64E73 /* TTLanguagesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLanguagesCellViewModel.swift; sourceTree = "<group>"; };
+		3B46937F24932C1400D64E73 /* Foundation+SwiftHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+SwiftHub.swift"; sourceTree = "<group>"; };
+		3B46938224935C6800D64E73 /* TTIssuesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTIssuesViewModel.swift; sourceTree = "<group>"; };
+		3B46938424935E3000D64E73 /* TTIssueCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTIssueCellViewModel.swift; sourceTree = "<group>"; };
+		3B46938724936BB600D64E73 /* TTIssueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTIssueViewModel.swift; sourceTree = "<group>"; };
+		3B469389249371A500D64E73 /* TTIssueCommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTIssueCommentsViewModel.swift; sourceTree = "<group>"; };
+		3B46938C2493763300D64E73 /* TTCommitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCommitsViewModel.swift; sourceTree = "<group>"; };
+		3B46938E249376D400D64E73 /* TTCommitCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCommitCellViewModel.swift; sourceTree = "<group>"; };
+		3B46939124937B8B00D64E73 /* TTBranchCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBranchCellViewModel.swift; sourceTree = "<group>"; };
+		3B46939324937BB700D64E73 /* TTBranch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBranch.swift; sourceTree = "<group>"; };
+		3B46939524937C7500D64E73 /* TTBranchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBranchesViewModel.swift; sourceTree = "<group>"; };
 		3B67553E247B5C06009973B6 /* RepositoryTrendings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryTrendings.json; sourceTree = "<group>"; };
 		3B675540247B63EC009973B6 /* UserTrendings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserTrendings.json; sourceTree = "<group>"; };
 		3B675542247B664A009973B6 /* Languages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Languages.json; sourceTree = "<group>"; };
@@ -251,6 +279,9 @@
 			isa = PBXGroup;
 			children = (
 				3B0D0D19248F88FA0092EB54 /* TTRepositoryViewModel.swift */,
+				3B0D0D39249207710092EB54 /* TTRepositorySection.swift */,
+				3B0D0D3B249207B90092EB54 /* TTRepositoryDetailCellViewModel.swift */,
+				3B46937D24932A8C00D64E73 /* TTLanguagesCellViewModel.swift */,
 			);
 			path = RepositoryDetails;
 			sourceTree = "<group>";
@@ -263,6 +294,43 @@
 				3B0D0D2224908DC00092EB54 /* TTUserDetailCellViewModel.swift */,
 			);
 			path = UserDetails;
+			sourceTree = "<group>";
+		};
+		3B46938124935C4400D64E73 /* Issues */ = {
+			isa = PBXGroup;
+			children = (
+				3B46938224935C6800D64E73 /* TTIssuesViewModel.swift */,
+				3B46938424935E3000D64E73 /* TTIssueCellViewModel.swift */,
+				3B46938624936B8B00D64E73 /* Issue Details */,
+			);
+			path = Issues;
+			sourceTree = "<group>";
+		};
+		3B46938624936B8B00D64E73 /* Issue Details */ = {
+			isa = PBXGroup;
+			children = (
+				3B46938724936BB600D64E73 /* TTIssueViewModel.swift */,
+				3B469389249371A500D64E73 /* TTIssueCommentsViewModel.swift */,
+			);
+			path = "Issue Details";
+			sourceTree = "<group>";
+		};
+		3B46938B2493761300D64E73 /* Commits */ = {
+			isa = PBXGroup;
+			children = (
+				3B46938C2493763300D64E73 /* TTCommitsViewModel.swift */,
+				3B46938E249376D400D64E73 /* TTCommitCellViewModel.swift */,
+			);
+			path = Commits;
+			sourceTree = "<group>";
+		};
+		3B46939024937B5D00D64E73 /* Branches */ = {
+			isa = PBXGroup;
+			children = (
+				3B46939124937B8B00D64E73 /* TTBranchCellViewModel.swift */,
+				3B46939524937C7500D64E73 /* TTBranchesViewModel.swift */,
+			);
+			path = Branches;
 			sourceTree = "<group>";
 		};
 		3B67553D247B5BBE009973B6 /* Stubbed Responses */ = {
@@ -383,8 +451,11 @@
 				3BCF341D246E2C3700591DEF /* Notifications */,
 				3BCF3420246E2C8A00591DEF /* Settings */,
 				3BCF3423246E2CDC00591DEF /* Login */,
-				3B67554D247CB068009973B6 /* Repositories */,
+				3B46938124935C4400D64E73 /* Issues */,
+				3B46939024937B5D00D64E73 /* Branches */,
 				3B0D0D18248F88E10092EB54 /* RepositoryDetails */,
+				3B67554D247CB068009973B6 /* Repositories */,
+				3B46938B2493761300D64E73 /* Commits */,
 				3B0D0D13248F7D030092EB54 /* Users */,
 				3B0D0D1D24908C310092EB54 /* UserDetails */,
 			);
@@ -426,6 +497,7 @@
 			children = (
 				3BCF33BA246BFD0900591DEF /* UIView+Layout.swift */,
 				3B67554B247B9E82009973B6 /* UIColor+SwiftHub.swift */,
+				3B46937F24932C1400D64E73 /* Foundation+SwiftHub.swift */,
 				3BCF3437246E606600591DEF /* RxSwift */,
 			);
 			path = Extension;
@@ -577,6 +649,8 @@
 				3B0D0D332491D0E40092EB54 /* TTComment.swift */,
 				3B0D0D352491D5650092EB54 /* TTCommit.swift */,
 				3B0D0D372491D6670092EB54 /* TTRelease.swift */,
+				3B0D0D3D24920BEA0092EB54 /* TTContent.swift */,
+				3B46939324937BB700D64E73 /* TTBranch.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -923,13 +997,16 @@
 				3BCF3445246E9D1B00591DEF /* TTAuthManager.swift in Sources */,
 				3BF2FDD22473822B0007C202 /* TTCodetabsApi.swift in Sources */,
 				3BCF33CE246CE70D00591DEF /* TTRestApi.swift in Sources */,
+				3B46938024932C1400D64E73 /* Foundation+SwiftHub.swift in Sources */,
 				3B0D0D382491D6670092EB54 /* TTRelease.swift in Sources */,
 				3BCF3436246E5F2900591DEF /* KafkaRefresh+Rx.swift in Sources */,
 				3B0D0D2E2491CF9F0092EB54 /* TTState.swift in Sources */,
 				3B0D0D10248F768C0092EB54 /* TTTrendingUserCellViewModel.swift in Sources */,
+				3B46938F249376D400D64E73 /* TTCommitCellViewModel.swift in Sources */,
 				3BF2FDD4247382C10007C202 /* TTTrendingGithubAPI.swift in Sources */,
 				3BCF33D9246D11DD00591DEF /* Navigator.swift in Sources */,
 				3BCF341C246E2BFF00591DEF /* TTEventsViewController.swift in Sources */,
+				3B0D0D3A249207710092EB54 /* TTRepositorySection.swift in Sources */,
 				3B0D0D12248F780B0092EB54 /* TTRepositoryCellViewModel.swift in Sources */,
 				3BCF343F246E770E00591DEF /* TTSplitViewController.swift in Sources */,
 				3BCF3419246E2A5F00591DEF /* TTNavigationController.swift in Sources */,
@@ -940,6 +1017,7 @@
 				3B67554A247B955B009973B6 /* TTTrendingRepositoryCellViewModel.swift in Sources */,
 				3B67554F247CB0A2009973B6 /* TTRepositoriesViewModel.swift in Sources */,
 				3B675548247B7974009973B6 /* TTDefaultTableViewCellViewModel.swift in Sources */,
+				3B0D0D3C249207B90092EB54 /* TTRepositoryDetailCellViewModel.swift in Sources */,
 				3BCF33BD246BFDAD00591DEF /* TTView.swift in Sources */,
 				3B0D0D2124908CB00092EB54 /* TTUserSection.swift in Sources */,
 				3BCF337A246BDADD00591DEF /* AppDelegate.swift in Sources */,
@@ -949,20 +1027,27 @@
 				3B0D0D322491D0140092EB54 /* TTPullRequest.swift in Sources */,
 				3B0D0D2324908DC00092EB54 /* TTUserDetailCellViewModel.swift in Sources */,
 				3BCF3432246E445600591DEF /* TTLanguage.swift in Sources */,
+				3B46938824936BB600D64E73 /* TTIssueViewModel.swift in Sources */,
 				3B675545247B7847009973B6 /* TTSearchSection.swift in Sources */,
+				3B46938A249371A500D64E73 /* TTIssueCommentsViewModel.swift in Sources */,
 				3B0D0D17248F7D420092EB54 /* TTUsersCellViewModel.swift in Sources */,
 				3B0D0D1A248F88FA0092EB54 /* TTRepositoryViewModel.swift in Sources */,
+				3B46937E24932A8C00D64E73 /* TTLanguagesCellViewModel.swift in Sources */,
 				3BCF33DD246D253D00591DEF /* R.generated.swift in Sources */,
 				3BCF33C8246CE55800591DEF /* ActivityIndicator.swift in Sources */,
 				3BCF33CB246CE5DD00591DEF /* ErrorTracker.swift in Sources */,
 				3BCF33C1246CE26500591DEF /* TTViewModelType.swift in Sources */,
+				3B46939424937BB700D64E73 /* TTBranch.swift in Sources */,
+				3B46938524935E3000D64E73 /* TTIssueCellViewModel.swift in Sources */,
 				3BCF3430246E41BB00591DEF /* ISO8601DateTransform.swift in Sources */,
 				3BCF3448246EA06500591DEF /* TTToken.swift in Sources */,
 				3BCF340B246D2D4900591DEF /* TTBarButtonItem.swift in Sources */,
 				3BCF33D5246CEE3000591DEF /* TTReachabilityManager.swift in Sources */,
 				3BCF33C4246CE38300591DEF /* Api.swift in Sources */,
 				3B0D0D262490B7140092EB54 /* TTAnalyticsManager.swift in Sources */,
+				3B46938D2493763300D64E73 /* TTCommitsViewModel.swift in Sources */,
 				3BCF33B5246BEC4E00591DEF /* TTTableView.swift in Sources */,
+				3B46939224937B8B00D64E73 /* TTBranchCellViewModel.swift in Sources */,
 				3B67554C247B9E82009973B6 /* UIColor+SwiftHub.swift in Sources */,
 				3BCF33BF246CDED500591DEF /* TTBaseViewController.swift in Sources */,
 				3BCF337C246BDADD00591DEF /* SceneDelegate.swift in Sources */,
@@ -981,12 +1066,15 @@
 				3B0D0D1F24908C4C0092EB54 /* TTUserViewModel.swift in Sources */,
 				3BCF3417246E29EC00591DEF /* TTSearchViewController.swift in Sources */,
 				3BCF3441246E77DE00591DEF /* TTThemeManager.swift in Sources */,
+				3B0D0D3E24920BEA0092EB54 /* TTContent.swift in Sources */,
 				3B0D0D302491CFCB0092EB54 /* TTMilestone.swift in Sources */,
 				3BCF3429246E394800591DEF /* TTSearchViewModel.swift in Sources */,
 				3BCF33B8246BF19800591DEF /* Configs.swift in Sources */,
 				3B0D0D362491D5650092EB54 /* TTCommit.swift in Sources */,
 				3B0D0D2A2491C6E90092EB54 /* TTEvent.swift in Sources */,
 				3BCF3411246D395200591DEF /* TTLibsManager.swift in Sources */,
+				3B46938324935C6800D64E73 /* TTIssuesViewModel.swift in Sources */,
+				3B46939624937C7500D64E73 /* TTBranchesViewModel.swift in Sources */,
 				3BCF340F246D37C400591DEF /* TTStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
