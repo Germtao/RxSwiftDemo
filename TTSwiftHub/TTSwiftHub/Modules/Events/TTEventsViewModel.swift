@@ -96,12 +96,12 @@ class TTEventsViewModel: TTViewModel, TTViewModelType {
                 return TTUserViewModel(user: user, provider: self.provider)
         }
         
-        let repositoryDetails = input.selection
-            .map { $0.event.repository }
-            .filterNil()
-            .map { repository -> TTRepositoryViewModel in
-                return TTRepositoryViewModel(
-        }
+//        let repositoryDetails = input.selection
+//            .map { $0.event.repository }
+//            .filterNil()
+//            .map { repository -> TTRepositoryViewModel in
+//                return TTRepositoryViewModel(
+//        }
     }
     
     func request() -> Observable<[TTEventsCellViewModel]> {

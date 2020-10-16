@@ -9,12 +9,28 @@
 import UIKit
 
 extension UIColor {
-    static var text: UIColor {
+    static var primary: UIColor {
         return themeService.type.associatedObject.primary
     }
     
-    static var secondary: UIColor {
+    static var primaryDark: UIColor {
         return themeService.type.associatedObject.primaryDark
+    }
+    
+    static var secondaryDark: UIColor {
+        return themeService.type.associatedObject.secondaryDark
+    }
+    
+    static var separator: UIColor {
+        return themeService.type.associatedObject.separator
+    }
+    
+    static var text: UIColor {
+        return themeService.type.associatedObject.text
+    }
+    
+    static var secondary: UIColor {
+        return themeService.type.associatedObject.secondary
     }
     
     var brightnessAdjustedColor: UIColor {

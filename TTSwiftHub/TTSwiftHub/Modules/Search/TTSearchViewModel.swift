@@ -153,6 +153,9 @@ class TTSearchViewModel: TTViewModel, TTViewModelType {
         let totalCountText: Driver<String>
         let textDidBeginEditing: Driver<Void>
         let dismissKeyboard: Driver<Void>
+        let languagesSelection: Driver<TTLanguagesViewModel>
+        let repositorySelected: Driver<TTRepositoryViewModel>
+        let userSelected: Driver<TTUserViewModel>
         let hidesTrendingPeriodSegment: Driver<Bool>
         let hidesSearchModeSegment: Driver<Bool>
         let hidesSortLabel: Driver<Bool>
@@ -473,12 +476,70 @@ class TTSearchViewModel: TTViewModel, TTViewModelType {
         
         let textDidBeginEditing = input.textDidBeginEditing
         
-        let repositoryDetails = repositorySelected.map { repository -> TTRepositoriesViewModel in
-            let viewModel = TTRepositoriesViewModel(mode: <#T##TTRepositoriesMode#>, provider: <#T##TTSwiftHubAPI#>)
-        }
+        let repositoryDetails = repositorySelected.map { repository -> TTRepositoryViewModel in
+            TTRepositoryViewModel(repository: repository, provider: self.provider)
+        }.asDriverOnErrorJustComplete()
+        
+        let userDetails = userSelected.map { user -> TTUserViewModel in
+            TTUserViewModel(user: user, provider: self.provider)
+        }.asDriverOnErrorJustComplete()
+        
+        let languagesSelection = input.languagesSelection.asDriver(onErrorJustReturn: ())
+            .map { () -> TTLanguagesViewModel in
+                let viewModel = TTLanguagesViewModel(currentLanguage: self.currentLanguage.value,
+                                                     languages: languageElements.value,
+                                                     provider: self.provider)
+                viewModel.currentLanguage.skip(1).bind(to: self.currentLanguage).disposed(by: self.rx.disposeBag)
+                return viewModel
+            }
+        
+        let hidesTrendingPeriodSegment = searchMode.map { $0 != .trending }.asDriver(onErrorJustReturn: false)
+        
+        let hidesSearchModeSegment = Observable.combineLatest(
+            input.keywordTrigger.asObservable().map { $0.isNotEmpty },
+            currentLanguage.map { $0 == nil }
+        ).map {
+            $0 || $1
+        }.asDriver(onErrorJustReturn: false)
+        
+        let hidesSortLabel = searchMode.map { $0 == .trending }.asDriver(onErrorJustReturn: false)
+        
+        let sortItems = Observable.combineLatest(searchType, input.languageTrigger)
+            .map { (searchType, _) -> [String] in
+                switch searchType {
+                case .repositories: return TTSortRepositoryItems.allItems()
+                case .users: return TTSortUserItems.allItems()
+                }
+        }.asDriver(onErrorJustReturn: [])
+        
+        let sortText = Observable.combineLatest(searchType, sortRepositoryItem, sortUserItem, input.languageTrigger)
+            .map { (searchType, sortRepositoryItem, sortUserItem, _) -> String in
+                switch searchType {
+                case .repositories: return sortRepositoryItem.title + " ▼"
+                case .users: return sortUserItem.title + " ▼"
+                }
+        }.asDriver(onErrorJustReturn: "")
+        
+        let totalCountText = Observable.combineLatest(searchType, repositorySearchElements, userSearchElements, input.languageTrigger)
+            .map { (searchType, repositorySearchElements, userSearchElements, _) -> String in
+                switch searchType {
+                case .repositories: return R.string.localizable.searchRepositoriesTotalCountTitle.key.localizedFormat("\(repositorySearchElements.totalCount.kFormatted())")
+                case .users: return R.string.localizable.searchUsersTotalCountTitle.key.localizedFormat("\(userSearchElements.totalCount.kFormatted())")
+                }
+        }.asDriver(onErrorJustReturn: "")
         
         return Output(items: elements,
-                      sortItems: sort, sortText: <#T##Driver<String>#>, totalCountText: <#T##Driver<String>#>, textDidBeginEditing: <#T##Driver<Void>#>, dismissKeyboard: <#T##Driver<Void>#>, hidesTrendingPeriodSegment: <#T##Driver<Bool>#>, hidesSearchModeSegment: <#T##Driver<Bool>#>, hidesSortLabel: <#T##Driver<Bool>#>)
+                      sortItems: sortItems,
+                      sortText: sortText,
+                      totalCountText: totalCountText,
+                      textDidBeginEditing: textDidBeginEditing,
+                      dismissKeyboard: dismissKeyboard,
+                      languagesSelection: languagesSelection,
+                      repositorySelected: repositoryDetails,
+                      userSelected: userDetails,
+                      hidesTrendingPeriodSegment: hidesTrendingPeriodSegment,
+                      hidesSearchModeSegment: hidesSearchModeSegment,
+                      hidesSortLabel: hidesSortLabel)
     }
     
     func makeQuery() -> String {

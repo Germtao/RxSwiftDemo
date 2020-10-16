@@ -26,37 +26,17 @@ struct TTCommit: Mappable {
     init() {}
     
     mutating func mapping(map: Map) {
-        url <- map["url"]
+        url         <- map["url"]
         commentsUrl <- map["comments_url"]
-        commit <- map["commit"]
-        files <- map["files"]
-        htmlUrl <- map["html_url"]
-        nodeId <- map["node_id"]
+        commit      <- map["commit"]
+        files       <- map["files"]
+        htmlUrl     <- map["html_url"]
+        nodeId      <- map["node_id"]
 //        parents <- map["parents"]
-        sha <- map["sha"]
-        stats <- map["stats"]
-        author <- map["author"]
-        committer <- map["committer"]
-    }
-}
-
-struct CommitInfo: Mappable {
-    var author: TTCommitter?
-    var commentCount: Int?
-    var committer: TTCommitter?
-    var message: String?
-    var url: String?
-    var verification: TTVerification?
-
-    init?(map: Map) {}
-
-    mutating func mapping(map: Map) {
-        author <- map["author"]
-        commentCount <- map["comment_count"]
-        committer <- map["committer"]
-        message <- map["message"]
-        url <- map["url"]
-        verification <- map["verification"]
+        sha         <- map["sha"]
+        stats       <- map["stats"]
+        author      <- map["author"]
+        committer   <- map["committer"]
     }
 }
 
@@ -69,9 +49,9 @@ struct TTCommitter: Mappable {
     init() {}
 
     mutating func mapping(map: Map) {
-        name <- map["name"]
+        name  <- map["name"]
         email <- map["email"]
-        date <- (map["date"], ISO8601DateTransform())
+        date  <- (map["date"], ISO8601DateTransform())
     }
 }
 
@@ -86,11 +66,11 @@ struct TTCommitInfo: Mappable {
     init?(map: Map) {}
 
     mutating func mapping(map: Map) {
-        author <- map["author"]
+        author       <- map["author"]
         commentCount <- map["comment_count"]
-        committer <- map["committer"]
-        message <- map["message"]
-        url <- map["url"]
+        committer    <- map["committer"]
+        message      <- map["message"]
+        url          <- map["url"]
         verification <- map["verification"]
     }
 }
@@ -105,7 +85,7 @@ struct TTStat: Mappable {
     mutating func mapping(map: Map) {
         additions <- map["additions"]
         deletions <- map["deletions"]
-        total <- map["total"]
+        total     <- map["total"]
     }
 }
 
@@ -123,13 +103,13 @@ struct TTFile: Mappable {
 
     mutating func mapping(map: Map) {
         additions <- map["additions"]
-        blobUrl <- map["blob_url"]
-        changes <- map["changes"]
+        blobUrl   <- map["blob_url"]
+        changes   <- map["changes"]
         deletions <- map["deletions"]
-        filename <- map["filename"]
-        patch <- map["patch"]
-        rawUrl <- map["raw_url"]
-        status <- map["status"]
+        filename  <- map["filename"]
+        patch     <- map["patch"]
+        rawUrl    <- map["raw_url"]
+        status    <- map["status"]
     }
 }
 

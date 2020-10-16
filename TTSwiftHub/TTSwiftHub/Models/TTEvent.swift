@@ -41,13 +41,13 @@ struct TTEvent: Mappable {
     init() {}
     
     mutating func mapping(map: Map) {
-        actor <- map["actor"]
-        createdAt <- (map["created_at"], ISO8601DateTransform())
-        id <- map["id"]
+        actor        <- map["actor"]
+        createdAt    <- (map["created_at"], ISO8601DateTransform())
+        id           <- map["id"]
         organization <- map["org"]
-        isPublic <- map["public"]
-        repository <- map["repo"]
-        type <- map["type"]
+        isPublic     <- map["public"]
+        repository   <- map["repo"]
+        type         <- map["type"]
 
         payload = Mapper<TTPayload>().map(JSON: map.JSON)
 
@@ -119,11 +119,11 @@ class TTCreatePayload: TTPayload {
     override func mapping(map: Map) {
         super.mapping(map: map)
 
-        ref <- map["payload.ref"]
-        refType <- map["payload.ref_type"]
+        ref          <- map["payload.ref"]
+        refType      <- map["payload.ref_type"]
         masterBranch <- map["payload.master_branch"]
-        description <- map["payload.description"]
-        pusherType <- map["payload.pusher_type"]
+        description  <- map["payload.description"]
+        pusherType   <- map["payload.pusher_type"]
     }
 }
 
@@ -135,8 +135,8 @@ class TTIssueCommentPayload: TTPayload {
     override func mapping(map: Map) {
         super.mapping(map: map)
 
-        action <- map["payload.action"]
-        issue <- map["payload.issue"]
+        action  <- map["payload.action"]
+        issue   <- map["payload.issue"]
         comment <- map["payload.comment"]
     }
 }
@@ -149,8 +149,8 @@ class TTIssuesPayload: TTPayload {
     override func mapping(map: Map) {
         super.mapping(map: map)
 
-        action <- map["payload.action"]
-        issue <- map["payload.issue"]
+        action     <- map["payload.action"]
+        issue      <- map["payload.issue"]
         repository <- map["payload.forkee"]
     }
 }
@@ -175,8 +175,8 @@ class TTPullRequestPayload: TTPayload {
     override func mapping(map: Map) {
         super.mapping(map: map)
 
-        action <- map["payload.action"]
-        number <- map["payload.number"]
+        action      <- map["payload.action"]
+        number      <- map["payload.number"]
         pullRequest <- map["payload.pull_request"]
     }
 }
@@ -189,8 +189,8 @@ class TTPullRequestReviewCommentPayload: TTPayload {
     override func mapping(map: Map) {
         super.mapping(map: map)
 
-        action <- map["payload.action"]
-        comment <- map["payload.comment"]
+        action      <- map["payload.action"]
+        comment     <- map["payload.comment"]
         pullRequest <- map["payload.pull_request"]
     }
 }
@@ -203,8 +203,8 @@ class TTPushPayload: TTPayload {
     override func mapping(map: Map) {
         super.mapping(map: map)
 
-        ref <- map["payload.ref"]
-        size <- map["payload.size"]
+        ref     <- map["payload.ref"]
+        size    <- map["payload.size"]
         commits <- map["payload.commits"]
     }
 }
@@ -216,7 +216,7 @@ class TTReleasePayload: TTPayload {
     override func mapping(map: Map) {
         super.mapping(map: map)
 
-        action <- map["payload.action"]
+        action  <- map["payload.action"]
         release <- map["payload.release"]
     }
 }

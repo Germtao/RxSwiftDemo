@@ -18,6 +18,9 @@ target 'TTSwiftHub' do
   
   # Date
   pod 'SwiftDate', '~> 6.0'  # https://github.com/malcommac/SwiftDate
+
+  # Image
+  pod 'Kingfisher', '~> 5.0'  # https://github.com/onevcat/Kingfisher
   
   # Keychain
   pod 'KeychainAccess', '~> 4.0'  # https://github.com/kishikawakatsumi/KeychainAccess
@@ -39,6 +42,12 @@ target 'TTSwiftHub' do
   pod 'RAMAnimatedTabBarController'  # https://github.com/Ramotion/animated-tab-bar
   pod 'Toast-Swift', '~> 5.0'  # https://github.com/scalessec/Toast-Swift
   pod 'MessageKit'  # https://github.com/MessageKit/MessageKit
+  pod 'HMSegmentedControl', '~> 1.0'  # https://github.com/HeshamMegid/HMSegmentedControl
+  pod 'DropDown', '~> 2.0'  # https://github.com/AssistoLab/DropDown
+  pod 'NVActivityIndicatorView', '~> 4.0'  # https://github.com/ninjaprox/NVActivityIndicatorView
+  
+  # Keyboard
+  pod 'IQKeyboardManagerSwift', '~> 6.0'  # https://github.com/hackiftekhar/IQKeyboardManager
   
   # Auto Layout
   pod 'SnapKit'  # https://github.com/SnapKit/SnapKit
@@ -57,10 +66,15 @@ target 'TTSwiftHub' do
   pod 'Mixpanel'
   pod 'Firebase/Analytics'
   
+  # Fabric
+#  pod 'Fabric'
+#  pod 'Crashlytics'
+  
   # Logging
   pod 'CocoaLumberjack/Swift'  # https://github.com/CocoaLumberjack/CocoaLumberjack
   
   # Ads
+#  pod 'Firebase/AdMob'
   pod 'Google-Mobile-Ads-SDK'
 
   target 'TTSwiftHubTests' do

@@ -15,50 +15,74 @@ import RxOptional
 struct TTRepository: Mappable {
     var archived: Bool?
     var cloneUrl: String?
+    /// 标识创建对象的日期和时间
     var createdAt: Date?
+    /// 与存储库的默认分支关联的引用名称
     var defaultBranch = "master"
+    /// 资料库的描述
     var descriptionField: String?
+    /// 标识存储库是否为fork
     var fork: Bool?
+    /// 标识直接分支存储库的总数
     var forks: Int?
     var forksCount: Int?
-    var fullname: String?   // 拥有者的存储库的名称
+    /// 拥有者的存储库的名称
+    var fullname: String?
     var hasDownloads: Bool?
     var hasIssues: Bool?
     var hasPages: Bool?
     var hasProjects: Bool?
     var hasWiki: Bool?
-    var homepage: String?  // 存储库的URL
+    /// 存储库的URL
+    var homepage: String?
     var htmlUrl: String?
+    /// 当前语言的名称
     var language: String?
+    /// 为当前语言定义的颜色
     var languageColor: String?
+    /// 包含存储库语言组成明细的列表
     var languages: TTLanguages?
-//    var license: License?
-    var name: String?  // The name of the repository.
+    var license: TTLicense?
+    /// 仓库名称
+    var name: String?
     var networkCount: Int?
     var nodeId: String?
     var openIssues: Int?
-    var openIssuesCount: Int?  // Identifies the total count of issues that have been opened in the repository.
+    /// 标识已在存储库中打开的问题的总数
+    var openIssuesCount: Int?
     var organization: TTUser?
-    var owner: TTUser?  // The User owner of the repository.
+    /// 存储库的拥有者
+    var owner: TTUser?
     var privateField: Bool?
     var pushedAt: String?
-    var size: Int?  // The number of kilobytes this repository occupies on disk.
+    /// 该存储库在磁盘上占用大小
+    var size: Int?
     var sshUrl: String?
-    var stargazersCount: Int?  // Identifies the total count of items who have starred this starrable.
-    var subscribersCount: Int?  // Identifies the total count of users watching the repository
-    var updatedAt: Date?  // Identifies the date and time when the object was last updated.
-    var url: String?  // The HTTP URL for this repository
+    /// 标识已对该星标加注星标的项目总数
+    var stargazersCount: Int?
+    /// 标识观看存储库的用户总数
+    var subscribersCount: Int?
+    /// 标识上次更新对象的日期和时间
+    var updatedAt: Date?
+    /// 该存储库的HTTP URL
+    var url: String?
     var watchers: Int?
     var watchersCount: Int?
-    var parentFullname: String?  // The parent repository's name with owner, if this is a fork.
+    /// 父存储库的名称，带有所有者（如果这是派生的话）
+    var parentFullname: String?
     
-    var commitsCount: Int?  // Identifies the total count of the commits
-    var pullRequestsCount: Int?  // Identifies the total count of a list of pull requests that have been opened in the repository.
+    /// 标识提交的总数
+    var commitsCount: Int?
+    /// 标识已在存储库中打开的拉取请求列表的总数
+    var pullRequestsCount: Int?
     var branchesCount: Int?
-    var releasesCount: Int?  // Identifies the total count of releases which are dependent on this repository.
-    var contributorsCount: Int?  // Identifies the total count of Users that can be mentioned in the context of the repository.
+    /// 标识依赖于此存储库的发行总数
+    var releasesCount: Int?
+    /// 标识可以在存储库上下文中提及的用户总数
+    var contributorsCount: Int?
 
-    var viewerHasStarred: Bool?  // Returns a boolean indicating whether the viewing user has starred this starrable.
+    /// 返回一个布尔值，指示查看用户是否已对此可加注星标加注
+    var viewerHasStarred: Bool?
     
     init(name: String?,
          fullname: String?,
@@ -111,7 +135,7 @@ struct TTRepository: Mappable {
         homepage         <- map["homepage"]
         htmlUrl          <- map["html_url"]
         language         <- map["language"]
-//        license <- map["license"]
+        license          <- map["license"]
         name             <- map["name"]
         networkCount     <- map["network_count"]
         nodeId           <- map["node_id"]
@@ -137,6 +161,12 @@ struct TTRepository: Mappable {
         var repo = TTRepository()
         repo.fullname = parentFullname
         return repo
+    }
+}
+
+extension TTRepository: Equatable {
+    static func == (lhs: TTRepository, rhs: TTRepository) -> Bool {
+        return lhs.fullname == rhs.fullname
     }
 }
 
@@ -180,6 +210,7 @@ struct TTTrendingRepository: Mappable {
     }
     
     init?(map: Map) {}
+    init() {}
     
     mutating func mapping(map: Map) {
         author             <- map["author"]

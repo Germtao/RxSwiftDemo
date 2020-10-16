@@ -16,6 +16,7 @@ struct TTLanguage: Mappable {
     var name: String?
     
     init?(map: Map) {}
+    init() {}
     
     mutating func mapping(map: Map) {
         urlParam <- map["urlParam"]
@@ -62,13 +63,34 @@ struct TTLanguages {
 }
 
 struct TTRepoLanguage {
-//    var size: Int = 0
-//    var name: String?
-//    var color: String?
+    var size: Int = 0
+    var name: String?
+    var color: String?
 //
 //    init(graph: RepositoryQuery.Data.Repository.Language.Edge?) {
 //        size = graph?.size ?? 0
 //        name = graph?.node.name
 //        color = graph?.node.color
 //    }
+}
+
+struct TTLanguageLines: Mappable {
+    var language: String?
+    var files: String?
+    var lines: String?
+    var blanks: String?
+    var comments: String?
+    var linesOfCode: String?
+    
+    init?(map: Map) {}
+    init() {}
+
+    mutating func mapping(map: Map) {
+        language    <- map["language"]
+        files       <- map["files"]
+        lines       <- map["lines"]
+        blanks      <- map["blanks"]
+        comments    <- map["comments"]
+        linesOfCode <- map["linesOfCode"]
+    }
 }

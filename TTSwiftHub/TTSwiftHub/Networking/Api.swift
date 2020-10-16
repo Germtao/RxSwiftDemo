@@ -34,6 +34,13 @@ protocol TTSwiftHubAPI {
     func commits(fullname: String, page: Int) -> Single<[TTCommit]>
     
     func branches(fullname: String, page: Int) -> Single<[TTBranch]>
+    func releases(fullname: String, page: Int) -> Single<[TTRelease]>
+    func pullRequests(fullname: String, state: String, page: Int) -> Single<[TTPullRequest]>
+    
+    func userRepositories(username: String, page: Int) -> Single<[TTRepository]>
+    func userStarredRepositories(username: String, page: Int) -> Single<[TTRepository]>
+    func userWatchingRepositories(username: String, page: Int) -> Single<[TTRepository]>
+    func forks(fullname: String, page: Int) -> Single<[TTRepository]>
     
     func repositoryEvents(owner: String, repo: String, page: Int) -> Single<[TTEvent]>
     func userPerformedEvents(username: String, page: Int) -> Single<[TTEvent]>

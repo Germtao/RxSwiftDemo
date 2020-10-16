@@ -20,28 +20,49 @@ enum TTUserType: String {
 }
 
 struct TTUser: Mappable, SenderType {
+    /// 指向用户的公共头像的URL
     var avatarUrl: String?
+    /// 指向用户的公共网站/博客的URL
     var blog: String?
+    /// 用户的公开资料公司
     var company: String?
     var contributions: Int?
+    /// 标识创建对象的日期和时间
     var createdAt: Date?
+    /// 用户的公开个人资料电子邮件
     var email: String?
+    /// 确定关注者总数
     var followers: Int?
+    /// 标识跟随者的总数
     var following: Int?
+    /// 该用户的HTTP URL
     var htmlUrl: String?
+    /// 用户的公开个人资料位置
     var location: String?
+    /// 用于登录的用户名
     var login: String?
+    /// 用户的公开个人资料名称
     var name: String?
     var type: TTUserType = .user
+    /// 标识上次更新的日期和时间
     var updatedAt: Date?
+    /// 标识用户已加注星标的存储库总数
     var starredRepositoriesCount: Int?
+    /// 标识用户拥有的存储库总数
     var repositoriesCount: Int?
+    /// 标识与此用户相关的问题总数
     var issuesCount: Int?
+    /// 标识给定用户正在查看的存储库总数
     var watchingCount: Int?
+    /// 是否能够跟随用户
     var viewerCanFollow: Bool?
+    /// 是否关注此用户
     var viewerIsFollowing: Bool?
+    /// 此用户是否为访问者
     var isViewer: Bool?
+    /// 该用户已固定到其个人资料的存储库列表
     var pinnedRepositories: [TTRepository]?
+    /// 用户所属的组织列表
     var organizations: [TTUser]?
     
     // 仅针对组织类型

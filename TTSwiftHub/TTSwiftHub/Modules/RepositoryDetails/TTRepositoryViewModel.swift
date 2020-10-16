@@ -349,9 +349,11 @@ class TTRepositoryViewModel: TTViewModel, TTViewModelType {
         case .branchesItem:
             return TTBranchesViewModel(repository: repository.value, provider: provider)
         case .releasesItem:
-            return 
+            return TTReleasesViewModel(repository: repository.value, provider: provider)
+        case .pullRequestsItem:
+            return TTPullRequestsViewModel(repository: repository.value, provider: provider)
         default:
-            <#code#>
+            return nil
         }
     }
 }

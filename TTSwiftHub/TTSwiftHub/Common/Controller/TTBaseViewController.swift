@@ -12,6 +12,7 @@ import RxCocoa
 import Localize_Swift
 import GoogleMobileAds
 import DZNEmptyDataSet
+import Hero
 
 class TTBaseViewController: UIViewController, Navigatable {
     
@@ -100,7 +101,7 @@ class TTBaseViewController: UIViewController, Navigatable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupUI()
+        makeUI()
         bindViewModel()
         
         closeBarItem.rx.tap
@@ -186,7 +187,7 @@ class TTBaseViewController: UIViewController, Navigatable {
         }
     }
     
-    func setupUI() {
+    func makeUI() {
         hero.isEnabled = true
         navigationItem.backBarButtonItem = backBarItem
         
@@ -194,11 +195,11 @@ class TTBaseViewController: UIViewController, Navigatable {
         TTLibsManager.shared.bannersEnabled
             .asDriver() // Driver序列不允许发出error, Driver序列的监听只会在主线程中
             .drive(onNext: { [weak self] enabled in
-                guard let _self = self else { return }
-                _self.bannerView.removeFromSuperview()
-                _self.stackView.removeArrangedSubview(_self.bannerView)
+                guard let self = self else { return }
+                self.bannerView.removeFromSuperview()
+                self.stackView.removeArrangedSubview(self.bannerView)
                 if enabled {
-                    _self.stackView.addArrangedSubview(_self.bannerView)
+                    self.stackView.addArrangedSubview(self.bannerView)
                 }
             })
             .disposed(by: rx.disposeBag)
@@ -209,10 +210,16 @@ class TTBaseViewController: UIViewController, Navigatable {
             })
             .disposed(by: rx.disposeBag)
         
-//        motionShakeEvent
-//            .subscribe(onNext: {
-//                let theme = theme
-//            })
+        motionShakeEvent.subscribe(onNext: {
+            let theme = themeService.type.toggled()
+            themeService.switch(theme)
+        }).disposed(by: rx.disposeBag)
+        
+        themeService.rx
+            .bind({ $0.primaryDark }, to: view.rx.backgroundColor)
+            .bind({ $0.secondary }, to: [backBarItem.rx.tintColor, closeBarItem.rx.tintColor])
+            .bind({ $0.text }, to: self.rx.emptyDataSetImageTintColorBinder)
+            .disposed(by: rx.disposeBag)
         
         updateUI()
     }
@@ -260,14 +267,21 @@ extension TTBaseViewController {
     
     @objc func handleOneFingerSwipe(_ gesture: UISwipeGestureRecognizer) {
         if gesture.state == .recognized, canOpenFlex {
-            
+            TTLibsManager.shared.showFlex()
         }
     }
     
     @objc func handleTwoFingerSwipe(_ gesture: UISwipeGestureRecognizer) {
         if gesture.state == .recognized {
-//            HeroDe
+            TTLibsManager.shared.showFlex()
+            HeroDebugPlugin.isEnabled = !HeroDebugPlugin.isEnabled
         }
+    }
+}
+
+extension TTBaseViewController {
+    var inset: CGFloat {
+        return Configs.BaseDimensions.inset
     }
 }
 

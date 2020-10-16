@@ -31,21 +31,21 @@ struct TTMilestone: Mappable {
     init() {}
     
     mutating func mapping(map: Map) {
-        closedAt <- (map["closed_at"], ISO8601DateTransform())
-        closedIssues <- map["closed_issues"]
-        createdAt <- (map["created_at"], ISO8601DateTransform())
-        creator <- map["creator"]
+        closedAt         <- (map["closed_at"], ISO8601DateTransform())
+        closedIssues     <- map["closed_issues"]
+        createdAt        <- (map["created_at"], ISO8601DateTransform())
+        creator          <- map["creator"]
         descriptionField <- map["description"]
-        dueOn <- (map["due_on"], ISO8601DateTransform())
-        htmlUrl <- map["html_url"]
-        id <- map["id"]
-        labelsUrl <- map["labels_url"]
-        nodeId <- map["node_id"]
-        number <- map["number"]
-        openIssues <- map["open_issues"]
-        state <- map["state"]
-        title <- map["title"]
-        updatedAt <- (map["updated_at"], ISO8601DateTransform())
-        url <- map["url"]
+        dueOn            <- (map["due_on"], ISO8601DateTransform())
+        htmlUrl          <- map["html_url"]
+        id               <- map["id"]
+        labelsUrl        <- map["labels_url"]
+        nodeId           <- map["node_id"]
+        number           <- map["number"]
+        openIssues       <- map["open_issues"]
+        state            <- map["state"]
+        title            <- map["title"]
+        updatedAt        <- (map["updated_at"], ISO8601DateTransform())
+        url              <- map["url"]
     }
 }

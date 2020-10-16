@@ -39,6 +39,24 @@
 		3B46939224937B8B00D64E73 /* TTBranchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46939124937B8B00D64E73 /* TTBranchCellViewModel.swift */; };
 		3B46939424937BB700D64E73 /* TTBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46939324937BB700D64E73 /* TTBranch.swift */; };
 		3B46939624937C7500D64E73 /* TTBranchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46939524937C7500D64E73 /* TTBranchesViewModel.swift */; };
+		3B4693992497074600D64E73 /* TTReleaseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693982497074600D64E73 /* TTReleaseCellViewModel.swift */; };
+		3B46939B2497084600D64E73 /* TTReleasesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46939A2497084600D64E73 /* TTReleasesViewModel.swift */; };
+		3B46939E24970D2F00D64E73 /* TTPullRequestCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46939D24970D2F00D64E73 /* TTPullRequestCellViewModel.swift */; };
+		3B4693A024970FAF00D64E73 /* TTPullRequestsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46939F24970FAF00D64E73 /* TTPullRequestsViewModel.swift */; };
+		3B4693A32497267000D64E73 /* TTPullRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693A22497267000D64E73 /* TTPullRequestViewModel.swift */; };
+		3B4693A624974F3000D64E73 /* TTLanguageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693A524974F3000D64E73 /* TTLanguageSection.swift */; };
+		3B4693A824974F7F00D64E73 /* TTRepoLanguageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693A724974F7F00D64E73 /* TTRepoLanguageCellViewModel.swift */; };
+		3B4693AA2497513D00D64E73 /* TTLanguagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693A92497513D00D64E73 /* TTLanguagesViewModel.swift */; };
+		3B4693AC249776D900D64E73 /* TTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693AB249776D900D64E73 /* TTTableViewCell.swift */; };
+		3B4693AE2497792100D64E73 /* TTDefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693AD2497792100D64E73 /* TTDefaultTableViewCell.swift */; };
+		3B4693B02497795600D64E73 /* TTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693AF2497795600D64E73 /* TTImageView.swift */; };
+		3B4693B224977CA800D64E73 /* TTLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693B124977CA800D64E73 /* TTLabel.swift */; };
+		3B4693B42498731400D64E73 /* Kingfisher+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693B32498731400D64E73 /* Kingfisher+Rx.swift */; };
+		3B4693B72498BED700D64E73 /* TTTrendingRepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693B52498BED700D64E73 /* TTTrendingRepositoryCell.swift */; };
+		3B4693B82498BED700D64E73 /* TTTrendingRepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B4693B62498BED700D64E73 /* TTTrendingRepositoryCell.xib */; };
+		3B4693BB2498C52500D64E73 /* TTTrendingUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693B92498C52500D64E73 /* TTTrendingUserCell.swift */; };
+		3B4693BC2498C52500D64E73 /* TTTrendingUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B4693BA2498C52500D64E73 /* TTTrendingUserCell.xib */; };
+		3B4693BE2498CC8600D64E73 /* TTSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693BD2498CC8600D64E73 /* TTSegmentedControl.swift */; };
 		3B67553F247B5C06009973B6 /* RepositoryTrendings.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B67553E247B5C06009973B6 /* RepositoryTrendings.json */; };
 		3B675541247B63EC009973B6 /* UserTrendings.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B675540247B63EC009973B6 /* UserTrendings.json */; };
 		3B675543247B664A009973B6 /* Languages.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B675542247B664A009973B6 /* Languages.json */; };
@@ -47,6 +65,10 @@
 		3B67554A247B955B009973B6 /* TTTrendingRepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B675549247B955B009973B6 /* TTTrendingRepositoryCellViewModel.swift */; };
 		3B67554C247B9E82009973B6 /* UIColor+SwiftHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B67554B247B9E82009973B6 /* UIColor+SwiftHub.swift */; };
 		3B67554F247CB0A2009973B6 /* TTRepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B67554E247CB0A2009973B6 /* TTRepositoriesViewModel.swift */; };
+		3B92C98825398FD200A475FE /* TTSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92C98725398FD200A475FE /* TTSectionType.swift */; };
+		3B92C99025399AC600A475FE /* TTNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92C98F25399AC600A475FE /* TTNotification.swift */; };
+		3B92C99825399D9300A475FE /* TTLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92C99725399D9300A475FE /* TTLicense.swift */; };
+		3B92C9A02539A56100A475FE /* TTContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92C99F2539A56100A475FE /* TTContact.swift */; };
 		3BCF337A246BDADD00591DEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3379246BDADD00591DEF /* AppDelegate.swift */; };
 		3BCF337C246BDADD00591DEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337B246BDADD00591DEF /* SceneDelegate.swift */; };
 		3BCF337E246BDADD00591DEF /* InitialSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337D246BDADD00591DEF /* InitialSplitViewController.swift */; };
@@ -161,6 +183,24 @@
 		3B46939124937B8B00D64E73 /* TTBranchCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBranchCellViewModel.swift; sourceTree = "<group>"; };
 		3B46939324937BB700D64E73 /* TTBranch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBranch.swift; sourceTree = "<group>"; };
 		3B46939524937C7500D64E73 /* TTBranchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBranchesViewModel.swift; sourceTree = "<group>"; };
+		3B4693982497074600D64E73 /* TTReleaseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTReleaseCellViewModel.swift; sourceTree = "<group>"; };
+		3B46939A2497084600D64E73 /* TTReleasesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTReleasesViewModel.swift; sourceTree = "<group>"; };
+		3B46939D24970D2F00D64E73 /* TTPullRequestCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTPullRequestCellViewModel.swift; sourceTree = "<group>"; };
+		3B46939F24970FAF00D64E73 /* TTPullRequestsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTPullRequestsViewModel.swift; sourceTree = "<group>"; };
+		3B4693A22497267000D64E73 /* TTPullRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTPullRequestViewModel.swift; sourceTree = "<group>"; };
+		3B4693A524974F3000D64E73 /* TTLanguageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLanguageSection.swift; sourceTree = "<group>"; };
+		3B4693A724974F7F00D64E73 /* TTRepoLanguageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTRepoLanguageCellViewModel.swift; sourceTree = "<group>"; };
+		3B4693A92497513D00D64E73 /* TTLanguagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLanguagesViewModel.swift; sourceTree = "<group>"; };
+		3B4693AB249776D900D64E73 /* TTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTableViewCell.swift; sourceTree = "<group>"; };
+		3B4693AD2497792100D64E73 /* TTDefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDefaultTableViewCell.swift; sourceTree = "<group>"; };
+		3B4693AF2497795600D64E73 /* TTImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTImageView.swift; sourceTree = "<group>"; };
+		3B4693B124977CA800D64E73 /* TTLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLabel.swift; sourceTree = "<group>"; };
+		3B4693B32498731400D64E73 /* Kingfisher+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kingfisher+Rx.swift"; sourceTree = "<group>"; };
+		3B4693B52498BED700D64E73 /* TTTrendingRepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTrendingRepositoryCell.swift; sourceTree = "<group>"; };
+		3B4693B62498BED700D64E73 /* TTTrendingRepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTTrendingRepositoryCell.xib; sourceTree = "<group>"; };
+		3B4693B92498C52500D64E73 /* TTTrendingUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTrendingUserCell.swift; sourceTree = "<group>"; };
+		3B4693BA2498C52500D64E73 /* TTTrendingUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTTrendingUserCell.xib; sourceTree = "<group>"; };
+		3B4693BD2498CC8600D64E73 /* TTSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSegmentedControl.swift; sourceTree = "<group>"; };
 		3B67553E247B5C06009973B6 /* RepositoryTrendings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryTrendings.json; sourceTree = "<group>"; };
 		3B675540247B63EC009973B6 /* UserTrendings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserTrendings.json; sourceTree = "<group>"; };
 		3B675542247B664A009973B6 /* Languages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Languages.json; sourceTree = "<group>"; };
@@ -169,6 +209,10 @@
 		3B675549247B955B009973B6 /* TTTrendingRepositoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTrendingRepositoryCellViewModel.swift; sourceTree = "<group>"; };
 		3B67554B247B9E82009973B6 /* UIColor+SwiftHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+SwiftHub.swift"; sourceTree = "<group>"; };
 		3B67554E247CB0A2009973B6 /* TTRepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTRepositoriesViewModel.swift; sourceTree = "<group>"; };
+		3B92C98725398FD200A475FE /* TTSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSectionType.swift; sourceTree = "<group>"; };
+		3B92C98F25399AC600A475FE /* TTNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTNotification.swift; sourceTree = "<group>"; };
+		3B92C99725399D9300A475FE /* TTLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLicense.swift; sourceTree = "<group>"; };
+		3B92C99F2539A56100A475FE /* TTContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTContact.swift; sourceTree = "<group>"; };
 		3BCF3376246BDADD00591DEF /* TTSwiftHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTSwiftHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCF3379246BDADD00591DEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BCF337B246BDADD00591DEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -333,6 +377,42 @@
 			path = Branches;
 			sourceTree = "<group>";
 		};
+		3B4693972497070E00D64E73 /* Releases */ = {
+			isa = PBXGroup;
+			children = (
+				3B4693982497074600D64E73 /* TTReleaseCellViewModel.swift */,
+				3B46939A2497084600D64E73 /* TTReleasesViewModel.swift */,
+			);
+			path = Releases;
+			sourceTree = "<group>";
+		};
+		3B46939C24970CF400D64E73 /* PullRequests */ = {
+			isa = PBXGroup;
+			children = (
+				3B46939D24970D2F00D64E73 /* TTPullRequestCellViewModel.swift */,
+				3B46939F24970FAF00D64E73 /* TTPullRequestsViewModel.swift */,
+			);
+			path = PullRequests;
+			sourceTree = "<group>";
+		};
+		3B4693A12497264E00D64E73 /* PullRequest Details */ = {
+			isa = PBXGroup;
+			children = (
+				3B4693A22497267000D64E73 /* TTPullRequestViewModel.swift */,
+			);
+			path = "PullRequest Details";
+			sourceTree = "<group>";
+		};
+		3B4693A424974EFD00D64E73 /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				3B4693A524974F3000D64E73 /* TTLanguageSection.swift */,
+				3B4693A724974F7F00D64E73 /* TTRepoLanguageCellViewModel.swift */,
+				3B4693A92497513D00D64E73 /* TTLanguagesViewModel.swift */,
+			);
+			path = Languages;
+			sourceTree = "<group>";
+		};
 		3B67553D247B5BBE009973B6 /* Stubbed Responses */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +427,8 @@
 			isa = PBXGroup;
 			children = (
 				3B675547247B7974009973B6 /* TTDefaultTableViewCellViewModel.swift */,
+				3B4693AB249776D900D64E73 /* TTTableViewCell.swift */,
+				3B4693AD2497792100D64E73 /* TTDefaultTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -455,7 +537,11 @@
 				3B46939024937B5D00D64E73 /* Branches */,
 				3B0D0D18248F88E10092EB54 /* RepositoryDetails */,
 				3B67554D247CB068009973B6 /* Repositories */,
+				3B4693972497070E00D64E73 /* Releases */,
 				3B46938B2493761300D64E73 /* Commits */,
+				3B46939C24970CF400D64E73 /* PullRequests */,
+				3B4693A12497264E00D64E73 /* PullRequest Details */,
+				3B4693A424974EFD00D64E73 /* Languages */,
 				3B0D0D13248F7D030092EB54 /* Users */,
 				3B0D0D1D24908C310092EB54 /* UserDetails */,
 			);
@@ -572,6 +658,9 @@
 				3BCF33BC246BFDAD00591DEF /* TTView.swift */,
 				3BCF340A246D2D4800591DEF /* TTBarButtonItem.swift */,
 				3BCF340E246D37C400591DEF /* TTStackView.swift */,
+				3B4693AF2497795600D64E73 /* TTImageView.swift */,
+				3B4693B124977CA800D64E73 /* TTLabel.swift */,
+				3B4693BD2498CC8600D64E73 /* TTSegmentedControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -593,7 +682,11 @@
 				3BCF3416246E29EC00591DEF /* TTSearchViewController.swift */,
 				3BCF3428246E394800591DEF /* TTSearchViewModel.swift */,
 				3B675544247B7847009973B6 /* TTSearchSection.swift */,
+				3B4693B52498BED700D64E73 /* TTTrendingRepositoryCell.swift */,
+				3B4693B62498BED700D64E73 /* TTTrendingRepositoryCell.xib */,
 				3B675549247B955B009973B6 /* TTTrendingRepositoryCellViewModel.swift */,
+				3B4693B92498C52500D64E73 /* TTTrendingUserCell.swift */,
+				3B4693BA2498C52500D64E73 /* TTTrendingUserCell.xib */,
 				3B0D0D0F248F768C0092EB54 /* TTTrendingUserCellViewModel.swift */,
 			);
 			path = Search;
@@ -636,21 +729,25 @@
 		3BCF342A246E3A6300591DEF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3BCF342B246E3A8100591DEF /* TTUser.swift */,
-				3BCF342D246E3BDE00591DEF /* TTRepository.swift */,
-				3BCF342F246E41BA00591DEF /* ISO8601DateTransform.swift */,
-				3BCF3431246E445600591DEF /* TTLanguage.swift */,
-				3BCF3447246EA06500591DEF /* TTToken.swift */,
-				3B0D0D292491C6E90092EB54 /* TTEvent.swift */,
-				3B0D0D2B2491CF190092EB54 /* TTIssue.swift */,
-				3B0D0D2D2491CF9F0092EB54 /* TTState.swift */,
-				3B0D0D2F2491CFCB0092EB54 /* TTMilestone.swift */,
-				3B0D0D312491D0140092EB54 /* TTPullRequest.swift */,
 				3B0D0D332491D0E40092EB54 /* TTComment.swift */,
-				3B0D0D352491D5650092EB54 /* TTCommit.swift */,
-				3B0D0D372491D6670092EB54 /* TTRelease.swift */,
-				3B0D0D3D24920BEA0092EB54 /* TTContent.swift */,
 				3B46939324937BB700D64E73 /* TTBranch.swift */,
+				3B0D0D352491D5650092EB54 /* TTCommit.swift */,
+				3B92C99F2539A56100A475FE /* TTContact.swift */,
+				3B0D0D3D24920BEA0092EB54 /* TTContent.swift */,
+				3B0D0D292491C6E90092EB54 /* TTEvent.swift */,
+				3BCF342F246E41BA00591DEF /* ISO8601DateTransform.swift */,
+				3B0D0D2B2491CF190092EB54 /* TTIssue.swift */,
+				3BCF3431246E445600591DEF /* TTLanguage.swift */,
+				3B92C99725399D9300A475FE /* TTLicense.swift */,
+				3B0D0D2F2491CFCB0092EB54 /* TTMilestone.swift */,
+				3B92C98F25399AC600A475FE /* TTNotification.swift */,
+				3B0D0D312491D0140092EB54 /* TTPullRequest.swift */,
+				3B0D0D372491D6670092EB54 /* TTRelease.swift */,
+				3BCF342D246E3BDE00591DEF /* TTRepository.swift */,
+				3B92C98725398FD200A475FE /* TTSectionType.swift */,
+				3B0D0D2D2491CF9F0092EB54 /* TTState.swift */,
+				3BCF3447246EA06500591DEF /* TTToken.swift */,
+				3BCF342B246E3A8100591DEF /* TTUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -666,6 +763,7 @@
 			isa = PBXGroup;
 			children = (
 				3BCF3435246E5F2900591DEF /* KafkaRefresh+Rx.swift */,
+				3B4693B32498731400D64E73 /* Kingfisher+Rx.swift */,
 				3BCF3438246E609B00591DEF /* Observable+Operators.swift */,
 			);
 			path = RxSwift;
@@ -824,8 +922,10 @@
 				3BCF3383246BDAE100591DEF /* Assets.xcassets in Resources */,
 				3B675543247B664A009973B6 /* Languages.json in Resources */,
 				3BCF3381246BDADD00591DEF /* Main.storyboard in Resources */,
+				3B4693B82498BED700D64E73 /* TTTrendingRepositoryCell.xib in Resources */,
 				3BCF340D246D2DBB00591DEF /* Icons.xcassets in Resources */,
 				3BF2FDCE2472292D0007C202 /* GoogleService-Info.plist in Resources */,
+				3B4693BC2498C52500D64E73 /* TTTrendingUserCell.xib in Resources */,
 				3B675541247B63EC009973B6 /* UserTrendings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -997,36 +1097,50 @@
 				3BCF3445246E9D1B00591DEF /* TTAuthManager.swift in Sources */,
 				3BF2FDD22473822B0007C202 /* TTCodetabsApi.swift in Sources */,
 				3BCF33CE246CE70D00591DEF /* TTRestApi.swift in Sources */,
+				3B4693A024970FAF00D64E73 /* TTPullRequestsViewModel.swift in Sources */,
+				3B92C9A02539A56100A475FE /* TTContact.swift in Sources */,
 				3B46938024932C1400D64E73 /* Foundation+SwiftHub.swift in Sources */,
 				3B0D0D382491D6670092EB54 /* TTRelease.swift in Sources */,
+				3B4693BE2498CC8600D64E73 /* TTSegmentedControl.swift in Sources */,
 				3BCF3436246E5F2900591DEF /* KafkaRefresh+Rx.swift in Sources */,
 				3B0D0D2E2491CF9F0092EB54 /* TTState.swift in Sources */,
+				3B46939E24970D2F00D64E73 /* TTPullRequestCellViewModel.swift in Sources */,
 				3B0D0D10248F768C0092EB54 /* TTTrendingUserCellViewModel.swift in Sources */,
 				3B46938F249376D400D64E73 /* TTCommitCellViewModel.swift in Sources */,
 				3BF2FDD4247382C10007C202 /* TTTrendingGithubAPI.swift in Sources */,
 				3BCF33D9246D11DD00591DEF /* Navigator.swift in Sources */,
 				3BCF341C246E2BFF00591DEF /* TTEventsViewController.swift in Sources */,
+				3B4693B224977CA800D64E73 /* TTLabel.swift in Sources */,
+				3B4693BB2498C52500D64E73 /* TTTrendingUserCell.swift in Sources */,
 				3B0D0D3A249207710092EB54 /* TTRepositorySection.swift in Sources */,
 				3B0D0D12248F780B0092EB54 /* TTRepositoryCellViewModel.swift in Sources */,
 				3BCF343F246E770E00591DEF /* TTSplitViewController.swift in Sources */,
 				3BCF3419246E2A5F00591DEF /* TTNavigationController.swift in Sources */,
+				3B4693A824974F7F00D64E73 /* TTRepoLanguageCellViewModel.swift in Sources */,
 				3BCF337E246BDADD00591DEF /* InitialSplitViewController.swift in Sources */,
 				3BCF3425246E2CED00591DEF /* TTLoginViewController.swift in Sources */,
 				3BCF33AF246BE36900591DEF /* TTTableViewController.swift in Sources */,
+				3B92C98825398FD200A475FE /* TTSectionType.swift in Sources */,
 				3BCF343B246E694900591DEF /* TTApplication.swift in Sources */,
 				3B67554A247B955B009973B6 /* TTTrendingRepositoryCellViewModel.swift in Sources */,
+				3B4693992497074600D64E73 /* TTReleaseCellViewModel.swift in Sources */,
+				3B4693B72498BED700D64E73 /* TTTrendingRepositoryCell.swift in Sources */,
 				3B67554F247CB0A2009973B6 /* TTRepositoriesViewModel.swift in Sources */,
 				3B675548247B7974009973B6 /* TTDefaultTableViewCellViewModel.swift in Sources */,
+				3B92C99825399D9300A475FE /* TTLicense.swift in Sources */,
 				3B0D0D3C249207B90092EB54 /* TTRepositoryDetailCellViewModel.swift in Sources */,
 				3BCF33BD246BFDAD00591DEF /* TTView.swift in Sources */,
 				3B0D0D2124908CB00092EB54 /* TTUserSection.swift in Sources */,
 				3BCF337A246BDADD00591DEF /* AppDelegate.swift in Sources */,
 				3B0D0D282491C08B0092EB54 /* TTEventsCellViewModel.swift in Sources */,
 				3BF2FDD0247267590007C202 /* TTEventsViewModel.swift in Sources */,
+				3B4693AC249776D900D64E73 /* TTTableViewCell.swift in Sources */,
 				3B0D0D2C2491CF190092EB54 /* TTIssue.swift in Sources */,
+				3B4693A32497267000D64E73 /* TTPullRequestViewModel.swift in Sources */,
 				3B0D0D322491D0140092EB54 /* TTPullRequest.swift in Sources */,
 				3B0D0D2324908DC00092EB54 /* TTUserDetailCellViewModel.swift in Sources */,
 				3BCF3432246E445600591DEF /* TTLanguage.swift in Sources */,
+				3B4693AE2497792100D64E73 /* TTDefaultTableViewCell.swift in Sources */,
 				3B46938824936BB600D64E73 /* TTIssueViewModel.swift in Sources */,
 				3B675545247B7847009973B6 /* TTSearchSection.swift in Sources */,
 				3B46938A249371A500D64E73 /* TTIssueCommentsViewModel.swift in Sources */,
@@ -1043,6 +1157,7 @@
 				3BCF3448246EA06500591DEF /* TTToken.swift in Sources */,
 				3BCF340B246D2D4900591DEF /* TTBarButtonItem.swift in Sources */,
 				3BCF33D5246CEE3000591DEF /* TTReachabilityManager.swift in Sources */,
+				3B4693A624974F3000D64E73 /* TTLanguageSection.swift in Sources */,
 				3BCF33C4246CE38300591DEF /* Api.swift in Sources */,
 				3B0D0D262490B7140092EB54 /* TTAnalyticsManager.swift in Sources */,
 				3B46938D2493763300D64E73 /* TTCommitsViewModel.swift in Sources */,
@@ -1060,19 +1175,24 @@
 				3B0D0D342491D0E40092EB54 /* TTComment.swift in Sources */,
 				3BCF33D2246CEA7300591DEF /* TTNetworking.swift in Sources */,
 				3BCF33BB246BFD0900591DEF /* UIView+Layout.swift in Sources */,
+				3B4693B02497795600D64E73 /* TTImageView.swift in Sources */,
 				3BCF33D7246CFC5200591DEF /* TTLogManager.swift in Sources */,
 				3BCF342E246E3BDE00591DEF /* TTRepository.swift in Sources */,
+				3B92C99025399AC600A475FE /* TTNotification.swift in Sources */,
 				3BCF341F246E2C5A00591DEF /* TTNotificationsViewController.swift in Sources */,
 				3B0D0D1F24908C4C0092EB54 /* TTUserViewModel.swift in Sources */,
 				3BCF3417246E29EC00591DEF /* TTSearchViewController.swift in Sources */,
 				3BCF3441246E77DE00591DEF /* TTThemeManager.swift in Sources */,
 				3B0D0D3E24920BEA0092EB54 /* TTContent.swift in Sources */,
+				3B46939B2497084600D64E73 /* TTReleasesViewModel.swift in Sources */,
 				3B0D0D302491CFCB0092EB54 /* TTMilestone.swift in Sources */,
 				3BCF3429246E394800591DEF /* TTSearchViewModel.swift in Sources */,
 				3BCF33B8246BF19800591DEF /* Configs.swift in Sources */,
 				3B0D0D362491D5650092EB54 /* TTCommit.swift in Sources */,
 				3B0D0D2A2491C6E90092EB54 /* TTEvent.swift in Sources */,
 				3BCF3411246D395200591DEF /* TTLibsManager.swift in Sources */,
+				3B4693B42498731400D64E73 /* Kingfisher+Rx.swift in Sources */,
+				3B4693AA2497513D00D64E73 /* TTLanguagesViewModel.swift in Sources */,
 				3B46938324935C6800D64E73 /* TTIssuesViewModel.swift in Sources */,
 				3B46939624937C7500D64E73 /* TTBranchesViewModel.swift in Sources */,
 				3BCF340F246D37C400591DEF /* TTStackView.swift in Sources */,

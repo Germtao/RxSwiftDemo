@@ -12,4 +12,9 @@ extension UIView {
     var inset: CGFloat {
         return Configs.BaseDimensions.inset
     }
+    
+    open func setPriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) {
+        self.setContentHuggingPriority(priority, for: axis)
+        self.setContentCompressionResistancePriority(priority, for: axis)
+    }
 }
