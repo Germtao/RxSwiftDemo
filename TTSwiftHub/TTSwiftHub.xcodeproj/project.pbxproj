@@ -69,6 +69,45 @@
 		3B92C99025399AC600A475FE /* TTNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92C98F25399AC600A475FE /* TTNotification.swift */; };
 		3B92C99825399D9300A475FE /* TTLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92C99725399D9300A475FE /* TTLicense.swift */; };
 		3B92C9A02539A56100A475FE /* TTContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92C99F2539A56100A475FE /* TTContact.swift */; };
+		3B92C9A8253D33E100A475FE /* RepositoryNumberOfLines.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9A7253D33E100A475FE /* RepositoryNumberOfLines.json */; };
+		3B92C9D2253D892000A475FE /* RepositoryContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9AC253D891C00A475FE /* RepositoryContents.json */; };
+		3B92C9D3253D892000A475FE /* RepositoryIssueComments.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9AD253D891C00A475FE /* RepositoryIssueComments.json */; };
+		3B92C9D4253D892000A475FE /* RepositoryRelease.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9AE253D891C00A475FE /* RepositoryRelease.json */; };
+		3B92C9D5253D892000A475FE /* EventsUserPerformed.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9AF253D891C00A475FE /* EventsUserPerformed.json */; };
+		3B92C9D6253D892000A475FE /* Profile.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9B0253D891C00A475FE /* Profile.json */; };
+		3B92C9D7253D892000A475FE /* RepositoryBranch.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9B1253D891D00A475FE /* RepositoryBranch.json */; };
+		3B92C9D8253D892000A475FE /* RepositoryStargazers.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9B2253D891D00A475FE /* RepositoryStargazers.json */; };
+		3B92C9D9253D892000A475FE /* RepositoryPullRequests.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9B3253D891D00A475FE /* RepositoryPullRequests.json */; };
+		3B92C9DA253D892000A475FE /* Organization.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9B4253D891D00A475FE /* Organization.json */; };
+		3B92C9DB253D892000A475FE /* RepositoryPullRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9B5253D891D00A475FE /* RepositoryPullRequest.json */; };
+		3B92C9DC253D892000A475FE /* RepositoryForks.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9B6253D891D00A475FE /* RepositoryForks.json */; };
+		3B92C9DD253D892000A475FE /* UserRepositories.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9B7253D891D00A475FE /* UserRepositories.json */; };
+		3B92C9DE253D892000A475FE /* EventsRepository.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9B8253D891D00A475FE /* EventsRepository.json */; };
+		3B92C9DF253D892000A475FE /* EmptyArray.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9B9253D891D00A475FE /* EmptyArray.json */; };
+		3B92C9E0253D892000A475FE /* RepositoryCommits.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9BA253D891D00A475FE /* RepositoryCommits.json */; };
+		3B92C9E1253D892000A475FE /* NotificationsRepository.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9BB253D891D00A475FE /* NotificationsRepository.json */; };
+		3B92C9E2253D892000A475FE /* EventsOrganization.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9BC253D891D00A475FE /* EventsOrganization.json */; };
+		3B92C9E3253D892000A475FE /* UserFollowers.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9BD253D891E00A475FE /* UserFollowers.json */; };
+		3B92C9E4253D892000A475FE /* RepositorySearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9BE253D891E00A475FE /* RepositorySearch.json */; };
+		3B92C9E5253D892000A475FE /* RepositoryIssue.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9BF253D891E00A475FE /* RepositoryIssue.json */; };
+		3B92C9E6253D892000A475FE /* RepositoryCommit.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9C0253D891E00A475FE /* RepositoryCommit.json */; };
+		3B92C9E7253D892000A475FE /* UserFollowing.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9C1253D891E00A475FE /* UserFollowing.json */; };
+		3B92C9E8253D892000A475FE /* UserRepositoriesStarred.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9C2253D891E00A475FE /* UserRepositoriesStarred.json */; };
+		3B92C9E9253D892000A475FE /* UserRepositoriesWatching.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9C3253D891E00A475FE /* UserRepositoriesWatching.json */; };
+		3B92C9EA253D892000A475FE /* RepositoryIssues.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9C4253D891E00A475FE /* RepositoryIssues.json */; };
+		3B92C9EB253D892000A475FE /* Repository.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9C5253D891E00A475FE /* Repository.json */; };
+		3B92C9EC253D892000A475FE /* EventsUserReceived.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9C6253D891E00A475FE /* EventsUserReceived.json */; };
+		3B92C9ED253D892000A475FE /* RepositoryPullRequestComments.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9C7253D891F00A475FE /* RepositoryPullRequestComments.json */; };
+		3B92C9EE253D892000A475FE /* RepositoryContributors.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9C8253D891F00A475FE /* RepositoryContributors.json */; };
+		3B92C9EF253D892000A475FE /* Events.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9C9253D891F00A475FE /* Events.json */; };
+		3B92C9F0253D892000A475FE /* RepositoryBranches.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9CA253D891F00A475FE /* RepositoryBranches.json */; };
+		3B92C9F1253D892000A475FE /* EmptyObject.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9CB253D891F00A475FE /* EmptyObject.json */; };
+		3B92C9F2253D892000A475FE /* Notifications.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9CC253D891F00A475FE /* Notifications.json */; };
+		3B92C9F3253D892000A475FE /* RepositoryWatchers.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9CD253D891F00A475FE /* RepositoryWatchers.json */; };
+		3B92C9F4253D892000A475FE /* RepositoryReleases.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9CE253D891F00A475FE /* RepositoryReleases.json */; };
+		3B92C9F5253D892000A475FE /* UserSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9CF253D891F00A475FE /* UserSearch.json */; };
+		3B92C9F6253D892000A475FE /* RepositoryReadme.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9D0253D891F00A475FE /* RepositoryReadme.json */; };
+		3B92C9F7253D892000A475FE /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9D1253D891F00A475FE /* User.json */; };
 		3BCF337A246BDADD00591DEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3379246BDADD00591DEF /* AppDelegate.swift */; };
 		3BCF337C246BDADD00591DEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337B246BDADD00591DEF /* SceneDelegate.swift */; };
 		3BCF337E246BDADD00591DEF /* InitialSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337D246BDADD00591DEF /* InitialSplitViewController.swift */; };
@@ -213,6 +252,45 @@
 		3B92C98F25399AC600A475FE /* TTNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTNotification.swift; sourceTree = "<group>"; };
 		3B92C99725399D9300A475FE /* TTLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLicense.swift; sourceTree = "<group>"; };
 		3B92C99F2539A56100A475FE /* TTContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTContact.swift; sourceTree = "<group>"; };
+		3B92C9A7253D33E100A475FE /* RepositoryNumberOfLines.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryNumberOfLines.json; sourceTree = "<group>"; };
+		3B92C9AC253D891C00A475FE /* RepositoryContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryContents.json; sourceTree = "<group>"; };
+		3B92C9AD253D891C00A475FE /* RepositoryIssueComments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryIssueComments.json; sourceTree = "<group>"; };
+		3B92C9AE253D891C00A475FE /* RepositoryRelease.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryRelease.json; sourceTree = "<group>"; };
+		3B92C9AF253D891C00A475FE /* EventsUserPerformed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EventsUserPerformed.json; sourceTree = "<group>"; };
+		3B92C9B0253D891C00A475FE /* Profile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Profile.json; sourceTree = "<group>"; };
+		3B92C9B1253D891D00A475FE /* RepositoryBranch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryBranch.json; sourceTree = "<group>"; };
+		3B92C9B2253D891D00A475FE /* RepositoryStargazers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryStargazers.json; sourceTree = "<group>"; };
+		3B92C9B3253D891D00A475FE /* RepositoryPullRequests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryPullRequests.json; sourceTree = "<group>"; };
+		3B92C9B4253D891D00A475FE /* Organization.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Organization.json; sourceTree = "<group>"; };
+		3B92C9B5253D891D00A475FE /* RepositoryPullRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryPullRequest.json; sourceTree = "<group>"; };
+		3B92C9B6253D891D00A475FE /* RepositoryForks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryForks.json; sourceTree = "<group>"; };
+		3B92C9B7253D891D00A475FE /* UserRepositories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserRepositories.json; sourceTree = "<group>"; };
+		3B92C9B8253D891D00A475FE /* EventsRepository.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EventsRepository.json; sourceTree = "<group>"; };
+		3B92C9B9253D891D00A475FE /* EmptyArray.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmptyArray.json; sourceTree = "<group>"; };
+		3B92C9BA253D891D00A475FE /* RepositoryCommits.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryCommits.json; sourceTree = "<group>"; };
+		3B92C9BB253D891D00A475FE /* NotificationsRepository.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NotificationsRepository.json; sourceTree = "<group>"; };
+		3B92C9BC253D891D00A475FE /* EventsOrganization.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EventsOrganization.json; sourceTree = "<group>"; };
+		3B92C9BD253D891E00A475FE /* UserFollowers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserFollowers.json; sourceTree = "<group>"; };
+		3B92C9BE253D891E00A475FE /* RepositorySearch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositorySearch.json; sourceTree = "<group>"; };
+		3B92C9BF253D891E00A475FE /* RepositoryIssue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryIssue.json; sourceTree = "<group>"; };
+		3B92C9C0253D891E00A475FE /* RepositoryCommit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryCommit.json; sourceTree = "<group>"; };
+		3B92C9C1253D891E00A475FE /* UserFollowing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserFollowing.json; sourceTree = "<group>"; };
+		3B92C9C2253D891E00A475FE /* UserRepositoriesStarred.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserRepositoriesStarred.json; sourceTree = "<group>"; };
+		3B92C9C3253D891E00A475FE /* UserRepositoriesWatching.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserRepositoriesWatching.json; sourceTree = "<group>"; };
+		3B92C9C4253D891E00A475FE /* RepositoryIssues.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryIssues.json; sourceTree = "<group>"; };
+		3B92C9C5253D891E00A475FE /* Repository.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Repository.json; sourceTree = "<group>"; };
+		3B92C9C6253D891E00A475FE /* EventsUserReceived.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EventsUserReceived.json; sourceTree = "<group>"; };
+		3B92C9C7253D891F00A475FE /* RepositoryPullRequestComments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryPullRequestComments.json; sourceTree = "<group>"; };
+		3B92C9C8253D891F00A475FE /* RepositoryContributors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryContributors.json; sourceTree = "<group>"; };
+		3B92C9C9253D891F00A475FE /* Events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Events.json; sourceTree = "<group>"; };
+		3B92C9CA253D891F00A475FE /* RepositoryBranches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryBranches.json; sourceTree = "<group>"; };
+		3B92C9CB253D891F00A475FE /* EmptyObject.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmptyObject.json; sourceTree = "<group>"; };
+		3B92C9CC253D891F00A475FE /* Notifications.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Notifications.json; sourceTree = "<group>"; };
+		3B92C9CD253D891F00A475FE /* RepositoryWatchers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryWatchers.json; sourceTree = "<group>"; };
+		3B92C9CE253D891F00A475FE /* RepositoryReleases.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryReleases.json; sourceTree = "<group>"; };
+		3B92C9CF253D891F00A475FE /* UserSearch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserSearch.json; sourceTree = "<group>"; };
+		3B92C9D0253D891F00A475FE /* RepositoryReadme.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryReadme.json; sourceTree = "<group>"; };
+		3B92C9D1253D891F00A475FE /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
 		3BCF3376246BDADD00591DEF /* TTSwiftHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTSwiftHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCF3379246BDADD00591DEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BCF337B246BDADD00591DEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -419,6 +497,45 @@
 				3B67553E247B5C06009973B6 /* RepositoryTrendings.json */,
 				3B675540247B63EC009973B6 /* UserTrendings.json */,
 				3B675542247B664A009973B6 /* Languages.json */,
+				3B92C9A7253D33E100A475FE /* RepositoryNumberOfLines.json */,
+				3B92C9B9253D891D00A475FE /* EmptyArray.json */,
+				3B92C9CB253D891F00A475FE /* EmptyObject.json */,
+				3B92C9C9253D891F00A475FE /* Events.json */,
+				3B92C9BC253D891D00A475FE /* EventsOrganization.json */,
+				3B92C9B8253D891D00A475FE /* EventsRepository.json */,
+				3B92C9AF253D891C00A475FE /* EventsUserPerformed.json */,
+				3B92C9C6253D891E00A475FE /* EventsUserReceived.json */,
+				3B92C9CC253D891F00A475FE /* Notifications.json */,
+				3B92C9BB253D891D00A475FE /* NotificationsRepository.json */,
+				3B92C9B4253D891D00A475FE /* Organization.json */,
+				3B92C9B0253D891C00A475FE /* Profile.json */,
+				3B92C9C5253D891E00A475FE /* Repository.json */,
+				3B92C9B1253D891D00A475FE /* RepositoryBranch.json */,
+				3B92C9CA253D891F00A475FE /* RepositoryBranches.json */,
+				3B92C9C0253D891E00A475FE /* RepositoryCommit.json */,
+				3B92C9BA253D891D00A475FE /* RepositoryCommits.json */,
+				3B92C9AC253D891C00A475FE /* RepositoryContents.json */,
+				3B92C9C8253D891F00A475FE /* RepositoryContributors.json */,
+				3B92C9B6253D891D00A475FE /* RepositoryForks.json */,
+				3B92C9BF253D891E00A475FE /* RepositoryIssue.json */,
+				3B92C9AD253D891C00A475FE /* RepositoryIssueComments.json */,
+				3B92C9C4253D891E00A475FE /* RepositoryIssues.json */,
+				3B92C9B5253D891D00A475FE /* RepositoryPullRequest.json */,
+				3B92C9C7253D891F00A475FE /* RepositoryPullRequestComments.json */,
+				3B92C9B3253D891D00A475FE /* RepositoryPullRequests.json */,
+				3B92C9D0253D891F00A475FE /* RepositoryReadme.json */,
+				3B92C9AE253D891C00A475FE /* RepositoryRelease.json */,
+				3B92C9CE253D891F00A475FE /* RepositoryReleases.json */,
+				3B92C9BE253D891E00A475FE /* RepositorySearch.json */,
+				3B92C9B2253D891D00A475FE /* RepositoryStargazers.json */,
+				3B92C9CD253D891F00A475FE /* RepositoryWatchers.json */,
+				3B92C9D1253D891F00A475FE /* User.json */,
+				3B92C9BD253D891E00A475FE /* UserFollowers.json */,
+				3B92C9C1253D891E00A475FE /* UserFollowing.json */,
+				3B92C9B7253D891D00A475FE /* UserRepositories.json */,
+				3B92C9C2253D891E00A475FE /* UserRepositoriesStarred.json */,
+				3B92C9C3253D891E00A475FE /* UserRepositoriesWatching.json */,
+				3B92C9CF253D891F00A475FE /* UserSearch.json */,
 			);
 			path = "Stubbed Responses";
 			sourceTree = "<group>";
@@ -917,16 +1034,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B67553F247B5C06009973B6 /* RepositoryTrendings.json in Resources */,
+				3B92C9F0253D892000A475FE /* RepositoryBranches.json in Resources */,
+				3B92C9E9253D892000A475FE /* UserRepositoriesWatching.json in Resources */,
 				3BCF3386246BDAE100591DEF /* LaunchScreen.storyboard in Resources */,
+				3B92C9DC253D892000A475FE /* RepositoryForks.json in Resources */,
+				3B92C9D2253D892000A475FE /* RepositoryContents.json in Resources */,
+				3B92C9E3253D892000A475FE /* UserFollowers.json in Resources */,
+				3B92C9E5253D892000A475FE /* RepositoryIssue.json in Resources */,
+				3B92C9DE253D892000A475FE /* EventsRepository.json in Resources */,
+				3B92C9DD253D892000A475FE /* UserRepositories.json in Resources */,
+				3B92C9D3253D892000A475FE /* RepositoryIssueComments.json in Resources */,
 				3BCF3401246D290300591DEF /* Localizable.strings in Resources */,
 				3BCF3383246BDAE100591DEF /* Assets.xcassets in Resources */,
 				3B675543247B664A009973B6 /* Languages.json in Resources */,
+				3B92C9D4253D892000A475FE /* RepositoryRelease.json in Resources */,
+				3B92C9ED253D892000A475FE /* RepositoryPullRequestComments.json in Resources */,
+				3B92C9D9253D892000A475FE /* RepositoryPullRequests.json in Resources */,
+				3B92C9F4253D892000A475FE /* RepositoryReleases.json in Resources */,
+				3B92C9EA253D892000A475FE /* RepositoryIssues.json in Resources */,
+				3B92C9F3253D892000A475FE /* RepositoryWatchers.json in Resources */,
+				3B92C9E4253D892000A475FE /* RepositorySearch.json in Resources */,
+				3B92C9D5253D892000A475FE /* EventsUserPerformed.json in Resources */,
+				3B92C9F6253D892000A475FE /* RepositoryReadme.json in Resources */,
+				3B92C9A8253D33E100A475FE /* RepositoryNumberOfLines.json in Resources */,
+				3B92C9D8253D892000A475FE /* RepositoryStargazers.json in Resources */,
+				3B92C9EC253D892000A475FE /* EventsUserReceived.json in Resources */,
+				3B92C9E7253D892000A475FE /* UserFollowing.json in Resources */,
 				3BCF3381246BDADD00591DEF /* Main.storyboard in Resources */,
+				3B92C9E6253D892000A475FE /* RepositoryCommit.json in Resources */,
+				3B92C9F5253D892000A475FE /* UserSearch.json in Resources */,
+				3B92C9EB253D892000A475FE /* Repository.json in Resources */,
 				3B4693B82498BED700D64E73 /* TTTrendingRepositoryCell.xib in Resources */,
+				3B92C9DA253D892000A475FE /* Organization.json in Resources */,
 				3BCF340D246D2DBB00591DEF /* Icons.xcassets in Resources */,
 				3BF2FDCE2472292D0007C202 /* GoogleService-Info.plist in Resources */,
+				3B92C9E8253D892000A475FE /* UserRepositoriesStarred.json in Resources */,
 				3B4693BC2498C52500D64E73 /* TTTrendingUserCell.xib in Resources */,
+				3B92C9D7253D892000A475FE /* RepositoryBranch.json in Resources */,
+				3B92C9E1253D892000A475FE /* NotificationsRepository.json in Resources */,
+				3B92C9F2253D892000A475FE /* Notifications.json in Resources */,
+				3B92C9D6253D892000A475FE /* Profile.json in Resources */,
+				3B92C9DB253D892000A475FE /* RepositoryPullRequest.json in Resources */,
+				3B92C9E0253D892000A475FE /* RepositoryCommits.json in Resources */,
+				3B92C9F1253D892000A475FE /* EmptyObject.json in Resources */,
+				3B92C9EE253D892000A475FE /* RepositoryContributors.json in Resources */,
 				3B675541247B63EC009973B6 /* UserTrendings.json in Resources */,
+				3B92C9F7253D892000A475FE /* User.json in Resources */,
+				3B92C9E2253D892000A475FE /* EventsOrganization.json in Resources */,
+				3B92C9EF253D892000A475FE /* Events.json in Resources */,
+				3B92C9DF253D892000A475FE /* EmptyArray.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
