@@ -133,16 +133,34 @@ struct TTTrendingGithubNetworking: TTNetworkingType {
     typealias T = TTTrendingGithubAPI
     let provider: TTOnlineProvider<T>
     
-    static func defaultNetworking() -> TTTrendingGithubNetworking {
+    static func defaultNetworking() -> Self {
         return TTTrendingGithubNetworking(provider: newProvider(plugins))
     }
     
-    static func stubbingNetworking() -> TTTrendingGithubNetworking {
+    static func stubbingNetworking() -> Self {
         return TTTrendingGithubNetworking(provider:
             TTOnlineProvider(endpointClosure: TTTrendingGithubNetworking.endpointsClosure(),
                              requestClosure: TTTrendingGithubNetworking.endpointResolver(),
                              stubClosure: MoyaProvider.immediatelyStub,
                              online: .just(true)))
+    }
+    
+    func request(_ token: T) -> Observable<Moya.Response> {
+        let actualRequest = provider.request(token)
+        return actualRequest
+    }
+}
+
+struct TTCodetabsNetworking: TTNetworkingType {
+    typealias T = TTCodetabsApi
+    let provider: TTOnlineProvider<T>
+    
+    static func defaultNetworking() -> Self {
+        return TTCodetabsNetworking(provider: newProvider(plugins))
+    }
+    
+    static func stubbingNetworking() -> Self {
+        return TTCodetabsNetworking(provider: TTOnlineProvider(endpointClosure: endpointsClosure(), requestClosure: TTCodetabsNetworking.endpointResolver(), stubClosure: MoyaProvider.immediatelyStub, online: .just(true)))
     }
     
     func request(_ token: T) -> Observable<Moya.Response> {

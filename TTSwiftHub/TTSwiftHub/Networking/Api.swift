@@ -14,9 +14,11 @@ protocol TTSwiftHubAPI {
     
     // MARK: - Search
     func searchRepositories(query: String, sort: String, order: String, page: Int, endCursor: String?) -> Single<TTRepositorySearch>
-    func searchUser(query: String, sort: String, order: String, page: Int, endCursor: String?) -> Single<TTUserSearch>
+    func searchUsers(query: String, sort: String, order: String, page: Int, endCursor: String?) -> Single<TTUserSearch>
     
     // MARK: - 不需要授权
+    func createAccessToken(clientId: String, clientSecret: String, code: String, redirectUri: String?, state: String?) -> Single<TTToken>
+    
     func userFollowers(username: String, page: Int) -> Single<[TTUser]>
     func userFollowing(username: String, page: Int) -> Single<[TTUser]>
     func watchers(fullname: String, page: Int) -> Single<[TTUser]>
@@ -28,13 +30,21 @@ protocol TTSwiftHubAPI {
     
     func repository(fullname: String, qualifiedName: String) -> Single<TTRepository>
     func readme(fullname: String, ref: String?) -> Single<TTContent>
+    func contents(fullname: String, path: String, ref: String?) -> Single<[TTContent]>
+    func issue(fullname: String, number: Int) -> Single<TTIssue>
     func issues(fullname: String, state: String, page: Int) -> Single<[TTIssue]>
     func issueComments(fullname: String, number: Int, page: Int) -> Single<[TTComment]>
     
+    func commit(fullname: String, sha: String) -> Single<TTCommit>
     func commits(fullname: String, page: Int) -> Single<[TTCommit]>
     
+    func branch(fullname: String, name: String) -> Single<TTBranch>
     func branches(fullname: String, page: Int) -> Single<[TTBranch]>
+    
+    func release(fullname: String, releaseId: Int) -> Single<TTRelease>
     func releases(fullname: String, page: Int) -> Single<[TTRelease]>
+    
+    func pullRequest(fullname: String, number: Int) -> Single<TTPullRequest>
     func pullRequests(fullname: String, state: String, page: Int) -> Single<[TTPullRequest]>
     
     func userRepositories(username: String, page: Int) -> Single<[TTRepository]>
@@ -60,4 +70,7 @@ protocol TTSwiftHubAPI {
     func trendingRepositories(language: String, since: String) -> Single<[TTTrendingRepository]>
     func trendingDevelopers(language: String, since: String) -> Single<[TTTrendingUser]>
     func languages() -> Single<[TTLanguage]>
+    
+    // MARK: - Codetabs
+    func numberOfLines(fullname: String) -> Single<[TTLanguageLines]>
 }
