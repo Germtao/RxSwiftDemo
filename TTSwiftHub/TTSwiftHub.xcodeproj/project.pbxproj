@@ -729,8 +729,8 @@
 		3BCF342A246E3A6300591DEF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3B0D0D332491D0E40092EB54 /* TTComment.swift */,
 				3B46939324937BB700D64E73 /* TTBranch.swift */,
+				3B0D0D332491D0E40092EB54 /* TTComment.swift */,
 				3B0D0D352491D5650092EB54 /* TTCommit.swift */,
 				3B92C99F2539A56100A475FE /* TTContact.swift */,
 				3B0D0D3D24920BEA0092EB54 /* TTContent.swift */,

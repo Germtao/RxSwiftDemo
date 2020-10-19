@@ -122,9 +122,9 @@ struct TTVerification: Mappable {
     init?(map: Map) {}
 
     mutating func mapping(map: Map) {
-        payload <- map["payload"]
-        reason <- map["reason"]
+        payload   <- map["payload"]
+        reason    <- map["reason"]
         signature <- map["signature"]
-        verified <- map["verified"]
+        verified  <- map["verified"]
     }
 }

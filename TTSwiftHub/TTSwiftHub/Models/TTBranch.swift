@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 struct TTBranch: Mappable {
-//    var links:
+//    var links: Link?
     
     var commit: TTCommit?
     var name: String?
@@ -21,10 +21,11 @@ struct TTBranch: Mappable {
     init() {}
     
     mutating func mapping(map: Map) {
-        commit <- map["commit"]
-        name <- map["name"]
+//        links <- map["_links"]
+        commit         <- map["commit"]
+        name           <- map["name"]
         protectedField <- map["protected"]
-        protectionUrl <- map["protection_url"]
+        protectionUrl  <- map["protection_url"]
     }
     
 }
