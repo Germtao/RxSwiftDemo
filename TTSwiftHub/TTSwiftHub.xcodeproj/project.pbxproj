@@ -111,6 +111,12 @@
 		3B92C9FC253EB4E800A475FE /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92C9FB253EB4E600A475FE /* UIView+Rx.swift */; };
 		3B92CA04253EBC7E00A475FE /* TTContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA03253EBC7E00A475FE /* TTContactsManager.swift */; };
 		3B92CA09253EC0C700A475FE /* TTWhatsNewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA08253EC0C700A475FE /* TTWhatsNewManager.swift */; };
+		3B92CA4A253ECFD000A475FE /* TTNotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA49253ECFD000A475FE /* TTNotificationsViewModel.swift */; };
+		3B92CA4F253ED24500A475FE /* TTNotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA4E253ED24500A475FE /* TTNotificationCellViewModel.swift */; };
+		3B92CA57253EDF6000A475FE /* TTSettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA56253EDF6000A475FE /* TTSettingsSection.swift */; };
+		3B92CA5C253EE1EC00A475FE /* TTSettingCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA5B253EE1EC00A475FE /* TTSettingCellViewModel.swift */; };
+		3B92CA61253EE2DD00A475FE /* TTSettingSwitchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA60253EE2DD00A475FE /* TTSettingSwitchCellViewModel.swift */; };
+		3B92CA66253EEA1600A475FE /* TTSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA65253EEA1600A475FE /* TTSettingsViewModel.swift */; };
 		3BCF337A246BDADD00591DEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3379246BDADD00591DEF /* AppDelegate.swift */; };
 		3BCF337C246BDADD00591DEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337B246BDADD00591DEF /* SceneDelegate.swift */; };
 		3BCF337E246BDADD00591DEF /* InitialSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337D246BDADD00591DEF /* InitialSplitViewController.swift */; };
@@ -297,6 +303,12 @@
 		3B92C9FB253EB4E600A475FE /* UIView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
 		3B92CA03253EBC7E00A475FE /* TTContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTContactsManager.swift; sourceTree = "<group>"; };
 		3B92CA08253EC0C700A475FE /* TTWhatsNewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTWhatsNewManager.swift; sourceTree = "<group>"; };
+		3B92CA49253ECFD000A475FE /* TTNotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTNotificationsViewModel.swift; sourceTree = "<group>"; };
+		3B92CA4E253ED24500A475FE /* TTNotificationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTNotificationCellViewModel.swift; sourceTree = "<group>"; };
+		3B92CA56253EDF6000A475FE /* TTSettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSettingsSection.swift; sourceTree = "<group>"; };
+		3B92CA5B253EE1EC00A475FE /* TTSettingCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSettingCellViewModel.swift; sourceTree = "<group>"; };
+		3B92CA60253EE2DD00A475FE /* TTSettingSwitchCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSettingSwitchCellViewModel.swift; sourceTree = "<group>"; };
+		3B92CA65253EEA1600A475FE /* TTSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSettingsViewModel.swift; sourceTree = "<group>"; };
 		3BCF3376246BDADD00591DEF /* TTSwiftHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTSwiftHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCF3379246BDADD00591DEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BCF337B246BDADD00591DEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -831,6 +843,8 @@
 			isa = PBXGroup;
 			children = (
 				3BCF341E246E2C5A00591DEF /* TTNotificationsViewController.swift */,
+				3B92CA49253ECFD000A475FE /* TTNotificationsViewModel.swift */,
+				3B92CA4E253ED24500A475FE /* TTNotificationCellViewModel.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -839,6 +853,10 @@
 			isa = PBXGroup;
 			children = (
 				3BCF3421246E2CA300591DEF /* TTSettingsViewController.swift */,
+				3B92CA56253EDF6000A475FE /* TTSettingsSection.swift */,
+				3B92CA5B253EE1EC00A475FE /* TTSettingCellViewModel.swift */,
+				3B92CA60253EE2DD00A475FE /* TTSettingSwitchCellViewModel.swift */,
+				3B92CA65253EEA1600A475FE /* TTSettingsViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1262,6 +1280,7 @@
 				3BCF3445246E9D1B00591DEF /* TTAuthManager.swift in Sources */,
 				3BF2FDD22473822B0007C202 /* TTCodetabsApi.swift in Sources */,
 				3BCF33CE246CE70D00591DEF /* TTRestApi.swift in Sources */,
+				3B92CA61253EE2DD00A475FE /* TTSettingSwitchCellViewModel.swift in Sources */,
 				3B4693A024970FAF00D64E73 /* TTPullRequestsViewModel.swift in Sources */,
 				3B92C9A02539A56100A475FE /* TTContact.swift in Sources */,
 				3B46938024932C1400D64E73 /* Foundation+SwiftHub.swift in Sources */,
@@ -1283,6 +1302,7 @@
 				3BCF3419246E2A5F00591DEF /* TTNavigationController.swift in Sources */,
 				3B4693A824974F7F00D64E73 /* TTRepoLanguageCellViewModel.swift in Sources */,
 				3BCF337E246BDADD00591DEF /* InitialSplitViewController.swift in Sources */,
+				3B92CA66253EEA1600A475FE /* TTSettingsViewModel.swift in Sources */,
 				3BCF3425246E2CED00591DEF /* TTLoginViewController.swift in Sources */,
 				3BCF33AF246BE36900591DEF /* TTTableViewController.swift in Sources */,
 				3B92CA09253EC0C700A475FE /* TTWhatsNewManager.swift in Sources */,
@@ -1305,6 +1325,7 @@
 				3B4693AC249776D900D64E73 /* TTTableViewCell.swift in Sources */,
 				3B0D0D2C2491CF190092EB54 /* TTIssue.swift in Sources */,
 				3B4693A32497267000D64E73 /* TTPullRequestViewModel.swift in Sources */,
+				3B92CA5C253EE1EC00A475FE /* TTSettingCellViewModel.swift in Sources */,
 				3B0D0D322491D0140092EB54 /* TTPullRequest.swift in Sources */,
 				3B0D0D2324908DC00092EB54 /* TTUserDetailCellViewModel.swift in Sources */,
 				3BCF3432246E445600591DEF /* TTLanguage.swift in Sources */,
@@ -1324,6 +1345,7 @@
 				3BCF3430246E41BB00591DEF /* ISO8601DateTransform.swift in Sources */,
 				3BCF3448246EA06500591DEF /* TTToken.swift in Sources */,
 				3BCF340B246D2D4900591DEF /* TTBarButtonItem.swift in Sources */,
+				3B92CA4A253ECFD000A475FE /* TTNotificationsViewModel.swift in Sources */,
 				3BCF33D5246CEE3000591DEF /* TTReachabilityManager.swift in Sources */,
 				3B4693A624974F3000D64E73 /* TTLanguageSection.swift in Sources */,
 				3BCF33C4246CE38300591DEF /* Api.swift in Sources */,
@@ -1346,6 +1368,7 @@
 				3B4693B02497795600D64E73 /* TTImageView.swift in Sources */,
 				3BCF33D7246CFC5200591DEF /* TTLogManager.swift in Sources */,
 				3BCF342E246E3BDE00591DEF /* TTRepository.swift in Sources */,
+				3B92CA4F253ED24500A475FE /* TTNotificationCellViewModel.swift in Sources */,
 				3B92C99025399AC600A475FE /* TTNotification.swift in Sources */,
 				3BCF341F246E2C5A00591DEF /* TTNotificationsViewController.swift in Sources */,
 				3B0D0D1F24908C4C0092EB54 /* TTUserViewModel.swift in Sources */,
@@ -1355,6 +1378,7 @@
 				3B46939B2497084600D64E73 /* TTReleasesViewModel.swift in Sources */,
 				3B0D0D302491CFCB0092EB54 /* TTMilestone.swift in Sources */,
 				3BCF3429246E394800591DEF /* TTSearchViewModel.swift in Sources */,
+				3B92CA57253EDF6000A475FE /* TTSettingsSection.swift in Sources */,
 				3BCF33B8246BF19800591DEF /* Configs.swift in Sources */,
 				3B0D0D362491D5650092EB54 /* TTCommit.swift in Sources */,
 				3B0D0D2A2491C6E90092EB54 /* TTEvent.swift in Sources */,
