@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import WhatsNewKit
 
 class TTMainTabBarViewModel: TTViewModel, TTViewModelType {
     
@@ -18,10 +19,13 @@ class TTMainTabBarViewModel: TTViewModel, TTViewModelType {
     
     struct Output {
         let tabBarItems: Driver<[MainTabBarItem]>
-//        let openWhatsNew: Driver<What>
+        let openWhatsNew: Driver<WhatsNewBlock>
     }
     
+    let whatsNewManager: TTWhatsNewManager
+    
     override init(provider: TTSwiftHubAPI) {
+        whatsNewManager = TTWhatsNewManager.shared
         super.init(provider: provider)
     }
     
@@ -35,12 +39,23 @@ class TTMainTabBarViewModel: TTViewModel, TTViewModelType {
         }
         .asDriver(onErrorJustReturn: [])
         
-        return Output(tabBarItems: tabBarItems)
+        let whatsNewItems = Driver.just(whatsNewManager.whatsNew())
+        
+        return Output(tabBarItems: tabBarItems,
+                      openWhatsNew: whatsNewItems)
     }
     
     func viewModel(for tabBarItem: MainTabBarItem) -> TTViewModel {
         switch tabBarItem {
-        case .search: return TTSearchViewModel(provider: provider)
+        case .search:
+            return TTSearchViewModel(provider: provider)
+        case .events:
+            let user = TTUser.currentUser()!
+            return TTEventsViewModel(mode: .user(user: user), provider: provider)
+        case .notifications:
+            return TTNotificationsViewModel(mode: .mine, provider: provider)
+        case .settings:
+            
         default:
             return TTViewModel(provider: provider)
         }

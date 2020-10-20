@@ -44,7 +44,7 @@ class TTViewModel: NSObject {
                         return ApiError.serverError(response: errorResponse)
                     }
                 } catch {
-                    print(error)
+                    logError(error.localizedDescription)
                 }
                 return nil
             }
