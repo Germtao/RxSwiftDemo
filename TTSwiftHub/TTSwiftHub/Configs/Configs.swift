@@ -45,32 +45,37 @@ enum Keys {
 struct Configs {
     
     struct App {
-        static let githubUrl = "https://github.com/khoren93/SwiftHub"
+        static let githubUrl        = "https://github.com/khoren93/SwiftHub"
         static let bundleIdentifier = "com.public.SwiftHub"
     }
     
     struct Network {
-        static let useStaging = false  // set true for tests and generating screenshots with fastlane
-        static let loggingEnabled = false
-        static let githubBaseUrl = "https://api.github.com"
+        static let useStaging            = false  // 为测试设置正确，并使用fastlane生成屏幕截图
+        static let loggingEnabled        = false
+        static let githubBaseUrl         = "https://api.github.com"
         static let trendingGithubBaseUrl = "https://github-trending-api.now.sh"
-        static let codetabsBaseUrl = "https://api.codetabs.com/v1"
-        static let githistoryBaseUrl = "https://github.githistory.xyz"
-        static let starHistoryBaseUrl = "https://star-history.t9t.io"
+        static let codetabsBaseUrl       = "https://api.codetabs.com/v1"
+        static let githistoryBaseUrl     = "https://github.githistory.xyz"
+        static let starHistoryBaseUrl    = "https://star-history.t9t.io"
         static let profileSummaryBaseUrl = "https://profile-summary-for-github.com"
     }
     
     struct BaseDimensions {
-        static let inset: CGFloat = 10
-        static let cornerRadius: CGFloat = 5
-        static let tabBarHeight: CGFloat = 58
-        static let toolBarHeight: CGFloat = 66
+        static let inset: CGFloat                     = 10
+        static let cornerRadius: CGFloat              = 5
+        static let tabBarHeight: CGFloat              = 58
+        static let toolBarHeight: CGFloat             = 66
         static let navBarWithStatusBarHeight: CGFloat = 64
-        static let borderWidth: CGFloat = 1
-        static let buttonHeight: CGFloat = 40
-        static let textFieldHeight: CGFloat = 40
-        static let tableRowHeight: CGFloat = 40
-        static let segmentedControlHeight: CGFloat = 40
+        static let borderWidth: CGFloat               = 1
+        static let buttonHeight: CGFloat              = 40
+        static let textFieldHeight: CGFloat           = 40
+        static let tableRowHeight: CGFloat            = 40
+        static let segmentedControlHeight: CGFloat    = 40
+    }
+    
+    struct Path {
+        static let Documents = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        static let Tmp       = NSTemporaryDirectory()
     }
     
     struct UserDefaultsKeys {
