@@ -139,6 +139,7 @@ extension TTLibsManager {
     func setupAnalytics() {
         FirebaseApp.configure()
         Mixpanel.sharedInstance(withToken: Keys.mixpanel.apiKey)
+//        Fabric
     }
     
     func setupAds() {

@@ -10,7 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxTheme
-import KafkaRefresh
 
 let globalStatusBarStyle = BehaviorRelay<UIStatusBarStyle>(value: .default)
 
@@ -196,22 +195,6 @@ extension TTThemeType {
         switch self {
         case .light(let color): defaults.set(color.rawValue, forKey: "ThemeKey")
         case .dark(let color): defaults.set(color.rawValue, forKey: "ThemeKey")
-        }
-    }
-}
-
-extension Reactive where Base: UIApplication {
-    var statusBarStyle: Binder<UIStatusBarStyle> {
-        return Binder(self.base) { (view, style) in
-            globalStatusBarStyle.accept(style)
-        }
-    }
-}
-
-extension Reactive where Base: KafkaRefreshDefaults {
-    var themeColor: Binder<UIColor?> {
-        return Binder(self.base) { (view, color) in
-            view.themeColor = color
         }
     }
 }

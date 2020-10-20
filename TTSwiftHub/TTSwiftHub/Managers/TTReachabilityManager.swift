@@ -15,7 +15,7 @@ func connectedToInternet() -> Observable<Bool> {
     return TTReachabilityManager.shared.reach
 }
 
-class TTReachabilityManager: NSObject {
+private class TTReachabilityManager: NSObject {
     
     static let shared = TTReachabilityManager()
     

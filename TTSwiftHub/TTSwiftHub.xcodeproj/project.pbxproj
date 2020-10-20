@@ -108,6 +108,9 @@
 		3B92C9F5253D892000A475FE /* UserSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9CF253D891F00A475FE /* UserSearch.json */; };
 		3B92C9F6253D892000A475FE /* RepositoryReadme.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9D0253D891F00A475FE /* RepositoryReadme.json */; };
 		3B92C9F7253D892000A475FE /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B92C9D1253D891F00A475FE /* User.json */; };
+		3B92C9FC253EB4E800A475FE /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92C9FB253EB4E600A475FE /* UIView+Rx.swift */; };
+		3B92CA04253EBC7E00A475FE /* TTContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA03253EBC7E00A475FE /* TTContactsManager.swift */; };
+		3B92CA09253EC0C700A475FE /* TTWhatsNewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA08253EC0C700A475FE /* TTWhatsNewManager.swift */; };
 		3BCF337A246BDADD00591DEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3379246BDADD00591DEF /* AppDelegate.swift */; };
 		3BCF337C246BDADD00591DEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337B246BDADD00591DEF /* SceneDelegate.swift */; };
 		3BCF337E246BDADD00591DEF /* InitialSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337D246BDADD00591DEF /* InitialSplitViewController.swift */; };
@@ -291,6 +294,9 @@
 		3B92C9CF253D891F00A475FE /* UserSearch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserSearch.json; sourceTree = "<group>"; };
 		3B92C9D0253D891F00A475FE /* RepositoryReadme.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RepositoryReadme.json; sourceTree = "<group>"; };
 		3B92C9D1253D891F00A475FE /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
+		3B92C9FB253EB4E600A475FE /* UIView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
+		3B92CA03253EBC7E00A475FE /* TTContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTContactsManager.swift; sourceTree = "<group>"; };
+		3B92CA08253EC0C700A475FE /* TTWhatsNewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTWhatsNewManager.swift; sourceTree = "<group>"; };
 		3BCF3376246BDADD00591DEF /* TTSwiftHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTSwiftHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCF3379246BDADD00591DEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BCF337B246BDADD00591DEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -757,12 +763,14 @@
 		3BCF33D3246CEDF000591DEF /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				3BCF3444246E9D1B00591DEF /* TTAuthManager.swift */,
 				3BCF33D4246CEE3000591DEF /* TTReachabilityManager.swift */,
 				3BCF33D6246CFC5200591DEF /* TTLogManager.swift */,
 				3BCF3410246D395200591DEF /* TTLibsManager.swift */,
 				3BCF3440246E77DE00591DEF /* TTThemeManager.swift */,
-				3BCF3444246E9D1B00591DEF /* TTAuthManager.swift */,
 				3B0D0D252490B7140092EB54 /* TTAnalyticsManager.swift */,
+				3B92CA03253EBC7E00A475FE /* TTContactsManager.swift */,
+				3B92CA08253EC0C700A475FE /* TTWhatsNewManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -882,6 +890,7 @@
 				3BCF3435246E5F2900591DEF /* KafkaRefresh+Rx.swift */,
 				3B4693B32498731400D64E73 /* Kingfisher+Rx.swift */,
 				3BCF3438246E609B00591DEF /* Observable+Operators.swift */,
+				3B92C9FB253EB4E600A475FE /* UIView+Rx.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -1276,11 +1285,14 @@
 				3BCF337E246BDADD00591DEF /* InitialSplitViewController.swift in Sources */,
 				3BCF3425246E2CED00591DEF /* TTLoginViewController.swift in Sources */,
 				3BCF33AF246BE36900591DEF /* TTTableViewController.swift in Sources */,
+				3B92CA09253EC0C700A475FE /* TTWhatsNewManager.swift in Sources */,
 				3B92C98825398FD200A475FE /* TTSectionType.swift in Sources */,
 				3BCF343B246E694900591DEF /* TTApplication.swift in Sources */,
 				3B67554A247B955B009973B6 /* TTTrendingRepositoryCellViewModel.swift in Sources */,
 				3B4693992497074600D64E73 /* TTReleaseCellViewModel.swift in Sources */,
+				3B92C9FC253EB4E800A475FE /* UIView+Rx.swift in Sources */,
 				3B4693B72498BED700D64E73 /* TTTrendingRepositoryCell.swift in Sources */,
+				3B92CA04253EBC7E00A475FE /* TTContactsManager.swift in Sources */,
 				3B67554F247CB0A2009973B6 /* TTRepositoriesViewModel.swift in Sources */,
 				3B675548247B7974009973B6 /* TTDefaultTableViewCellViewModel.swift in Sources */,
 				3B92C99825399D9300A475FE /* TTLicense.swift in Sources */,
