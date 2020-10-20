@@ -46,6 +46,7 @@ protocol TTSwiftHubAPI {
     
     func pullRequest(fullname: String, number: Int) -> Single<TTPullRequest>
     func pullRequests(fullname: String, state: String, page: Int) -> Single<[TTPullRequest]>
+    func pullRequestComments(fullname: String, number: Int, page: Int) -> Single<[TTComment]>
     
     func userRepositories(username: String, page: Int) -> Single<[TTRepository]>
     func userStarredRepositories(username: String, page: Int) -> Single<[TTRepository]>
@@ -65,6 +66,11 @@ protocol TTSwiftHubAPI {
     func starRepository(fullname: String) -> Single<Void>
     func unstarRepository(fullname: String) -> Single<Void>
     func checkStarring(fullname: String) -> Single<Void>
+    
+    func markAsReadNotifications() -> Single<Void>
+    func markAsReadRepositoryNotifications(fullname: String) -> Single<Void>
+    func notifications(all: Bool, participating: Bool, page: Int) -> Single<[TTNotification]>
+    func repositoryNotifications(fullname: String, all: Bool, participating: Bool, page: Int) -> Single<[TTNotification]>
     
     // MARK: - Trending 趋向
     func trendingRepositories(language: String, since: String) -> Single<[TTTrendingRepository]>

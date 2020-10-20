@@ -85,6 +85,31 @@ private extension TTRestApi {
     }
 }
 
+private extension TTRestApi {
+    func trendingRequestObject<T: BaseMappable>(_ target: TTTrendingGithubAPI, type: T.Type) -> Single<T> {
+        return trendingGithubProvider.request(target)
+            .mapObject(T.self)
+            .observeOn(MainScheduler.instance)
+            .asSingle()
+    }
+    
+    func trendingRequestArray<T: BaseMappable>(_ target: TTTrendingGithubAPI, type: T.Type) -> Single<[T]> {
+        return trendingGithubProvider.request(target)
+            .mapArray(T.self)
+            .observeOn(MainScheduler.instance)
+            .asSingle()
+    }
+}
+
+private extension TTRestApi {
+    func codetabsRequestArray<T: BaseMappable>(_ target: TTCodetabsApi, type: T.Type) -> Single<[T]> {
+        return codetabsProvider.request(target)
+            .mapArray(T.self)
+            .observeOn(MainScheduler.instance)
+            .asSingle()
+    }
+}
+
 extension TTRestApi {
     func createAccessToken(clientId: String, clientSecret: String, code: String, redirectUri: String?, state: String?) -> Single<TTToken> {
         return Single.create { single in
@@ -128,11 +153,11 @@ extension TTRestApi {
     }
     
     func userFollowers(username: String, page: Int) -> Single<[TTUser]> {
-        <#code#>
+        return requestArray(.userFollowers(username: username, page: page), type: TTUser.self)
     }
     
     func userFollowing(username: String, page: Int) -> Single<[TTUser]> {
-        <#code#>
+        return requestArray(.userFollowing(username: username, page: page), type: TTUser.self)
     }
     
     func watchers(fullname: String, page: Int) -> Single<[TTUser]> {
@@ -144,7 +169,7 @@ extension TTRestApi {
     }
     
     func contributors(fullname: String, page: Int) -> Single<[TTUser]> {
-        <#code#>
+        return requestArray(.contributors(fullname: fullname, page: page), type: TTUser.self)
     }
     
     func user(owner: String) -> Single<TTUser> {
@@ -172,11 +197,11 @@ extension TTRestApi {
     }
     
     func issues(fullname: String, state: String, page: Int) -> Single<[TTIssue]> {
-        <#code#>
+        return requestArray(.issues(fullname: fullname, state: state, page: page), type: TTIssue.self)
     }
     
     func issueComments(fullname: String, number: Int, page: Int) -> Single<[TTComment]> {
-        <#code#>
+        return requestArray(.issueComments(fullname: fullname, number: number, page: page), type: TTComment.self)
     }
     
     func commit(fullname: String, sha: String) -> Single<TTCommit> {
@@ -184,7 +209,7 @@ extension TTRestApi {
     }
     
     func commits(fullname: String, page: Int) -> Single<[TTCommit]> {
-        <#code#>
+        return requestArray(.commits(fullname: fullname, page: page), type: TTCommit.self)
     }
     
     func branch(fullname: String, name: String) -> Single<TTBranch> {
@@ -192,7 +217,7 @@ extension TTRestApi {
     }
     
     func branches(fullname: String, page: Int) -> Single<[TTBranch]> {
-        <#code#>
+        return requestArray(.branches(fullname: fullname, page: page), type: TTBranch.self)
     }
     
     func release(fullname: String, releaseId: Int) -> Single<TTRelease> {
@@ -200,7 +225,7 @@ extension TTRestApi {
     }
     
     func releases(fullname: String, page: Int) -> Single<[TTRelease]> {
-        <#code#>
+        return requestArray(.releases(fullname: fullname, page: page), type: TTRelease.self)
     }
     
     func pullRequest(fullname: String, number: Int) -> Single<TTPullRequest> {
@@ -208,19 +233,23 @@ extension TTRestApi {
     }
     
     func pullRequests(fullname: String, state: String, page: Int) -> Single<[TTPullRequest]> {
-        <#code#>
+        return requestArray(.pullRequests(fullname: fullname, state: state, page: page), type: TTPullRequest.self)
+    }
+    
+    func pullRequestComments(fullname: String, number: Int, page: Int) -> Single<[TTComment]> {
+        return requestArray(.pullRequestComments(fullname: fullname, number: number, page: page), type: TTComment.self)
     }
     
     func userRepositories(username: String, page: Int) -> Single<[TTRepository]> {
-        <#code#>
+        return requestArray(.userRepositories(username: username, page: page), type: TTRepository.self)
     }
     
     func userStarredRepositories(username: String, page: Int) -> Single<[TTRepository]> {
-        <#code#>
+        return requestArray(.userStarredRepositories(username: username, page: page), type: TTRepository.self)
     }
     
     func userWatchingRepositories(username: String, page: Int) -> Single<[TTRepository]> {
-        <#code#>
+        return requestArray(.userWatchingRepositories(username: username, page: page), type: TTRepository.self)
     }
     
     func forks(fullname: String, page: Int) -> Single<[TTRepository]> {
@@ -228,19 +257,19 @@ extension TTRestApi {
     }
     
     func repositoryEvents(owner: String, repo: String, page: Int) -> Single<[TTEvent]> {
-        <#code#>
+        return requestArray(.repositoryEvents(owner: owner, repo: repo, page: page), type: TTEvent.self)
     }
     
     func userPerformedEvents(username: String, page: Int) -> Single<[TTEvent]> {
-        <#code#>
+        return requestArray(.userPerformedEvents(username: username, page: page), type: TTEvent.self)
     }
     
     func userReceivedEvents(username: String, page: Int) -> Single<[TTEvent]> {
-        <#code#>
+        return requestArray(.userReceivedEvents(username: username, page: page), type: TTEvent.self)
     }
     
     func organizationEvents(username: String, page: Int) -> Single<[TTEvent]> {
-        <#code#>
+        return requestArray(.organizationEvents(username: username, page: page), type: TTEvent.self)
     }
     
     func profile() -> Single<TTUser> {
@@ -248,42 +277,58 @@ extension TTRestApi {
     }
     
     func followUser(username: String) -> Single<Void> {
-        <#code#>
+        return requestWithoutMapping(.followUser(username: username)).map { _ in }
     }
     
     func unfollowUser(username: String) -> Single<Void> {
-        <#code#>
+        return requestWithoutMapping(.unfollowUser(username: username)).map { _ in }
     }
     
     func checkFollowing(username: String) -> Single<Void> {
-        <#code#>
+        return requestWithoutMapping(.checkFollowing(username: username)).map { _ in }
     }
     
     func starRepository(fullname: String) -> Single<Void> {
-        <#code#>
+        return requestWithoutMapping(.starRepository(fullname: fullname)).map { _ in }
     }
     
     func unstarRepository(fullname: String) -> Single<Void> {
-        <#code#>
+        return requestWithoutMapping(.unstarRepository(fullname: fullname)).map { _ in }
     }
     
     func checkStarring(fullname: String) -> Single<Void> {
-        <#code#>
+        return requestWithoutMapping(.checkStarring(fullname: fullname)).map { _ in }
+    }
+    
+    func markAsReadNotifications() -> Single<Void> {
+        return requestWithoutMapping(.markAsReadNotifications).map { _ in }
+    }
+    
+    func markAsReadRepositoryNotifications(fullname: String) -> Single<Void> {
+        return requestWithoutMapping(.markAsReadRepositoryNotifications(fullname: fullname)).map { _ in }
+    }
+    
+    func notifications(all: Bool, participating: Bool, page: Int) -> Single<[TTNotification]> {
+        return requestArray(.notifications(all: all, participating: participating, page: page), type: TTNotification.self)
+    }
+    
+    func repositoryNotifications(fullname: String, all: Bool, participating: Bool, page: Int) -> Single<[TTNotification]> {
+        return requestArray(.repositoryNotifications(fullname: fullname, all: all, participating: participating, page: page), type: TTNotification.self)
     }
     
     func trendingRepositories(language: String, since: String) -> Single<[TTTrendingRepository]> {
-        <#code#>
+        return trendingRequestArray(.trendingRepositories(language: language, since: since), type: TTTrendingRepository.self)
     }
     
     func trendingDevelopers(language: String, since: String) -> Single<[TTTrendingUser]> {
-        <#code#>
+        return trendingRequestArray(.trendingDevelopers(language: language, since: since), type: TTTrendingUser.self)
     }
     
     func languages() -> Single<[TTLanguage]> {
-        <#code#>
+        return trendingRequestArray(.languages, type: TTLanguage.self)
     }
     
     func numberOfLines(fullname: String) -> Single<[TTLanguageLines]> {
-        <#code#>
+        return codetabsRequestArray(.numberOfLines(fullname: fullname), type: TTLanguageLines.self)
     }
 }

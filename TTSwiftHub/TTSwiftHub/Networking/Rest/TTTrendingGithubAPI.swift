@@ -48,14 +48,10 @@ extension TTTrendingGithubAPI: TargetType, TTProductAPIType {
     }
     
     var task: Task {
-        switch self {
-        case .trendingRepositories(let language, let since),
-             .trendingDevelopers(let language, let since):
-            let paras = ["language": language, "since": since]
-            return .requestParameters(parameters: paras, encoding: URLEncoding.default)
-        case .languages:
-            return .requestPlain
+        if let parameters = parameters {
+            return .requestParameters(parameters: parameters, encoding: parameterEncoding)
         }
+        return .requestPlain
     }
     
     var headers: [String : String]? {
@@ -66,5 +62,19 @@ extension TTTrendingGithubAPI: TargetType, TTProductAPIType {
         return false
     }
     
+    var parameters: [String: Any]? {
+        var params: [String: Any] = [:]
+        switch self {
+        case .trendingDevelopers(let language, let since),
+             .trendingRepositories(let language, let since):
+            params["language"] = language
+            params["since"] = since
+        default: break
+        }
+        return params
+    }
     
+    public var parameterEncoding: ParameterEncoding {
+        return URLEncoding.default
+    }
 }
