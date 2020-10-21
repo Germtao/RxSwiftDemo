@@ -22,8 +22,6 @@ class TTTableViewController: TTBaseViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     lazy var tableView: TTTableView = {
@@ -44,8 +42,8 @@ class TTTableViewController: TTBaseViewController, UIScrollViewDelegate {
         }
     }
     
-    override func setupUI() {
-        super.setupUI()
+    override func makeUI() {
+        super.makeUI()
         
         stackView.spacing = 0
         stackView.insertArrangedSubview(tableView, at: 0)
@@ -61,17 +59,20 @@ class TTTableViewController: TTBaseViewController, UIScrollViewDelegate {
         isHeaderLoading
             .bind(to: tableView.headRefreshControl.rx.isAnimating)
             .disposed(by: rx.disposeBag)
+        
         isFooterLoading
             .bind(to: tableView.footRefreshControl.rx.isAnimating)
             .disposed(by: rx.disposeBag)
         
+//        tableView.footRefreshControl.autoRefreshOnFoot = true
+        
         // 更新空数据
         let updateEmptyDataSet =
-            Observable
-                .of(isLoading.mapToVoid().asObservable(),
-                    emptyDataSetImageTintColor.mapToVoid(),
-                    languageChanged.asObservable())
-                .merge()
+            Observable.of(
+                isLoading.mapToVoid().asObservable(),
+                emptyDataSetImageTintColor.mapToVoid(),
+                languageChanged.asObservable()
+            ).merge()
         updateEmptyDataSet
             .subscribe(onNext: { [weak self] in
                 self?.tableView.reloadEmptyDataSet()
@@ -79,18 +80,19 @@ class TTTableViewController: TTBaseViewController, UIScrollViewDelegate {
             .disposed(by: rx.disposeBag)
         
         // 错误监听
-        error.subscribe(onNext: { [weak self] error in
-            var title = ""
-            var description = ""
-            let image = R.image.icon_toast_warning()
-            switch error {
-            case .serverError(let response):
-                title = response.message ?? ""
-                description = response.detail()
-            }
-            self?.tableView.makeToast(description, title: title, image: image)
-        })
-        .disposed(by: rx.disposeBag)
+        error
+            .subscribe(onNext: { [weak self] error in
+                var title = ""
+                var description = ""
+                let image = R.image.icon_toast_warning()
+                switch error {
+                case .serverError(let response):
+                    title = response.message ?? ""
+                    description = response.detail()
+                }
+                self?.tableView.makeToast(description, title: title, image: image)
+            })
+            .disposed(by: rx.disposeBag)
     }
     
     override func updateUI() {
@@ -112,7 +114,10 @@ extension TTTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let header = view as? UITableViewHeaderFooterView {
             header.textLabel?.font = UIFont(name: ".SFUIText-Bold", size: 15.0)
-            // TODO: theme service
+            themeService.rx
+                .bind({ $0.text }, to: header.textLabel!.rx.textColor)
+                .bind({ $0.primaryDark }, to: header.contentView.rx.backgroundColor)
+                .disposed(by: rx.disposeBag)
         }
     }
 }
