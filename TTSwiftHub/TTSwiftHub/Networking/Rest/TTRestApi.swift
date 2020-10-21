@@ -256,6 +256,10 @@ extension TTRestApi {
         return requestArray(.forks(fullname: fullname, page: page), type: TTRepository.self)
     }
     
+    func events(page: Int) -> Single<[TTEvent]> {
+        return requestArray(.events(page: page), type: TTEvent.self)
+    }
+    
     func repositoryEvents(owner: String, repo: String, page: Int) -> Single<[TTEvent]> {
         return requestArray(.repositoryEvents(owner: owner, repo: repo, page: page), type: TTEvent.self)
     }

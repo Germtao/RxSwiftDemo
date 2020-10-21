@@ -53,6 +53,7 @@ protocol TTSwiftHubAPI {
     func userWatchingRepositories(username: String, page: Int) -> Single<[TTRepository]>
     func forks(fullname: String, page: Int) -> Single<[TTRepository]>
     
+    func events(page: Int) -> Single<[TTEvent]>
     func repositoryEvents(owner: String, repo: String, page: Int) -> Single<[TTEvent]>
     func userPerformedEvents(username: String, page: Int) -> Single<[TTEvent]>
     func userReceivedEvents(username: String, page: Int) -> Single<[TTEvent]>
