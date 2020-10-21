@@ -105,6 +105,7 @@ class TTBaseViewController: UIViewController, Navigatable {
         bindViewModel()
         
         closeBarItem.rx.tap
+            .asObservable()
             .subscribe(onNext: { [weak self] in
                 self?.navigator.dismiss(current: self)
             })
@@ -196,8 +197,10 @@ class TTBaseViewController: UIViewController, Navigatable {
             .asDriver() // Driver序列不允许发出error, Driver序列的监听只会在主线程中
             .drive(onNext: { [weak self] enabled in
                 guard let self = self else { return }
+                
                 self.bannerView.removeFromSuperview()
                 self.stackView.removeArrangedSubview(self.bannerView)
+                
                 if enabled {
                     self.stackView.addArrangedSubview(self.bannerView)
                 }
@@ -210,10 +213,12 @@ class TTBaseViewController: UIViewController, Navigatable {
             })
             .disposed(by: rx.disposeBag)
         
-        motionShakeEvent.subscribe(onNext: {
-            let theme = themeService.type.toggled()
-            themeService.switch(theme)
-        }).disposed(by: rx.disposeBag)
+        motionShakeEvent
+            .subscribe(onNext: {
+                let theme = themeService.type.toggled()
+                themeService.switch(theme)
+            })
+            .disposed(by: rx.disposeBag)
         
         themeService.rx
             .bind({ $0.primaryDark }, to: view.rx.backgroundColor)
