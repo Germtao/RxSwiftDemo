@@ -177,6 +177,18 @@ enum TTThemeType: ThemeProvider {
         themeType.save()
         return themeType
     }
+    
+    func withColor(color: TTThemeColor) -> TTThemeType {
+        var theme: TTThemeType
+        switch self {
+        case .light:
+            theme = TTThemeType.light(color: color)
+        case .dark:
+            theme = TTThemeType.dark(color: color)
+        }
+        theme.save()
+        return theme
+    }
 }
 
 extension TTThemeType {

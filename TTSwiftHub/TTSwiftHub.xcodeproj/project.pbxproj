@@ -117,6 +117,13 @@
 		3B92CA5C253EE1EC00A475FE /* TTSettingCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA5B253EE1EC00A475FE /* TTSettingCellViewModel.swift */; };
 		3B92CA61253EE2DD00A475FE /* TTSettingSwitchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA60253EE2DD00A475FE /* TTSettingSwitchCellViewModel.swift */; };
 		3B92CA66253EEA1600A475FE /* TTSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA65253EEA1600A475FE /* TTSettingsViewModel.swift */; };
+		3B92CA6C253FD2D000A475FE /* TTThemeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA6B253FD2CF00A475FE /* TTThemeCellViewModel.swift */; };
+		3B92CA74253FD37C00A475FE /* TTThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA73253FD37C00A475FE /* TTThemeViewModel.swift */; };
+		3B92CA80253FD95700A475FE /* TTLanguageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA7F253FD95700A475FE /* TTLanguageCellViewModel.swift */; };
+		3B92CA88253FDB2500A475FE /* TTLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA87253FDB2500A475FE /* TTLanguageViewModel.swift */; };
+		3B92CA8E253FDFD000A475FE /* TTContactCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA8D253FDFD000A475FE /* TTContactCellViewModel.swift */; };
+		3B92CA96253FE0DA00A475FE /* TTContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA95253FE0DA00A475FE /* TTContactsViewModel.swift */; };
+		3B92CA9E2540011200A475FE /* TTLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CA9D2540011200A475FE /* TTLoginViewModel.swift */; };
 		3BCF337A246BDADD00591DEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3379246BDADD00591DEF /* AppDelegate.swift */; };
 		3BCF337C246BDADD00591DEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337B246BDADD00591DEF /* SceneDelegate.swift */; };
 		3BCF337E246BDADD00591DEF /* InitialSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337D246BDADD00591DEF /* InitialSplitViewController.swift */; };
@@ -309,6 +316,13 @@
 		3B92CA5B253EE1EC00A475FE /* TTSettingCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSettingCellViewModel.swift; sourceTree = "<group>"; };
 		3B92CA60253EE2DD00A475FE /* TTSettingSwitchCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSettingSwitchCellViewModel.swift; sourceTree = "<group>"; };
 		3B92CA65253EEA1600A475FE /* TTSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSettingsViewModel.swift; sourceTree = "<group>"; };
+		3B92CA6B253FD2CF00A475FE /* TTThemeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTThemeCellViewModel.swift; sourceTree = "<group>"; };
+		3B92CA73253FD37C00A475FE /* TTThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTThemeViewModel.swift; sourceTree = "<group>"; };
+		3B92CA7F253FD95700A475FE /* TTLanguageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLanguageCellViewModel.swift; sourceTree = "<group>"; };
+		3B92CA87253FDB2500A475FE /* TTLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLanguageViewModel.swift; sourceTree = "<group>"; };
+		3B92CA8D253FDFD000A475FE /* TTContactCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTContactCellViewModel.swift; sourceTree = "<group>"; };
+		3B92CA95253FE0DA00A475FE /* TTContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTContactsViewModel.swift; sourceTree = "<group>"; };
+		3B92CA9D2540011200A475FE /* TTLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLoginViewModel.swift; sourceTree = "<group>"; };
 		3BCF3376246BDADD00591DEF /* TTSwiftHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTSwiftHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCF3379246BDADD00591DEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BCF337B246BDADD00591DEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -577,6 +591,33 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		3B92CA6A253FD2B400A475FE /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				3B92CA6B253FD2CF00A475FE /* TTThemeCellViewModel.swift */,
+				3B92CA73253FD37C00A475FE /* TTThemeViewModel.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		3B92CA7E253FD88000A475FE /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				3B92CA7F253FD95700A475FE /* TTLanguageCellViewModel.swift */,
+				3B92CA87253FDB2500A475FE /* TTLanguageViewModel.swift */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		3B92CA8C253FDFB200A475FE /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				3B92CA8D253FDFD000A475FE /* TTContactCellViewModel.swift */,
+				3B92CA95253FE0DA00A475FE /* TTContactsViewModel.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
 		3BCF336D246BDADC00591DEF = {
 			isa = PBXGroup;
 			children = (
@@ -662,6 +703,8 @@
 		3BCF33AB246BE27300591DEF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3B92CA8C253FDFB200A475FE /* Contacts */,
+				3B92CA6A253FD2B400A475FE /* Theme */,
 				3BCF33AC246BE28200591DEF /* Main */,
 				3BCF3415246E29C600591DEF /* Search */,
 				3BCF341A246E2BE300591DEF /* Events */,
@@ -852,6 +895,7 @@
 		3BCF3420246E2C8A00591DEF /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				3B92CA7E253FD88000A475FE /* Language */,
 				3BCF3421246E2CA300591DEF /* TTSettingsViewController.swift */,
 				3B92CA56253EDF6000A475FE /* TTSettingsSection.swift */,
 				3B92CA5B253EE1EC00A475FE /* TTSettingCellViewModel.swift */,
@@ -865,6 +909,7 @@
 			isa = PBXGroup;
 			children = (
 				3BCF3424246E2CED00591DEF /* TTLoginViewController.swift */,
+				3B92CA9D2540011200A475FE /* TTLoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1295,6 +1340,7 @@
 				3BCF33D9246D11DD00591DEF /* Navigator.swift in Sources */,
 				3BCF341C246E2BFF00591DEF /* TTEventsViewController.swift in Sources */,
 				3B4693B224977CA800D64E73 /* TTLabel.swift in Sources */,
+				3B92CA80253FD95700A475FE /* TTLanguageCellViewModel.swift in Sources */,
 				3B4693BB2498C52500D64E73 /* TTTrendingUserCell.swift in Sources */,
 				3B0D0D3A249207710092EB54 /* TTRepositorySection.swift in Sources */,
 				3B0D0D12248F780B0092EB54 /* TTRepositoryCellViewModel.swift in Sources */,
@@ -1317,12 +1363,15 @@
 				3B675548247B7974009973B6 /* TTDefaultTableViewCellViewModel.swift in Sources */,
 				3B92C99825399D9300A475FE /* TTLicense.swift in Sources */,
 				3B0D0D3C249207B90092EB54 /* TTRepositoryDetailCellViewModel.swift in Sources */,
+				3B92CA8E253FDFD000A475FE /* TTContactCellViewModel.swift in Sources */,
 				3BCF33BD246BFDAD00591DEF /* TTView.swift in Sources */,
 				3B0D0D2124908CB00092EB54 /* TTUserSection.swift in Sources */,
+				3B92CA88253FDB2500A475FE /* TTLanguageViewModel.swift in Sources */,
 				3BCF337A246BDADD00591DEF /* AppDelegate.swift in Sources */,
 				3B0D0D282491C08B0092EB54 /* TTEventsCellViewModel.swift in Sources */,
 				3BF2FDD0247267590007C202 /* TTEventsViewModel.swift in Sources */,
 				3B4693AC249776D900D64E73 /* TTTableViewCell.swift in Sources */,
+				3B92CA74253FD37C00A475FE /* TTThemeViewModel.swift in Sources */,
 				3B0D0D2C2491CF190092EB54 /* TTIssue.swift in Sources */,
 				3B4693A32497267000D64E73 /* TTPullRequestViewModel.swift in Sources */,
 				3B92CA5C253EE1EC00A475FE /* TTSettingCellViewModel.swift in Sources */,
@@ -1357,6 +1406,7 @@
 				3BCF33BF246CDED500591DEF /* TTBaseViewController.swift in Sources */,
 				3BCF337C246BDADD00591DEF /* SceneDelegate.swift in Sources */,
 				3BCF343D246E6B5A00591DEF /* TTGithubApi.swift in Sources */,
+				3B92CA9E2540011200A475FE /* TTLoginViewModel.swift in Sources */,
 				3BCF3439246E609B00591DEF /* Observable+Operators.swift in Sources */,
 				3B0D0D1C248F92520092EB54 /* TTUsersViewModel.swift in Sources */,
 				3BCF3414246E28B200591DEF /* TTMainViewController.swift in Sources */,
@@ -1369,6 +1419,7 @@
 				3BCF33D7246CFC5200591DEF /* TTLogManager.swift in Sources */,
 				3BCF342E246E3BDE00591DEF /* TTRepository.swift in Sources */,
 				3B92CA4F253ED24500A475FE /* TTNotificationCellViewModel.swift in Sources */,
+				3B92CA6C253FD2D000A475FE /* TTThemeCellViewModel.swift in Sources */,
 				3B92C99025399AC600A475FE /* TTNotification.swift in Sources */,
 				3BCF341F246E2C5A00591DEF /* TTNotificationsViewController.swift in Sources */,
 				3B0D0D1F24908C4C0092EB54 /* TTUserViewModel.swift in Sources */,
@@ -1376,6 +1427,7 @@
 				3BCF3441246E77DE00591DEF /* TTThemeManager.swift in Sources */,
 				3B0D0D3E24920BEA0092EB54 /* TTContent.swift in Sources */,
 				3B46939B2497084600D64E73 /* TTReleasesViewModel.swift in Sources */,
+				3B92CA96253FE0DA00A475FE /* TTContactsViewModel.swift in Sources */,
 				3B0D0D302491CFCB0092EB54 /* TTMilestone.swift in Sources */,
 				3BCF3429246E394800591DEF /* TTSearchViewModel.swift in Sources */,
 				3B92CA57253EDF6000A475FE /* TTSettingsSection.swift in Sources */,

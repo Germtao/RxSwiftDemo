@@ -55,9 +55,9 @@ class TTMainTabBarViewModel: TTViewModel, TTViewModelType {
         case .notifications:
             return TTNotificationsViewModel(mode: .mine, provider: provider)
         case .settings:
-            
-        default:
-            return TTViewModel(provider: provider)
+            return TTSettingsViewModel(provider: provider)
+        case .login:
+            return TTLoginViewModel(provider: provider)
         }
     }
 }
