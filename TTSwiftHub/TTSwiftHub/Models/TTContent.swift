@@ -31,6 +31,15 @@ extension TTContentType: Comparable {
     static func < (lhs: TTContentType, rhs: TTContentType) -> Bool {
         return lhs.priority < rhs.priority
     }
+    
+    func image() -> UIImage? {
+        switch self {
+        case .file: return R.image.icon_cell_file()
+        case .dir: return R.image.icon_cell_dir()
+        case .symlink, .submodule: return R.image.icon_cell_submodule()
+        case .unknown: return nil
+        }
+    }
 }
 
 struct TTContent: Mappable {
