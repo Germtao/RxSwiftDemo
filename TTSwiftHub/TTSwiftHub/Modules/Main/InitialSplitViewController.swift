@@ -15,8 +15,8 @@ class InitialSplitViewController: TTTableViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func setupUI() {
-        super.setupUI()
+    override func makeUI() {
+        super.makeUI()
         
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = false

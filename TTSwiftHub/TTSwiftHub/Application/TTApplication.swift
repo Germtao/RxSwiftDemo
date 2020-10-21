@@ -27,21 +27,47 @@ class TTApplication: NSObject {
     private func updateProvider() {
         let useStaging = Configs.Network.useStaging
         let githubProvider = useStaging ? TTGithubNetworking.stubbingNetworking() : TTGithubNetworking.defaultNetworking()
+        let trendingGithubProvider = useStaging ? TTTrendingGithubNetworking.stubbingNetworking() : TTTrendingGithubNetworking.defaultNetworking()
+        let codetabsProvider = useStaging ? TTCodetabsNetworking.stubbingNetworking() : TTCodetabsNetworking.defaultNetworking()
+        let restApi = TTRestApi(
+            githubProvider: githubProvider,
+            trendingGithubProvider: trendingGithubProvider,
+            codetabsProvider: codetabsProvider
+        )
+        provider = restApi
         
-        provider = TTRestApi()
+        if let token = authManager.token, !Configs.Network.useStaging {
+            switch token.type() {
+            case .oAuth(let token):
+//                provider = GraphApi(restApi: <#T##<<error type>>#>, token: <#T##String#>)
+            logError("开始授权")
+            default: break
+            }
+        }
     }
     
     func presentInitialScreen(in window: UIWindow?) {
         updateProvider()
         
-        guard let _window = window, let _provider = provider else { return }
-        self.window = _window
+        guard let window = window, let provider = provider else { return }
+        self.window = window
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//            if let user =
+            if let user = TTUser.currentUser(), let login = user.login {
+                analytics.identify(userId: login)
+                analytics.set(.name(value: user.name ?? ""))
+                analytics.set(.email(value: user.email ?? ""))
+            }
             
-            let viewModel = TTMainTabBarViewModel(provider: _provider)
-            self.navigator.show(segue: .tabs(viewModel: viewModel), sender: nil, transition: .root(in: _window))
+            let viewModel = TTMainTabBarViewModel(provider: provider)
+            self.navigator.show(segue: .tabs(viewModel: viewModel), sender: nil, transition: .root(in: window))
         }
+    }
+    
+    func presentTestScreen(in window: UIWindow?) {
+        guard let window = window, let provider = provider else { return }
+        
+        let viewModel = TTUserViewModel(user: TTUser(), provider: provider)
+//        navigator.show(segue: <#T##Navigator.Scene#>, sender: <#T##UIViewController?#>)
     }
 }

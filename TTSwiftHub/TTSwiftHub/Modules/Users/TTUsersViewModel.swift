@@ -74,8 +74,8 @@ class TTUsersViewModel: TTViewModel, TTViewModelType {
         let textDidBeginEditing = input.textDidBeginEditing
         
         let userDetails = input.selection.map { cellViewModel -> TTUsersViewModel in
-            let user = cellViewModel.user
-            let viewModel = TTUsersViewModel(mode: user, provider: <#T##TTSwiftHubAPI#>)
+            let user = cellViewModel.mode
+            let viewModel = TTUsersViewModel(mode: user, provider: provider)
         }
     }
     

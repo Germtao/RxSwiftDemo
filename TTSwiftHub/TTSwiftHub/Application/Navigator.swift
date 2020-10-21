@@ -8,6 +8,11 @@
 
 import UIKit
 import Hero
+import RxSwift
+import RxCocoa
+import SafariServices
+import WhatsNewKit
+import MessageUI
 
 protocol Navigatable {
     var navigator: Navigator! { get set }
@@ -18,6 +23,32 @@ class Navigator {
     
     enum Scene {
         case tabs(viewModel: TTMainTabBarViewModel)
+        case search(viewModel: TTSearchViewModel)
+        case languages(viewModel: TTLanguagesViewModel)
+        case users(viewModel: TTUserViewModel)
+        case userDetails(viewModel: TTUserViewModel)
+        case repositories(viewModel: TTRepositoriesViewModel)
+        case repositoryDetails(viewModel: TTRepositoryViewModel)
+//        case contents(viewModel: TTcontent)
+//        case source(viewModel: )
+        case commits(viewModel: TTCommitsViewModel)
+        case branches(viewModel: TTBranchesViewModel)
+        case releases(viewModel: TTReleasesViewModel)
+        case pullRequests(viewModel: TTPullRequestsViewModel)
+        case pullRequestDetails(viewModel: TTPullRequestViewModel)
+        case events(viewModel: TTEventsViewModel)
+        case notifications(viewModel: TTNotificationsViewModel)
+        case issues(viewModel: TTIssuesViewModel)
+        case issueDetails(viewModel: TTIssueViewModel)
+//        case linesCount(viewModel: TTline)
+        case theme(viewModel: TTThemeViewModel)
+        case language(viewModel: TTLanguageViewModel)
+        case acknowledgements
+        case contacts(viewModel: TTContactsViewModel)
+        case whatsNew(block: WhatsNewBlock)
+        case safari(URL)
+        case safariController(URL)
+        case webController(URL)
     }
     
     enum Transition {
@@ -40,6 +71,20 @@ class Navigator {
             let splitVc = TTSplitViewController()
             splitVc.viewControllers = [rootVc, detailNavVc]
             return splitVc
+        case .search(let viewModel):
+            return TTSearchViewController(viewModel: viewModel, navigator: self)
+        case .languages(let viewModel):
+            return TTLanguagesViewController(viewModel: viewModel, navigator: self)
+        case .users(let viewModel):
+            return TTUsersViewController(viewModel: viewModel, navigator: self)
+        case .userDetails(let viewModel):
+            return TTUserViewController(viewModel: viewModel, navigator: self)
+        case .repositories(let viewModel):
+            return TTRepositoriesViewController(viewModel: viewModel, navigator: self)
+        case .repositoryDetails(let viewModel):
+            return TTRepositoryViewController(viewModel: viewModel, navigator: self)
+//        case .contents
+            
         }
     }
     
