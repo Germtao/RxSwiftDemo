@@ -9,6 +9,10 @@
 import UIKit
 
 class TTNavigationController: UINavigationController {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return globalStatusBarStyle.value
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +32,11 @@ class TTNavigationController: UINavigationController {
         navigationBar.backIndicatorImage = R.image.icon_navigation_back()
         navigationBar.backIndicatorTransitionMaskImage = R.image.icon_navigation_back()
         
-        // TODO: theme service
+        themeService.rx
+            .bind({ $0.secondary }, to: navigationBar.rx.tintColor)
+            .bind({ $0.primaryDark }, to: navigationBar.rx.barTintColor)
+            .bind({ [NSAttributedString.Key.foregroundColor: $0.text] }, to: navigationBar.rx.titleTextAttributes)
+            .disposed(by: rx.disposeBag)
     }
 
 }
