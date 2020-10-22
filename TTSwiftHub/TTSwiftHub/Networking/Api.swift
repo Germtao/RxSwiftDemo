@@ -11,6 +11,8 @@ import RxSwift
 import RxCocoa
 
 protocol TTSwiftHubAPI {
+    func downloadString(url: URL) -> Single<String>
+    func downloadFile(url: URL, fileName: String?) -> Single<Void>
     
     // MARK: - Search
     func searchRepositories(query: String, sort: String, order: String, page: Int, endCursor: String?) -> Single<TTRepositorySearch>
