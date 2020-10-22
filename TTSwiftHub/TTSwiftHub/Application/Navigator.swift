@@ -13,6 +13,7 @@ import RxCocoa
 import SafariServices
 import WhatsNewKit
 import MessageUI
+import AcknowList
 
 protocol Navigatable {
     var navigator: Navigator! { get set }
@@ -29,8 +30,8 @@ class Navigator {
         case userDetails(viewModel: TTUserViewModel)
         case repositories(viewModel: TTRepositoriesViewModel)
         case repositoryDetails(viewModel: TTRepositoryViewModel)
-//        case contents(viewModel: TTcontent)
-//        case source(viewModel: )
+        case contents(viewModel: TTContentsViewModel)
+        case source(viewModel: TTSourceViewModel)
         case commits(viewModel: TTCommitsViewModel)
         case branches(viewModel: TTBranchesViewModel)
         case releases(viewModel: TTReleasesViewModel)
@@ -40,7 +41,7 @@ class Navigator {
         case notifications(viewModel: TTNotificationsViewModel)
         case issues(viewModel: TTIssuesViewModel)
         case issueDetails(viewModel: TTIssueViewModel)
-//        case linesCount(viewModel: TTline)
+        case linesCount(viewModel: TTLinesCountViewModel)
         case theme(viewModel: TTThemeViewModel)
         case language(viewModel: TTLanguageViewModel)
         case acknowledgements
@@ -83,8 +84,54 @@ class Navigator {
             return TTRepositoriesViewController(viewModel: viewModel, navigator: self)
         case .repositoryDetails(let viewModel):
             return TTRepositoryViewController(viewModel: viewModel, navigator: self)
-//        case .contents
+        case .contents(let viewModel):
+            return TTContentsViewController(viewModel: viewModel, navigator: self)
+        case .source(let viewModel):
+            return TTSourceViewController(viewModel: viewModel, navigator: self)
+        case .commits(let viewModel):
+            return TTCommitsViewController(viewModel: viewModel, navigator: self)
+        case .branches(let viewModel):
+            return TTBranchesViewController(viewModel: viewModel, navigator: self)
+        case .releases(let viewModel):
+            return TTReleasesViewController(viewModel: viewModel, navigator: self)
+        case .pullRequests(let viewModel):
+            return TTPullRequestsViewController(viewModel: viewModel, navigator: self)
+        case .pullRequestDetails(let viewModel):
+            return TTPullRequestViewController(viewModel: viewModel, navigator: self)
+        case .events(let viewModel):
+            return TTEventsViewController(viewModel: viewModel, navigator: self)
+        case .notifications(let viewModel):
+            return TTNotificationsViewController(viewModel: viewModel, navigator: self)
+        case .issues(let viewModel):
+            return TTIssuesViewController(viewModel: viewModel, navigator: self)
+        case .issueDetails(let viewModel):
+            return TTIssueViewController(viewModel: viewModel, navigator: self)
+        case .linesCount(let viewModel):
+            return TTLinesCountViewController(viewModel: viewModel, navigator: self)
+        case .theme(let viewModel):
+            return TTThemeViewController(viewModel: viewModel, navigator: self)
+        case .language(let viewModel):
+            return TTLanguageViewController(viewModel: viewModel, navigator: self)
+        case .acknowledgements:
+            return AcknowListViewController()
+        case .contacts(let viewModel):
+            return TTContactsViewController(viewModel: viewModel, navigator: self)
             
+        case .whatsNew(let block):
+            if let versionStore = block.2 {
+                return WhatsNewViewController(whatsNew: block.0, configuration: block.1, versionStore: versionStore)
+            } else {
+                return WhatsNewViewController(whatsNew: block.0, configuration: block.1)
+            }
+        case .safari(let url):
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            return nil
+        case .safariController(let url):
+            return SFSafariViewController(url: url)
+        case .webController(let url):
+            let vc = TTWebViewController(viewModel: nil, navigator: self)
+            vc.load(url: url)
+            return vc
         }
     }
     
@@ -164,5 +211,12 @@ class Navigator {
         default:
             break
         }
+    }
+    
+    func toInviteContact(with phone: String) -> MFMessageComposeViewController {
+        let vc = MFMessageComposeViewController()
+        vc.body = "Hey! Come join SwiftHub at \(Configs.App.githubUrl)"
+        vc.recipients = [phone]
+        return vc
     }
 }
