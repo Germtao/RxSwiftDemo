@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        let libsManager = TTLibsManager.shared
+        libsManager.setupLibs(with: window)
+        
         if Configs.Network.useStaging {
+            // logout
+            TTUser.removeCurrentUser()
+            TTAuthManager.removeToken()
+            
+            // Use Green Dark theme
+            var theme = TTThemeType.currentTheme()
+            if theme.isDark != true {
+                theme = theme.toggled()
+            }
+            theme = theme.withColor(color: .green)
+            themeService.switch(theme)
+            
+            // Disable banners
+            libsManager.bannersEnabled.accept(false)
             
         } else {
             connectedToInternet()
@@ -32,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .disposed(by: rx.disposeBag)
         }
         
+        // Show initial screen
         TTApplication.shared.presentInitialScreen(in: window)
         
         return true
