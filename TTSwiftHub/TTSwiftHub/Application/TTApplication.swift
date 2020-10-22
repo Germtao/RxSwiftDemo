@@ -68,6 +68,6 @@ class TTApplication: NSObject {
         guard let window = window, let provider = provider else { return }
         
         let viewModel = TTUserViewModel(user: TTUser(), provider: provider)
-//        navigator.show(segue: <#T##Navigator.Scene#>, sender: <#T##UIViewController?#>)
+        navigator.show(segue: .userDetails(viewModel: viewModel), sender: nil, transition: .root(in: window))
     }
 }

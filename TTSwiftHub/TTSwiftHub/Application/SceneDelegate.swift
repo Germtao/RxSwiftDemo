@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -20,7 +21,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window = windowScene.windows.first
         }
         
+        let libsManager = TTLibsManager.shared
+        libsManager.setupLibs(with: window)
+        
         if Configs.Network.useStaging {
+            
+            // logout
+            TTUser.removeCurrentUser()
+            TTAuthManager.removeToken()
+            
+            // Use Green Dark theme
+            var theme = TTThemeType.currentTheme()
+            if theme.isDark != true {
+                theme = theme.toggled()
+            }
+            theme = theme.withColor(color: .green)
+            themeService.switch(theme)
+            
+            // Disable banners
+            libsManager.bannersEnabled.accept(false)
             
         } else {
             connectedToInternet()
