@@ -47,6 +47,7 @@ target 'TTSwiftHub' do
   pod 'NVActivityIndicatorView', '~> 4.0'  # https://github.com/ninjaprox/NVActivityIndicatorView
   pod 'WhatsNewKit', '~> 1.0'  # https://github.com/SvenTiigi/WhatsNewKit
   pod 'Highlightr', '~> 2.0'  # https://github.com/raspu/Highlightr
+  pod 'AcknowList', '~> 1.8'  # https://github.com/vtourraine/AcknowList
   
   # Keyboard
   pod 'IQKeyboardManagerSwift', '~> 6.0'  # https://github.com/hackiftekhar/IQKeyboardManager
