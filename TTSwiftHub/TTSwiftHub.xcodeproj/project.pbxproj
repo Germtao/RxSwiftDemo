@@ -148,6 +148,9 @@
 		3B92CBAE2541558900A475FE /* TTContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CBAD2541558800A475FE /* TTContactsViewController.swift */; };
 		3B92CBB32541574000A475FE /* TTWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CBB22541574000A475FE /* TTWebViewController.swift */; };
 		3B92CBC025415CDC00A475FE /* TTToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CBBF25415CDC00A475FE /* TTToolbar.swift */; };
+		3B92CBC52541734500A475FE /* TTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CBC42541734500A475FE /* TTTextField.swift */; };
+		3B92CBCA2541761300A475FE /* TTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CBC92541761300A475FE /* TTButton.swift */; };
+		3B92CBCF25417A6A00A475FE /* TTScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CBCE25417A6A00A475FE /* TTScrollView.swift */; };
 		3BCF337A246BDADD00591DEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3379246BDADD00591DEF /* AppDelegate.swift */; };
 		3BCF337C246BDADD00591DEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337B246BDADD00591DEF /* SceneDelegate.swift */; };
 		3BCF337E246BDADD00591DEF /* InitialSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337D246BDADD00591DEF /* InitialSplitViewController.swift */; };
@@ -371,6 +374,9 @@
 		3B92CBAD2541558800A475FE /* TTContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTContactsViewController.swift; sourceTree = "<group>"; };
 		3B92CBB22541574000A475FE /* TTWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTWebViewController.swift; sourceTree = "<group>"; };
 		3B92CBBF25415CDC00A475FE /* TTToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTToolbar.swift; sourceTree = "<group>"; };
+		3B92CBC42541734500A475FE /* TTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTextField.swift; sourceTree = "<group>"; };
+		3B92CBC92541761300A475FE /* TTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTButton.swift; sourceTree = "<group>"; };
+		3B92CBCE25417A6A00A475FE /* TTScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTScrollView.swift; sourceTree = "<group>"; };
 		3BCF3376246BDADD00591DEF /* TTSwiftHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTSwiftHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCF3379246BDADD00591DEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BCF337B246BDADD00591DEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -935,6 +941,9 @@
 				3B4693B124977CA800D64E73 /* TTLabel.swift */,
 				3B4693BD2498CC8600D64E73 /* TTSegmentedControl.swift */,
 				3B92CBBF25415CDC00A475FE /* TTToolbar.swift */,
+				3B92CBC42541734500A475FE /* TTTextField.swift */,
+				3B92CBC92541761300A475FE /* TTButton.swift */,
+				3B92CBCE25417A6A00A475FE /* TTScrollView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1490,6 +1499,7 @@
 				3BCF33CB246CE5DD00591DEF /* ErrorTracker.swift in Sources */,
 				3BCF33C1246CE26500591DEF /* TTViewModelType.swift in Sources */,
 				3B46939424937BB700D64E73 /* TTBranch.swift in Sources */,
+				3B92CBC52541734500A475FE /* TTTextField.swift in Sources */,
 				3B46938524935E3000D64E73 /* TTIssueCellViewModel.swift in Sources */,
 				3BCF3430246E41BB00591DEF /* ISO8601DateTransform.swift in Sources */,
 				3B92CB332541300100A475FE /* TTSourceViewController.swift in Sources */,
@@ -1506,11 +1516,13 @@
 				3B46939224937B8B00D64E73 /* TTBranchCellViewModel.swift in Sources */,
 				3B67554C247B9E82009973B6 /* UIColor+SwiftHub.swift in Sources */,
 				3BCF33BF246CDED500591DEF /* TTBaseViewController.swift in Sources */,
+				3B92CBCA2541761300A475FE /* TTButton.swift in Sources */,
 				3BCF337C246BDADD00591DEF /* SceneDelegate.swift in Sources */,
 				3B92CAE6254034E200A475FE /* TTContentsViewModel.swift in Sources */,
 				3BCF343D246E6B5A00591DEF /* TTGithubApi.swift in Sources */,
 				3B92CBC025415CDC00A475FE /* TTToolbar.swift in Sources */,
 				3B92CA9E2540011200A475FE /* TTLoginViewModel.swift in Sources */,
+				3B92CBCF25417A6A00A475FE /* TTScrollView.swift in Sources */,
 				3BCF3439246E609B00591DEF /* Observable+Operators.swift in Sources */,
 				3B0D0D1C248F92520092EB54 /* TTUsersViewModel.swift in Sources */,
 				3BCF3414246E28B200591DEF /* TTMainViewController.swift in Sources */,

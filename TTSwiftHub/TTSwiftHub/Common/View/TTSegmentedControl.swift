@@ -20,17 +20,17 @@ class TTSegmentedControl: HMSegmentedControl {
         makeUI()
     }
     
-    override init!(sectionTitles sectiontitles: [String]!) {
+    override init(sectionTitles sectiontitles: [String]) {
         super.init(sectionTitles: sectiontitles)
         makeUI()
     }
     
-    override init!(sectionImages: [UIImage]!, sectionSelectedImages: [UIImage]!) {
+    override init(sectionImages: [UIImage]!, sectionSelectedImages: [UIImage]!) {
         super.init(sectionImages: sectionImages, sectionSelectedImages: sectionSelectedImages)
         makeUI()
     }
     
-    override init!(sectionImages: [UIImage]!, sectionSelectedImages: [UIImage]!, titlesForSections sectiontitles: [String]!) {
+    override init(sectionImages: [UIImage]!, sectionSelectedImages: [UIImage]!, titlesForSections sectiontitles: [String]!) {
         super.init(sectionImages: sectionImages, sectionSelectedImages: sectionSelectedImages, titlesForSections: sectiontitles)
         makeUI()
     }
