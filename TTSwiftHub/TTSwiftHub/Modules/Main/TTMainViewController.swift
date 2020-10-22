@@ -66,7 +66,10 @@ enum MainTabBarItem: Int {
         case .settings:
             animation = RAMRightRotationAnimation()
         }
-        // TODO: theme service
+        
+        _ = themeService.rx
+            .bind({ $0.secondary }, to: animation.rx.iconSelectedColor)
+            .bind({ $0.secondary }, to: animation.rx.textSelectedColor)
         
         return animation
     }
@@ -75,7 +78,10 @@ enum MainTabBarItem: Int {
         let vc = controller(with: viewModel, navigator: navigator)
         let item = RAMAnimatedTabBarItem(title: title, image: image, tag: rawValue)
         item.animation = animation
-        // TODO: theme service
+        
+        _ = themeService.rx
+            .bind({ $0.text }, to: item.rx.iconColor)
+            .bind({ $0.text }, to: item.rx.textColor)
         
         vc.tabBarItem = item
         return vc
@@ -100,11 +106,11 @@ class TTMainViewController: RAMAnimatedTabBarController, Navigatable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupUI()
+        makeUI()
         bindViewModel()
     }
     
-    func setupUI() {
+    func makeUI() {
         hero.isEnabled = true
         tabBar.hero.id = "TabBarID"
         tabBar.isTranslucent = false
@@ -120,8 +126,19 @@ class TTMainViewController: RAMAnimatedTabBarController, Navigatable {
             })
             .disposed(by: rx.disposeBag)
         
-        // TODO: theme service
+        themeService.rx
+            .bind({ $0.primaryDark }, to: tabBar.rx.barTintColor)
+            .disposed(by: rx.disposeBag)
         
+        themeService.typeStream
+            .delay(DispatchTimeInterval.milliseconds(700), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { theme in
+                switch theme {
+                case .light(let color), .dark(let color):
+                    self.changeSelectedColor(color.color, iconSelectedColor: color.color)
+                }
+            })
+            .disposed(by: rx.disposeBag)
     }
     
     func bindViewModel() {
@@ -132,14 +149,20 @@ class TTMainViewController: RAMAnimatedTabBarController, Navigatable {
         
         output.tabBarItems
             .drive(onNext: { [weak self] tabBarItems in
-                guard let _self = self else { return }
+                guard let self = self else { return }
                 let vcs = tabBarItems.map {
-                    $0.getController(with: vm.viewModel(for: $0), navigator: _self.navigator)
+                    $0.getController(with: vm.viewModel(for: $0), navigator: self.navigator)
                 }
-                _self.setViewControllers(vcs, animated: false)
+                self.setViewControllers(vcs, animated: false)
             })
             .disposed(by: rx.disposeBag)
         
-//        output
+        output.openWhatsNew
+            .drive(onNext: { [weak self] block in
+                if Configs.Network.useStaging == false {
+                    self?.navigator.show(segue: .whatsNew(block: block), sender: self, transition: .modal)
+                }
+            })
+            .disposed(by: rx.disposeBag)
     }
 }
