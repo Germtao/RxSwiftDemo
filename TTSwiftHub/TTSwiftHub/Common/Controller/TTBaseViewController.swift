@@ -13,8 +13,9 @@ import Localize_Swift
 import GoogleMobileAds
 import DZNEmptyDataSet
 import Hero
+import NVActivityIndicatorView
 
-class TTBaseViewController: UIViewController, Navigatable {
+class TTBaseViewController: UIViewController, Navigatable, NVActivityIndicatorViewable {
     
     var viewModel: TTViewModel?
     var navigator: Navigator!
