@@ -20,10 +20,7 @@ class TTDefaultTableViewCell: TTTableViewCell {
             .bind({ $0.secondary }, to: [leftImageView.rx.tintColor, rightImageView.rx.tintColor])
             .disposed(by: rx.disposeBag)
         
-        stackView.addArrangedSubview(leftImageView)
-        stackView.addArrangedSubview(textsStackView)
-        stackView.addArrangedSubview(rightImageView)
-        
+        stackView.addArrangedSubviews([leftImageView, textsStackView, rightImageView])
         stackView.snp.makeConstraints { (make) in
             let inset = self.inset
             make.edges.equalToSuperview().inset(UIEdgeInsets(top: inset / 2, left: inset, bottom: inset / 2, right: inset))
@@ -126,8 +123,4 @@ class TTDefaultTableViewCell: TTTableViewCell {
         })
         return view
     }()
-}
-
-extension TTDefaultTableViewCell {
-    
 }

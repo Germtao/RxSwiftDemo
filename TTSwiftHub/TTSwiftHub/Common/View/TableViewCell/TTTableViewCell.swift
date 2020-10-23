@@ -15,7 +15,11 @@ class TTTableViewCell: UITableViewCell {
     var cellDisposeBag = DisposeBag()
     
     var isSelection = false
-    var selectionColor: UIColor?
+    var selectionColor: UIColor? {
+        didSet {
+            setSelected(isSelected, animated: true)
+        }
+    }
     
     lazy var containerView: TTView = {
         let view = TTView()
