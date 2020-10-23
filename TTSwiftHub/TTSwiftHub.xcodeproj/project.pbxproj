@@ -28,6 +28,10 @@
 		3B0D0D3A249207710092EB54 /* TTRepositorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D39249207710092EB54 /* TTRepositorySection.swift */; };
 		3B0D0D3C249207B90092EB54 /* TTRepositoryDetailCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D3B249207B90092EB54 /* TTRepositoryDetailCellViewModel.swift */; };
 		3B0D0D3E24920BEA0092EB54 /* TTContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0D3D24920BEA0092EB54 /* TTContent.swift */; };
+		3B38DA112542C35A0035F981 /* TTRepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B38DA0F2542C35A0035F981 /* TTRepositoryCell.swift */; };
+		3B38DA122542C35A0035F981 /* TTRepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B38DA102542C35A0035F981 /* TTRepositoryCell.xib */; };
+		3B38DA182542C6810035F981 /* TTUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B38DA162542C6810035F981 /* TTUserCell.swift */; };
+		3B38DA192542C6810035F981 /* TTUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B38DA172542C6810035F981 /* TTUserCell.xib */; };
 		3B46937E24932A8C00D64E73 /* TTLanguagesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46937D24932A8C00D64E73 /* TTLanguagesCellViewModel.swift */; };
 		3B46938024932C1400D64E73 /* Foundation+SwiftHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46937F24932C1400D64E73 /* Foundation+SwiftHub.swift */; };
 		3B46938324935C6800D64E73 /* TTIssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46938224935C6800D64E73 /* TTIssuesViewModel.swift */; };
@@ -254,6 +258,10 @@
 		3B0D0D39249207710092EB54 /* TTRepositorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTRepositorySection.swift; sourceTree = "<group>"; };
 		3B0D0D3B249207B90092EB54 /* TTRepositoryDetailCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTRepositoryDetailCellViewModel.swift; sourceTree = "<group>"; };
 		3B0D0D3D24920BEA0092EB54 /* TTContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTContent.swift; sourceTree = "<group>"; };
+		3B38DA0F2542C35A0035F981 /* TTRepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTRepositoryCell.swift; sourceTree = "<group>"; };
+		3B38DA102542C35A0035F981 /* TTRepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTRepositoryCell.xib; sourceTree = "<group>"; };
+		3B38DA162542C6810035F981 /* TTUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTUserCell.swift; sourceTree = "<group>"; };
+		3B38DA172542C6810035F981 /* TTUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTUserCell.xib; sourceTree = "<group>"; };
 		3B46937D24932A8C00D64E73 /* TTLanguagesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLanguagesCellViewModel.swift; sourceTree = "<group>"; };
 		3B46937F24932C1400D64E73 /* Foundation+SwiftHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+SwiftHub.swift"; sourceTree = "<group>"; };
 		3B46938224935C6800D64E73 /* TTIssuesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTIssuesViewModel.swift; sourceTree = "<group>"; };
@@ -479,6 +487,8 @@
 			children = (
 				3B0D0D16248F7D420092EB54 /* TTUsersCellViewModel.swift */,
 				3B0D0D1B248F92520092EB54 /* TTUsersViewModel.swift */,
+				3B38DA162542C6810035F981 /* TTUserCell.swift */,
+				3B38DA172542C6810035F981 /* TTUserCell.xib */,
 				3B92CAB4254028E300A475FE /* TTUsersViewController.swift */,
 			);
 			path = Users;
@@ -652,6 +662,8 @@
 			children = (
 				3B67554E247CB0A2009973B6 /* TTRepositoriesViewModel.swift */,
 				3B0D0D11248F780B0092EB54 /* TTRepositoryCellViewModel.swift */,
+				3B38DA0F2542C35A0035F981 /* TTRepositoryCell.swift */,
+				3B38DA102542C35A0035F981 /* TTRepositoryCell.xib */,
 				3B92CACC2540328200A475FE /* TTRepositoriesViewController.swift */,
 			);
 			path = Repositories;
@@ -1203,6 +1215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B67553F247B5C06009973B6 /* RepositoryTrendings.json in Resources */,
+				3B38DA122542C35A0035F981 /* TTRepositoryCell.xib in Resources */,
 				3B92C9F0253D892000A475FE /* RepositoryBranches.json in Resources */,
 				3B92C9E9253D892000A475FE /* UserRepositoriesWatching.json in Resources */,
 				3BCF3386246BDAE100591DEF /* LaunchScreen.storyboard in Resources */,
@@ -1215,6 +1228,7 @@
 				3B92C9D3253D892000A475FE /* RepositoryIssueComments.json in Resources */,
 				3BCF3401246D290300591DEF /* Localizable.strings in Resources */,
 				3BCF3383246BDAE100591DEF /* Assets.xcassets in Resources */,
+				3B38DA192542C6810035F981 /* TTUserCell.xib in Resources */,
 				3B675543247B664A009973B6 /* Languages.json in Resources */,
 				3B92C9D4253D892000A475FE /* RepositoryRelease.json in Resources */,
 				3B92C9ED253D892000A475FE /* RepositoryPullRequestComments.json in Resources */,
@@ -1446,6 +1460,7 @@
 				3B0D0D12248F780B0092EB54 /* TTRepositoryCellViewModel.swift in Sources */,
 				3B92CB512541372700A475FE /* TTIssuesViewController.swift in Sources */,
 				3BCF343F246E770E00591DEF /* TTSplitViewController.swift in Sources */,
+				3B38DA112542C35A0035F981 /* TTRepositoryCell.swift in Sources */,
 				3BCF3419246E2A5F00591DEF /* TTNavigationController.swift in Sources */,
 				3B4693A824974F7F00D64E73 /* TTRepoLanguageCellViewModel.swift in Sources */,
 				3B92CB47254131A900A475FE /* TTPullRequestsViewController.swift in Sources */,
@@ -1560,6 +1575,7 @@
 				3B92CB3D254130E300A475FE /* TTBranchesViewController.swift in Sources */,
 				3B4693B42498731400D64E73 /* Kingfisher+Rx.swift in Sources */,
 				3B92CBAE2541558900A475FE /* TTContactsViewController.swift in Sources */,
+				3B38DA182542C6810035F981 /* TTUserCell.swift in Sources */,
 				3B4693AA2497513D00D64E73 /* TTLanguagesViewModel.swift in Sources */,
 				3B46938324935C6800D64E73 /* TTIssuesViewModel.swift in Sources */,
 				3B46939624937C7500D64E73 /* TTBranchesViewModel.swift in Sources */,

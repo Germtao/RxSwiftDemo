@@ -18,7 +18,7 @@ enum TTSearchSectionItem {
     case trendingRepositoriesItem(cellViewModel: TTTrendingRepositoryCellViewModel)
     case trendingUsersItem(cellViewModel: TTTrendingUserCellViewModel)
     case repositoriesItem(cellViewModel: TTRepositoryCellViewModel)
-    case usersItem(cellViewModel: TTUsersCellViewModel)
+    case usersItem(cellViewModel: TTUserCellViewModel)
 }
 
 extension TTSearchSection: SectionModelType {

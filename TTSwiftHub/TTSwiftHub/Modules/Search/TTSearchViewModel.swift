@@ -238,30 +238,29 @@ class TTSearchViewModel: TTViewModel, TTViewModelType {
             .disposed(by: rx.disposeBag)
         
         // 监听footer刷新
-        input.footerRefresh.flatMapLatest { [weak self] () -> Observable<RxSwift.Event<TTRepositorySearch>> in
-            guard let _self = self else {
-                return Observable.just(RxSwift.Event.next(TTRepositorySearch()))
+        input.footerRefresh.flatMapLatest { [weak self] () -> Observable<TTRepositorySearch> in
+            guard let self = self else {
+                return Observable.just(TTRepositorySearch())
             }
             
-            if _self.searchMode.value != .search || !_self.repositorySearchElements.value.hasNextPage {
+            if self.searchMode.value != .search || !self.repositorySearchElements.value.hasNextPage {
                 var result = TTRepositorySearch()
-                result.totalCount = _self.repositorySearchElements.value.totalCount
-                return Observable.just(RxSwift.Event.next(result))
-                    .trackActivity(_self.footerLoading) // 用于强制停止表格footer动画
+                result.totalCount = self.repositorySearchElements.value.totalCount
+                return Observable.just(result)
+                    .trackActivity(self.footerLoading) // 用于强制停止表格footer动画
             }
             
-            _self.repositoriesPage += 1
-            let query = _self.makeQuery()
-            let sort = _self.sortRepositoryItem.value.sortValue
-            let order = _self.sortRepositoryItem.value.orderValue
-            let endCursor = _self.repositorySearchElements.value.endCursor
-            return _self.provider.searchRepositories(query: query, sort: sort, order: order, page: _self.repositoriesPage, endCursor: endCursor)
-                .trackActivity(_self.loading)
-                .trackActivity(_self.footerLoading)
-                .trackError(_self.error)
-                .materialize()
+            self.repositoriesPage += 1
+            let query = self.makeQuery()
+            let sort = self.sortRepositoryItem.value.sortValue
+            let order = self.sortRepositoryItem.value.orderValue
+            let endCursor = self.repositorySearchElements.value.endCursor
+            return self.provider.searchRepositories(query: query, sort: sort, order: order, page: self.repositoriesPage, endCursor: endCursor)
+                .trackActivity(self.loading)
+                .trackActivity(self.footerLoading)
+                .trackError(self.error)
         }
-        .subscribe(onNext: { [weak self] event in
+        .subscribe { [weak self] event in
             switch event {
             case .next(let result):
                 var newResult = result
@@ -269,7 +268,7 @@ class TTSearchViewModel: TTViewModel, TTViewModelType {
                 self?.repositorySearchElements.accept(newResult)
             default: break
             }
-        })
+        }
         .disposed(by: rx.disposeBag)
         
         Observable.combineLatest(keyword, currentLanguage, sortUserItem)
@@ -277,18 +276,18 @@ class TTSearchViewModel: TTViewModel, TTViewModelType {
                 return keyword.isNotEmpty || currentLanguage != nil
             }
             .flatMapLatest { [weak self] (keyword, currentLanguage, sortUserItem) -> Observable<RxSwift.Event<TTUserSearch>> in
-                guard let _self = self else {
+                guard let self = self else {
                     return Observable.just(RxSwift.Event.next(TTUserSearch()))
                 }
                 
-                _self.usersPage = 1
-                let query = _self.makeQuery()
+                self.usersPage = 1
+                let query = self.makeQuery()
                 let sort = sortUserItem.sortValue
                 let order = sortUserItem.orderValue
-                return _self.provider.searchUser(query: query, sort: sort, order: order, page: _self.usersPage, endCursor: nil)
-                    .trackActivity(_self.loading)
-                    .trackActivity(_self.headerLoading)
-                    .trackError(_self.error)
+                return self.provider.searchUsers(query: query, sort: sort, order: order, page: self.usersPage, endCursor: nil)
+                    .trackActivity(self.loading)
+                    .trackActivity(self.headerLoading)
+                    .trackError(self.error)
                     .materialize()
             }
             .subscribe(onNext: { [weak self] event in
@@ -301,25 +300,25 @@ class TTSearchViewModel: TTViewModel, TTViewModelType {
             .disposed(by: rx.disposeBag)
         
         input.footerRefresh.flatMapLatest { [weak self] () -> Observable<RxSwift.Event<TTUserSearch>> in
-            guard let _self = self else {
+            guard let self = self else {
                 return Observable.just(RxSwift.Event.next(TTUserSearch()))
             }
             
-            if _self.searchMode.value != .search || !_self.userSearchElements.value.hasNextPage {
+            if self.searchMode.value != .search || !self.userSearchElements.value.hasNextPage {
                 var result = TTUserSearch()
-                result.totalCount = _self.userSearchElements.value.totalCount
+                result.totalCount = self.userSearchElements.value.totalCount
                 return Observable.just(RxSwift.Event.next(TTUserSearch()))
             }
             
-            _self.usersPage += 1
-            let query = _self.makeQuery()
-            let sort = _self.sortUserItem.value.sortValue
-            let order = _self.sortUserItem.value.orderValue
-            let endCursor = _self.userSearchElements.value.endCursor
-            return _self.provider.searchUser(query: query, sort: sort, order: order, page: _self.usersPage, endCursor: endCursor)
-                .trackActivity(_self.loading)
-                .trackActivity(_self.footerLoading)
-                .trackError(_self.error)
+            self.usersPage += 1
+            let query = self.makeQuery()
+            let sort = self.sortUserItem.value.sortValue
+            let order = self.sortUserItem.value.orderValue
+            let endCursor = self.userSearchElements.value.endCursor
+            return self.provider.searchUsers(query: query, sort: sort, order: order, page: self.usersPage, endCursor: endCursor)
+                .trackActivity(self.loading)
+                .trackActivity(self.footerLoading)
+                .trackError(self.error)
                 .materialize()
         }
         .subscribe(onNext: { [weak self] event in
@@ -334,7 +333,7 @@ class TTSearchViewModel: TTViewModel, TTViewModelType {
         .disposed(by: rx.disposeBag)
         
         keyword.asDriver().debounce(RxTimeInterval.milliseconds(300)).filterEmpty().drive(onNext: { keyword in
-//            analytics
+            analytics.log(.search(keyword: keyword))
         }).disposed(by: rx.disposeBag)
         
         Observable.just(()).flatMapLatest { () -> Observable<[TTLanguage]> in
