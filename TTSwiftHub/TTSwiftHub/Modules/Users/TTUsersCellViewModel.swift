@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import BonMot
 
-class TTUsersCellViewModel: TTDefaultTableViewCellViewModel {
+class TTUserCellViewModel: TTDefaultTableViewCellViewModel {
     let following = BehaviorRelay<Bool>(value: false)
     let hidesFollowButton = BehaviorRelay<Bool>(value: true)
     
@@ -37,8 +37,8 @@ class TTUsersCellViewModel: TTDefaultTableViewCellViewModel {
     }
 }
 
-extension TTUsersCellViewModel {
-    static func == (lhs: TTUsersCellViewModel, rhs: TTUsersCellViewModel) -> Bool {
+extension TTUserCellViewModel {
+    static func == (lhs: TTUserCellViewModel, rhs: TTUserCellViewModel) -> Bool {
         return lhs.user == rhs.user
     }
 }

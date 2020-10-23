@@ -26,12 +26,12 @@ class TTUsersViewModel: TTViewModel, TTViewModelType {
         let footerRefresh: Observable<Void>
         let keywordTrigger: Driver<String>
         let textDidBeginEditing: Driver<Void>
-        let selection: Driver<TTUsersCellViewModel>
+        let selection: Driver<TTUserCellViewModel>
     }
     
     struct Output {
         let navigationTitle: Driver<String>
-        let items: BehaviorRelay<[TTUsersCellViewModel]>
+        let items: BehaviorRelay<[TTUserCellViewModel]>
         let imageUrl: Driver<URL?>
         let textDidBeginEditing: Driver<Void>
         let dismissKeyboard: Driver<Void>
@@ -46,10 +46,10 @@ class TTUsersViewModel: TTViewModel, TTViewModelType {
     }
     
     func transform(input: Input) -> Output {
-        let elements = BehaviorRelay<[TTUsersCellViewModel]>(value: [])
+        let elements = BehaviorRelay<[TTUserCellViewModel]>(value: [])
         let dismissKeyboard = input.selection.mapToVoid()
         
-        input.headerRefresh.flatMapLatest { [weak self] () -> Observable<[TTUsersCellViewModel]> in
+        input.headerRefresh.flatMapLatest { [weak self] () -> Observable<[TTUserCellViewModel]> in
             guard let _self = self else { return Observable.just([]) }
             _self.page = 1
             return _self.request()
@@ -60,7 +60,7 @@ class TTUsersViewModel: TTViewModel, TTViewModelType {
         })
         .disposed(by: rx.disposeBag)
         
-        input.footerRefresh.flatMapLatest { [weak self] () -> Observable<[TTUsersCellViewModel]> in
+        input.footerRefresh.flatMapLatest { [weak self] () -> Observable<[TTUserCellViewModel]> in
             guard let _self = self else { return Observable.just([]) }
             _self.page += 1
             return _self.request()
@@ -79,7 +79,7 @@ class TTUsersViewModel: TTViewModel, TTViewModelType {
         }
     }
     
-    func request() -> Observable<[TTUsersCellViewModel]> {
+    func request() -> Observable<[TTUserCellViewModel]> {
         var request: Single<[TTUser]>
         switch mode.value {
         case .followers(let user):
@@ -96,6 +96,6 @@ class TTUsersViewModel: TTViewModel, TTViewModelType {
         return request
             .trackActivity(loading)
             .trackError(error)
-            .map { $0.map { TTUsersCellViewModel(user: $0) } }
+            .map { $0.map { TTUserCellViewModel(user: $0) } }
     }
 }
