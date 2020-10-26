@@ -253,7 +253,7 @@ class TTUserViewModel: TTViewModel, TTViewModelType {
             
             // User Organizations
             var organizationItems: [TTUserSectionItem] = []
-            if let repos = user.organizations?.map({ TTUsersCellViewModel(user: $0) }) {
+            if let repos = user.organizations?.map({ TTUserCellViewModel(user: $0) }) {
                 repos.forEach {
                     organizationItems.append(TTUserSectionItem.organizationItem(viewModel: $0))
                 }
@@ -302,9 +302,25 @@ class TTUserViewModel: TTViewModel, TTViewModelType {
             let mode = TTRepositoriesMode.userWatchingRepositories(user: user)
             return TTRepositoriesViewModel(mode: mode, provider: provider)
         case .eventsItem:
-//            let mode = TTEventsModel
-        default:
-            break
+            let mode = TTEventsMode.user(user: user)
+            return TTEventsViewModel(mode: mode, provider: provider)
+        case .companyItem:
+            if let companyName = user.company?.removingPrefix("@") {
+                var user = TTUser()
+                user.login = companyName
+                return TTUserViewModel(user: user, provider: provider)
+            }
+        case .blogItem, .profileSummaryItem: return nil
+        case .repositoryItem(let cellViewModel):
+            return TTRepositoryViewModel(repository: cellViewModel.repository, provider: provider)
+        case .organizationItem(let cellViewModel):
+            return TTUserViewModel(user: cellViewModel.user, provider: provider)
         }
+        
+        return nil
+    }
+    
+    func profileSummaryUrl() -> URL? {
+        return "\(Configs.Network.profileSummaryBaseUrl)/user/\(self.user.value.login ?? "")".url
     }
 }

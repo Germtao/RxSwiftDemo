@@ -20,7 +20,7 @@ enum TTUserSectionItem {
     case profileSummaryItem(viewModel: TTUserDetailCellViewModel)
     
     case repositoryItem(viewModel: TTRepositoryCellViewModel)
-    case organizationItem(viewModel: TTUsersCellViewModel)
+    case organizationItem(viewModel: TTUserCellViewModel)
 }
 
 enum TTUserSection {
