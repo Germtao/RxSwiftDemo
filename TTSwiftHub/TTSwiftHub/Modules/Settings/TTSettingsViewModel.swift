@@ -68,7 +68,7 @@ class TTSettingsViewModel: TTViewModel, TTViewModelType {
                 var accountItems: [TTSettingsSectionItem] = []
                 
                 if let user = self.currentUser {
-                    let profileCellVm = TTUsersCellViewModel(user: user)
+                    let profileCellVm = TTUserCellViewModel(user: user)
                     accountItems.append(.profileItem(viewModel: profileCellVm))
                 }
                 

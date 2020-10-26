@@ -160,6 +160,11 @@
 		3BA56B582546AE1600BA600B /* TTSlideImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA56B572546AE1600BA600B /* TTSlideImageView.swift */; };
 		3BA56B9D2546BC2D00BA600B /* TTNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA56B9B2546BC2D00BA600B /* TTNotificationCell.swift */; };
 		3BA56B9E2546BC2D00BA600B /* TTNotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA56B9C2546BC2D00BA600B /* TTNotificationCell.xib */; };
+		3BA56BA42546C6FE00BA600B /* TTSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA56BA22546C6FE00BA600B /* TTSettingCell.swift */; };
+		3BA56BA52546C6FE00BA600B /* TTSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA56BA32546C6FE00BA600B /* TTSettingCell.xib */; };
+		3BA56BAB2546C80500BA600B /* TTSettingSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA56BA92546C80500BA600B /* TTSettingSwitchCell.swift */; };
+		3BA56BAC2546C80500BA600B /* TTSettingSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA56BAA2546C80500BA600B /* TTSettingSwitchCell.xib */; };
+		3BA56BB12546C85700BA600B /* TTSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA56BB02546C85700BA600B /* TTSwitch.swift */; };
 		3BCF337A246BDADD00591DEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3379246BDADD00591DEF /* AppDelegate.swift */; };
 		3BCF337C246BDADD00591DEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337B246BDADD00591DEF /* SceneDelegate.swift */; };
 		3BCF337E246BDADD00591DEF /* InitialSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337D246BDADD00591DEF /* InitialSplitViewController.swift */; };
@@ -395,6 +400,11 @@
 		3BA56B572546AE1600BA600B /* TTSlideImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSlideImageView.swift; sourceTree = "<group>"; };
 		3BA56B9B2546BC2D00BA600B /* TTNotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTNotificationCell.swift; sourceTree = "<group>"; };
 		3BA56B9C2546BC2D00BA600B /* TTNotificationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTNotificationCell.xib; sourceTree = "<group>"; };
+		3BA56BA22546C6FE00BA600B /* TTSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSettingCell.swift; sourceTree = "<group>"; };
+		3BA56BA32546C6FE00BA600B /* TTSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTSettingCell.xib; sourceTree = "<group>"; };
+		3BA56BA92546C80500BA600B /* TTSettingSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSettingSwitchCell.swift; sourceTree = "<group>"; };
+		3BA56BAA2546C80500BA600B /* TTSettingSwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTSettingSwitchCell.xib; sourceTree = "<group>"; };
+		3BA56BB02546C85700BA600B /* TTSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSwitch.swift; sourceTree = "<group>"; };
 		3BCF3376246BDADD00591DEF /* TTSwiftHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTSwiftHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCF3379246BDADD00591DEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BCF337B246BDADD00591DEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -967,6 +977,7 @@
 				3B92CBC92541761300A475FE /* TTButton.swift */,
 				3B92CBCE25417A6A00A475FE /* TTScrollView.swift */,
 				3BA56B572546AE1600BA600B /* TTSlideImageView.swift */,
+				3BA56BB02546C85700BA600B /* TTSwitch.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1032,6 +1043,10 @@
 				3B92CA5B253EE1EC00A475FE /* TTSettingCellViewModel.swift */,
 				3B92CA60253EE2DD00A475FE /* TTSettingSwitchCellViewModel.swift */,
 				3B92CA65253EEA1600A475FE /* TTSettingsViewModel.swift */,
+				3BA56BA22546C6FE00BA600B /* TTSettingCell.swift */,
+				3BA56BA32546C6FE00BA600B /* TTSettingCell.xib */,
+				3BA56BA92546C80500BA600B /* TTSettingSwitchCell.swift */,
+				3BA56BAA2546C80500BA600B /* TTSettingSwitchCell.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1253,6 +1268,7 @@
 				3B92C9EA253D892000A475FE /* RepositoryIssues.json in Resources */,
 				3B92C9F3253D892000A475FE /* RepositoryWatchers.json in Resources */,
 				3B92C9E4253D892000A475FE /* RepositorySearch.json in Resources */,
+				3BA56BA52546C6FE00BA600B /* TTSettingCell.xib in Resources */,
 				3B92C9D5253D892000A475FE /* EventsUserPerformed.json in Resources */,
 				3B92C9F6253D892000A475FE /* RepositoryReadme.json in Resources */,
 				3B92C9A8253D33E100A475FE /* RepositoryNumberOfLines.json in Resources */,
@@ -1276,6 +1292,7 @@
 				3B92C9D6253D892000A475FE /* Profile.json in Resources */,
 				3B92C9DB253D892000A475FE /* RepositoryPullRequest.json in Resources */,
 				3B92C9E0253D892000A475FE /* RepositoryCommits.json in Resources */,
+				3BA56BAC2546C80500BA600B /* TTSettingSwitchCell.xib in Resources */,
 				3B92C9F1253D892000A475FE /* EmptyObject.json in Resources */,
 				3B92C9EE253D892000A475FE /* RepositoryContributors.json in Resources */,
 				3B675541247B63EC009973B6 /* UserTrendings.json in Resources */,
@@ -1524,6 +1541,7 @@
 				3B46938A249371A500D64E73 /* TTIssueCommentsViewModel.swift in Sources */,
 				3B92CB4C2541328D00A475FE /* TTPullRequestViewController.swift in Sources */,
 				3B0D0D17248F7D420092EB54 /* TTUsersCellViewModel.swift in Sources */,
+				3BA56BA42546C6FE00BA600B /* TTSettingCell.swift in Sources */,
 				3B0D0D1A248F88FA0092EB54 /* TTRepositoryViewModel.swift in Sources */,
 				3B92CB562541378B00A475FE /* TTIssueViewController.swift in Sources */,
 				3B46937E24932A8C00D64E73 /* TTLanguagesCellViewModel.swift in Sources */,
@@ -1559,6 +1577,7 @@
 				3B92CBCF25417A6A00A475FE /* TTScrollView.swift in Sources */,
 				3BCF3439246E609B00591DEF /* Observable+Operators.swift in Sources */,
 				3B0D0D1C248F92520092EB54 /* TTUsersViewModel.swift in Sources */,
+				3BA56BB12546C85700BA600B /* TTSwitch.swift in Sources */,
 				3BCF3414246E28B200591DEF /* TTMainViewController.swift in Sources */,
 				3BCF3422246E2CA300591DEF /* TTSettingsViewController.swift in Sources */,
 				3BCF342C246E3A8100591DEF /* TTUser.swift in Sources */,
@@ -1577,6 +1596,7 @@
 				3B0D0D1F24908C4C0092EB54 /* TTUserViewModel.swift in Sources */,
 				3BCF3417246E29EC00591DEF /* TTSearchViewController.swift in Sources */,
 				3BCF3441246E77DE00591DEF /* TTThemeManager.swift in Sources */,
+				3BA56BAB2546C80500BA600B /* TTSettingSwitchCell.swift in Sources */,
 				3B0D0D3E24920BEA0092EB54 /* TTContent.swift in Sources */,
 				3B46939B2497084600D64E73 /* TTReleasesViewModel.swift in Sources */,
 				3B92CA96253FE0DA00A475FE /* TTContactsViewModel.swift in Sources */,

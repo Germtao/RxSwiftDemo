@@ -11,7 +11,7 @@ import RxDataSources
 
 enum TTSettingsSectionItem {
     // Account
-    case profileItem(viewModel: TTUsersCellViewModel)
+    case profileItem(viewModel: TTUserCellViewModel)
     case logoutItem(viewModel: TTSettingCellViewModel)
     
     // My Projects
