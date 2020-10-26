@@ -155,6 +155,9 @@
 		3B92CBC52541734500A475FE /* TTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CBC42541734500A475FE /* TTTextField.swift */; };
 		3B92CBCA2541761300A475FE /* TTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CBC92541761300A475FE /* TTButton.swift */; };
 		3B92CBCF25417A6A00A475FE /* TTScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92CBCE25417A6A00A475FE /* TTScrollView.swift */; };
+		3BA56B5225469B0B00BA600B /* TTEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA56B5025469B0B00BA600B /* TTEventCell.swift */; };
+		3BA56B5325469B0B00BA600B /* TTEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA56B5125469B0B00BA600B /* TTEventCell.xib */; };
+		3BA56B582546AE1600BA600B /* TTSlideImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA56B572546AE1600BA600B /* TTSlideImageView.swift */; };
 		3BCF337A246BDADD00591DEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF3379246BDADD00591DEF /* AppDelegate.swift */; };
 		3BCF337C246BDADD00591DEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337B246BDADD00591DEF /* SceneDelegate.swift */; };
 		3BCF337E246BDADD00591DEF /* InitialSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF337D246BDADD00591DEF /* InitialSplitViewController.swift */; };
@@ -385,6 +388,9 @@
 		3B92CBC42541734500A475FE /* TTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTextField.swift; sourceTree = "<group>"; };
 		3B92CBC92541761300A475FE /* TTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTButton.swift; sourceTree = "<group>"; };
 		3B92CBCE25417A6A00A475FE /* TTScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTScrollView.swift; sourceTree = "<group>"; };
+		3BA56B5025469B0B00BA600B /* TTEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTEventCell.swift; sourceTree = "<group>"; };
+		3BA56B5125469B0B00BA600B /* TTEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTEventCell.xib; sourceTree = "<group>"; };
+		3BA56B572546AE1600BA600B /* TTSlideImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSlideImageView.swift; sourceTree = "<group>"; };
 		3BCF3376246BDADD00591DEF /* TTSwiftHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTSwiftHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCF3379246BDADD00591DEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BCF337B246BDADD00591DEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -956,6 +962,7 @@
 				3B92CBC42541734500A475FE /* TTTextField.swift */,
 				3B92CBC92541761300A475FE /* TTButton.swift */,
 				3B92CBCE25417A6A00A475FE /* TTScrollView.swift */,
+				3BA56B572546AE1600BA600B /* TTSlideImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -992,6 +999,8 @@
 			isa = PBXGroup;
 			children = (
 				3BCF341B246E2BFF00591DEF /* TTEventsViewController.swift */,
+				3BA56B5025469B0B00BA600B /* TTEventCell.swift */,
+				3BA56B5125469B0B00BA600B /* TTEventCell.xib */,
 				3BF2FDCF247267590007C202 /* TTEventsViewModel.swift */,
 				3B0D0D272491C08B0092EB54 /* TTEventsCellViewModel.swift */,
 			);
@@ -1253,6 +1262,7 @@
 				3BF2FDCE2472292D0007C202 /* GoogleService-Info.plist in Resources */,
 				3B92C9E8253D892000A475FE /* UserRepositoriesStarred.json in Resources */,
 				3B4693BC2498C52500D64E73 /* TTTrendingUserCell.xib in Resources */,
+				3BA56B5325469B0B00BA600B /* TTEventCell.xib in Resources */,
 				3B92C9D7253D892000A475FE /* RepositoryBranch.json in Resources */,
 				3B92C9E1253D892000A475FE /* NotificationsRepository.json in Resources */,
 				3B92C9F2253D892000A475FE /* Notifications.json in Resources */,
@@ -1517,6 +1527,7 @@
 				3B92CBC52541734500A475FE /* TTTextField.swift in Sources */,
 				3B46938524935E3000D64E73 /* TTIssueCellViewModel.swift in Sources */,
 				3BCF3430246E41BB00591DEF /* ISO8601DateTransform.swift in Sources */,
+				3BA56B5225469B0B00BA600B /* TTEventCell.swift in Sources */,
 				3B92CB332541300100A475FE /* TTSourceViewController.swift in Sources */,
 				3BCF3448246EA06500591DEF /* TTToken.swift in Sources */,
 				3BCF340B246D2D4900591DEF /* TTBarButtonItem.swift in Sources */,
@@ -1576,6 +1587,7 @@
 				3B4693B42498731400D64E73 /* Kingfisher+Rx.swift in Sources */,
 				3B92CBAE2541558900A475FE /* TTContactsViewController.swift in Sources */,
 				3B38DA182542C6810035F981 /* TTUserCell.swift in Sources */,
+				3BA56B582546AE1600BA600B /* TTSlideImageView.swift in Sources */,
 				3B4693AA2497513D00D64E73 /* TTLanguagesViewModel.swift in Sources */,
 				3B46938324935C6800D64E73 /* TTIssuesViewModel.swift in Sources */,
 				3B46939624937C7500D64E73 /* TTBranchesViewModel.swift in Sources */,

@@ -96,12 +96,45 @@ class TTEventsViewModel: TTViewModel, TTViewModelType {
                 return TTUserViewModel(user: user, provider: self.provider)
         }
         
-//        let repositoryDetails = input.selection
-//            .map { $0.event.repository }
-//            .filterNil()
-//            .map { repository -> TTRepositoryViewModel in
-//                return TTRepositoryViewModel(
-//        }
+        let repositoryDetails = input.selection
+            .map { $0.event.repository }
+            .filterNil()
+            .map { repository -> TTRepositoryViewModel in
+                return TTRepositoryViewModel(repository: repository, provider: self.provider)
+            }
+        
+        let navigationTitle = mode.map { mode -> String in
+            return R.string.localizable.eventsNavigationTitle.key.localized()
+        }.asDriver(onErrorJustReturn: "")
+        
+        let imageUrl = mode.map { mode -> URL? in
+            switch mode {
+            case .repository(let repository):
+                return repository.owner?.avatarUrl?.url
+            case .user(let user):
+                return user.avatarUrl?.url
+            }
+        }.asDriver(onErrorJustReturn: nil)
+        
+        let hidesSegment = mode.map { mode -> Bool in
+            switch mode {
+            case .repository: return true
+            case .user(let user):
+                switch user.type {
+                case .organization: return true
+                case .user: return false
+                }
+            }
+        }.asDriver(onErrorJustReturn: false)
+        
+        return Output(
+            navigationTitle: navigationTitle,
+            imageUrl: imageUrl,
+            items: elements,
+            userSelected: userDetails,
+            repositorySelected: repositoryDetails,
+            hidesSegment: hidesSegment
+        )
     }
     
     func request() -> Observable<[TTEventsCellViewModel]> {
