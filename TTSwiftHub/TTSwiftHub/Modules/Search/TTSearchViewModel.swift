@@ -461,7 +461,7 @@ class TTSearchViewModel: TTViewModel, TTViewModelType {
                     }
                 case .search:
                     let users = users.items.map { user -> TTSearchSectionItem in
-                        let cellViewModel = TTUsersCellViewModel(user: user)
+                        let cellViewModel = TTUserCellViewModel(user: user)
                         return TTSearchSectionItem.usersItem(cellViewModel: cellViewModel)
                     }
                     if users.isNotEmpty {

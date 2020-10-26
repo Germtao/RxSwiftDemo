@@ -32,7 +32,7 @@ class TTLanguagesViewModel: TTViewModel, TTViewModelType {
     init(currentLanguage: TTLanguage?, languages: [TTLanguage], provider: TTSwiftHubAPI) {
         self.currentLanguage = BehaviorRelay(value: currentLanguage)
         self.languages = BehaviorRelay(value: languages)
-        super.init(provider: provider)
+        super.init(provider: self.provider)
     }
     
     func transform(input: Input) -> Output {

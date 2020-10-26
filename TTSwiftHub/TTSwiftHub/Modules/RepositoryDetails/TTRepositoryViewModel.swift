@@ -355,5 +355,7 @@ class TTRepositoryViewModel: TTViewModel, TTViewModelType {
         default:
             return nil
         }
+        
+        return nil
     }
 }
