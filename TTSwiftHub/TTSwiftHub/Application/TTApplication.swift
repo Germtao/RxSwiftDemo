@@ -60,7 +60,7 @@ class TTApplication: NSObject {
             }
             
             let authorized = self?.authManager.token?.isValid ?? false
-            let viewModel = TTMainTabBarViewModel(provider: provider)
+            let viewModel = TTMainTabBarViewModel(authorized: authorized, provider: provider)
             self?.navigator.show(segue: .tabs(viewModel: viewModel), sender: nil, transition: .root(in: window))
         }
     }
