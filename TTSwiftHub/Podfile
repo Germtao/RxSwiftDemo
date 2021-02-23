@@ -58,7 +58,7 @@ target 'TTSwiftHub' do
   
   # Tools
   pod 'R.swift'  # https://github.com/mac-cain13/R.swift
-#  pod 'SwiftLint', '0.39.2'  # https://github.com/realm/SwiftLint
+  pod 'SwiftLint', '0.39.2'  # https://github.com/realm/SwiftLint
 
   # Code Quality
   pod 'FLEX', '~> 4.0', :configurations => ['Debug']  # https://github.com/Flipboard/FLEX
