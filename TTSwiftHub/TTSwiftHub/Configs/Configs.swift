@@ -45,8 +45,9 @@ enum Keys {
 struct Configs {
     
     struct App {
-        static let githubUrl        = "https://github.com/khoren93/SwiftHub"
-        static let bundleIdentifier = "com.public.SwiftHub"
+        static let githubUrl        = "https://github.com/Germtao/TTSwiftHub"
+        static let githubScope      = "user+repo+notifications+read:org"
+        static let bundleIdentifier = "cn.com.tTao.TTSwiftHub"
     }
     
     struct Network {
