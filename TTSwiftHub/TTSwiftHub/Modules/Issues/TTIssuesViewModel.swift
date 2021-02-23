@@ -50,7 +50,7 @@ class TTIssuesViewModel: TTViewModel, TTViewModelType {
     
     init(repository: TTRepository, prodiver: TTSwiftHubAPI) {
         self.repository = BehaviorRelay(value: repository)
-        super.init(provider: self.provider)
+        super.init(provider: prodiver)
         if let fullname = repository.fullname {
             analytics.log(.issues(fullname: fullname))
         }

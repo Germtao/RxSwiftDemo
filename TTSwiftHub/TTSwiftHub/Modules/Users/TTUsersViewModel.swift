@@ -35,7 +35,7 @@ class TTUsersViewModel: TTViewModel, TTViewModelType {
         let imageUrl: Driver<URL?>
         let textDidBeginEditing: Driver<Void>
         let dismissKeyboard: Driver<Void>
-        let userSelected: Driver<TTUsersViewModel>
+        let userSelected: Driver<TTUserViewModel>
     }
     
     let mode: BehaviorRelay<TTUsersMode>
@@ -73,10 +73,41 @@ class TTUsersViewModel: TTViewModel, TTViewModelType {
         
         let textDidBeginEditing = input.textDidBeginEditing
         
-        let userDetails = input.selection.map { cellViewModel -> TTUsersViewModel in
-            let user = cellViewModel.mode
-            let viewModel = TTUsersViewModel(mode: user, provider: provider)
+        let userDetails = input.selection.map { cellViewModel -> TTUserViewModel in
+            let user = cellViewModel.user
+            return TTUserViewModel(user: user, provider: self.provider)
         }
+        
+        let navigationTitle = mode.map { mode -> String in
+            switch mode {
+            case .followers: return R.string.localizable.usersFollowersNavigationTitle.key.localized()
+            case .following: return R.string.localizable.usersFollowingNavigationTitle.key.localized()
+            case .watchers: return R.string.localizable.usersWatchersNavigationTitle.key.localized()
+            case .stars: return R.string.localizable.usersStargazersNavigationTitle.key.localized()
+            case .contributors: return R.string.localizable.usersContributorsNavigationTitle.key.localized()
+            }
+        }.asDriver(onErrorJustReturn: "")
+        
+        let imageUrl = mode.map { mode -> URL? in
+            switch mode {
+            case .followers(let user),
+                 .following(let user):
+                return user.avatarUrl?.url
+            case .watchers(let repository),
+                 .stars(let repository),
+                 .contributors(let repository):
+                return repository.owner?.avatarUrl?.url
+            }
+        }.asDriver(onErrorJustReturn: nil)
+        
+        return Output(
+            navigationTitle: navigationTitle,
+            items: elements,
+            imageUrl: imageUrl,
+            textDidBeginEditing: textDidBeginEditing,
+            dismissKeyboard: dismissKeyboard,
+            userSelected: userDetails
+        )
     }
     
     func request() -> Observable<[TTUserCellViewModel]> {

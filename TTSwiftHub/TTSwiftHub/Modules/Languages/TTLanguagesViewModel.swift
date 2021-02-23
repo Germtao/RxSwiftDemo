@@ -27,12 +27,12 @@ class TTLanguagesViewModel: TTViewModel, TTViewModelType {
     
     let currentLanguage: BehaviorRelay<TTLanguage?>
     let languages: BehaviorRelay<[TTLanguage]>
-    let selectedIndexPath: IndexPath?
+    let selectedIndexPath: IndexPath? = nil
     
     init(currentLanguage: TTLanguage?, languages: [TTLanguage], provider: TTSwiftHubAPI) {
         self.currentLanguage = BehaviorRelay(value: currentLanguage)
         self.languages = BehaviorRelay(value: languages)
-        super.init(provider: self.provider)
+        super.init(provider: provider)
     }
     
     func transform(input: Input) -> Output {
