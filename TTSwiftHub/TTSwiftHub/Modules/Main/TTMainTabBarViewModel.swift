@@ -22,27 +22,29 @@ class TTMainTabBarViewModel: TTViewModel, TTViewModelType {
         let openWhatsNew: Driver<WhatsNewBlock>
     }
     
+    let authorized: Bool
     let whatsNewManager: TTWhatsNewManager
     
-    override init(provider: TTSwiftHubAPI) {
+    init(authorized: Bool, provider: TTSwiftHubAPI) {
+        self.authorized = authorized
         whatsNewManager = TTWhatsNewManager.shared
         super.init(provider: provider)
     }
     
     func transform(input: Input) -> Output {
-        let tabBarItems = loggedIn.map { loggedIn -> [MainTabBarItem] in
-            if loggedIn {
+        let tabBarItems = Observable.just(authorized).map { authorized -> [MainTabBarItem] in
+            if authorized {
                 return [.events, .search, .notifications, .settings]
             } else {
-                return [.search, .notifications, .settings]
+                return [.search, .login, .settings]
             }
         }
         .asDriver(onErrorJustReturn: [])
         
-        let whatsNewItems = Driver.just(whatsNewManager.whatsNew())
+        let whatsNewItems = input.whatsNewTrigger.take(1).map { self.whatsNewManager.whatsNew() }
         
         return Output(tabBarItems: tabBarItems,
-                      openWhatsNew: whatsNewItems)
+                      openWhatsNew: whatsNewItems.asDriverOnErrorJustComplete())
     }
     
     func viewModel(for tabBarItem: MainTabBarItem) -> TTViewModel {
