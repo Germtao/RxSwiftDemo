@@ -39,7 +39,7 @@ class TTApplication: NSObject {
         if let token = authManager.token, !Configs.Network.useStaging {
             switch token.type() {
             case .oAuth(let token):
-//                provider = GraphApi(restApi: <#T##<<error type>>#>, token: <#T##String#>)
+//                provider = Grap
             logError("开始授权")
             default: break
             }
@@ -52,15 +52,16 @@ class TTApplication: NSObject {
         guard let window = window, let provider = provider else { return }
         self.window = window
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
             if let user = TTUser.currentUser(), let login = user.login {
                 analytics.identify(userId: login)
                 analytics.set(.name(value: user.name ?? ""))
                 analytics.set(.email(value: user.email ?? ""))
             }
             
+            let authorized = self?.authManager.token?.isValid ?? false
             let viewModel = TTMainTabBarViewModel(provider: provider)
-            self.navigator.show(segue: .tabs(viewModel: viewModel), sender: nil, transition: .root(in: window))
+            self?.navigator.show(segue: .tabs(viewModel: viewModel), sender: nil, transition: .root(in: window))
         }
     }
     
