@@ -239,6 +239,7 @@
 		3BF2FDD0247267590007C202 /* TTEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF2FDCF247267590007C202 /* TTEventsViewModel.swift */; };
 		3BF2FDD22473822B0007C202 /* TTCodetabsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF2FDD12473822B0007C202 /* TTCodetabsApi.swift */; };
 		3BF2FDD4247382C10007C202 /* TTTrendingGithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF2FDD3247382C10007C202 /* TTTrendingGithubAPI.swift */; };
+		7194517925E67BDC00C1D34C /* GraphApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7194517825E67BDC00C1D34C /* GraphApi.swift */; };
 		96662B8D1C85BE3578F9D71B /* Pods_TTSwiftHub_TTSwiftHubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20186349C22BEC120A0FE23A /* Pods_TTSwiftHub_TTSwiftHubUITests.framework */; };
 		9D75D815D8090737348F9954 /* Pods_TTSwiftHubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D9D6227B1B3571B1B91CA9 /* Pods_TTSwiftHubTests.framework */; };
 		DADD46D597C363EC8CBDC599 /* Pods_TTSwiftHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D78F151FB87D972037E314 /* Pods_TTSwiftHub.framework */; };
@@ -491,6 +492,7 @@
 		3BF2FDD3247382C10007C202 /* TTTrendingGithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTrendingGithubAPI.swift; sourceTree = "<group>"; };
 		425C402F9ACCFAF983F3BC59 /* Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig"; path = "Target Support Files/Pods-TTSwiftHub-TTSwiftHubUITests/Pods-TTSwiftHub-TTSwiftHubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		47D78F151FB87D972037E314 /* Pods_TTSwiftHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTSwiftHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7194517825E67BDC00C1D34C /* GraphApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphApi.swift; sourceTree = "<group>"; };
 		A7D9D6227B1B3571B1B91CA9 /* Pods_TTSwiftHubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTSwiftHubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4ED0560A1A09A551B9FFDA /* Pods-TTSwiftHub-TTSwiftHubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTSwiftHub-TTSwiftHubUITests.release.xcconfig"; path = "Target Support Files/Pods-TTSwiftHub-TTSwiftHubUITests/Pods-TTSwiftHub-TTSwiftHubUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E740193F2C54EA180D60FDBB /* Pods-TTSwiftHubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTSwiftHubTests.release.xcconfig"; path = "Target Support Files/Pods-TTSwiftHubTests/Pods-TTSwiftHubTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -943,6 +945,7 @@
 			isa = PBXGroup;
 			children = (
 				3BCF33C3246CE38300591DEF /* Api.swift */,
+				7194517725E67BC000C1D34C /* GraphQL */,
 				3BCF33CC246CE6D800591DEF /* Rest */,
 			);
 			path = Networking;
@@ -1157,6 +1160,14 @@
 				E740193F2C54EA180D60FDBB /* Pods-TTSwiftHubTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7194517725E67BC000C1D34C /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				7194517825E67BDC00C1D34C /* GraphApi.swift */,
+			);
+			path = GraphQL;
 			sourceTree = "<group>";
 		};
 		8E8F0CEE3261A712B15338BB /* Frameworks */ = {
@@ -1672,6 +1683,7 @@
 				3BCF33B8246BF19800591DEF /* Configs.swift in Sources */,
 				3B0D0D362491D5650092EB54 /* TTCommit.swift in Sources */,
 				3B0D0D2A2491C6E90092EB54 /* TTEvent.swift in Sources */,
+				7194517925E67BDC00C1D34C /* GraphApi.swift in Sources */,
 				3B92CAD2254032FA00A475FE /* TTRepositoryViewController.swift in Sources */,
 				3BCF3411246D395200591DEF /* TTLibsManager.swift in Sources */,
 				3B92CB66254139E700A475FE /* TTThemeViewController.swift in Sources */,
