@@ -52,6 +52,7 @@ class TTBaseViewController: UIViewController, Navigatable, NVActivityIndicatorVi
     
     let languageChanged = BehaviorRelay<Void>(value: ())
     
+    let orientationEvent = PublishSubject<Void>()
     let motionShakeEvent = PublishSubject<Void>()
     
     lazy var searchBar = UISearchBar()
@@ -115,6 +116,10 @@ class TTBaseViewController: UIViewController, Navigatable, NVActivityIndicatorVi
         // 监听设备方向
         NotificationCenter.default
             .rx.notification(UIDevice.orientationDidChangeNotification)
+            .mapToVoid()
+            .bind(to: orientationEvent)
+            .disposed(by: rx.disposeBag)
+        orientationEvent
             .subscribe(onNext: { [weak self] event in
                 self?.orientationChanged()
             })
@@ -231,7 +236,16 @@ class TTBaseViewController: UIViewController, Navigatable, NVActivityIndicatorVi
     }
     
     func bindViewModel() {
+        viewModel?.loading
+            .asObservable()
+            .bind(to: isLoading)
+            .disposed(by: rx.disposeBag)
         
+        isLoading
+            .subscribe(onNext: { (isLoading) in
+                UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
+            })
+            .disposed(by: rx.disposeBag)
     }
     
     func updateUI() {
