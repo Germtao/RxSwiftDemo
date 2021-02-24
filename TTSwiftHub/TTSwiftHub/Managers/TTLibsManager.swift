@@ -9,11 +9,13 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SnapKit
 
 #if DEBUG
 import FLEX
 #endif
 
+import FirebaseCrashlytics
 import CocoaLumberjack
 import DropDown
 import Toast_Swift
@@ -137,9 +139,9 @@ extension TTLibsManager {
     }
     
     func setupAnalytics() {
-        FirebaseApp.configure()
+//        FirebaseApp.configure()
         Mixpanel.sharedInstance(withToken: Keys.mixpanel.apiKey)
-//        Fabric
+        FirebaseConfiguration.shared.setLoggerLevel(.min)
     }
     
     func setupAds() {
