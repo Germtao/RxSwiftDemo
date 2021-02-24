@@ -29,13 +29,15 @@ class TTViewModel: NSObject {
     let footerLoading = ActivityIndicator()
     
     let error = ErrorTracker()
+    let serverError = PublishSubject<Error>()
     let parsedError = PublishSubject<ApiError>()
     
     init(provider: TTSwiftHubAPI) {
         self.provider = provider
         super.init()
         
-        error.asObservable()
+        serverError
+            .asObservable()
             .map { error -> ApiError? in
                 do {
                     let errorResponse = error as? MoyaError
@@ -52,7 +54,8 @@ class TTViewModel: NSObject {
             .bind(to: parsedError)
             .disposed(by: rx.disposeBag)
         
-        error.asDriver()
+        error
+            .asDriver()
             .drive(onNext: { error in
                 logError("\(error.localizedDescription)")
             })
