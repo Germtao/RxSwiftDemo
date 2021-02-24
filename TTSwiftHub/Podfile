@@ -68,11 +68,6 @@ target 'TTSwiftHub' do
   # Analytics 分析工具
   # 数据埋点库 https://github.com/devxoul/Umbrella
   pod 'Mixpanel'
-  pod 'Firebase/Analytics'
-  
-  # Fabric
-#  pod 'Fabric'
-#  pod 'Crashlytics'
   
   # Logging
   pod 'CocoaLumberjack/Swift'  # https://github.com/CocoaLumberjack/CocoaLumberjack
