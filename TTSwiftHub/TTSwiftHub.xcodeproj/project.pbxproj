@@ -32,6 +32,8 @@
 		3B38DA122542C35A0035F981 /* TTRepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B38DA102542C35A0035F981 /* TTRepositoryCell.xib */; };
 		3B38DA182542C6810035F981 /* TTUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B38DA162542C6810035F981 /* TTUserCell.swift */; };
 		3B38DA192542C6810035F981 /* TTUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B38DA172542C6810035F981 /* TTUserCell.xib */; };
+		3B3F281725E5E62900DF759A /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3F281625E5E62900DF759A /* UIFont+Extension.swift */; };
+		3B3F281C25E5E8AA00DF759A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3F281B25E5E8AA00DF759A /* UIImage+Extension.swift */; };
 		3B46937E24932A8C00D64E73 /* TTLanguagesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46937D24932A8C00D64E73 /* TTLanguagesCellViewModel.swift */; };
 		3B46938024932C1400D64E73 /* Foundation+SwiftHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46937F24932C1400D64E73 /* Foundation+SwiftHub.swift */; };
 		3B46938324935C6800D64E73 /* TTIssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46938224935C6800D64E73 /* TTIssuesViewModel.swift */; };
@@ -176,7 +178,7 @@
 		3BCF33AF246BE36900591DEF /* TTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF33AE246BE36900591DEF /* TTTableViewController.swift */; };
 		3BCF33B5246BEC4E00591DEF /* TTTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF33B4246BEC4E00591DEF /* TTTableView.swift */; };
 		3BCF33B8246BF19800591DEF /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF33B7246BF19800591DEF /* Configs.swift */; };
-		3BCF33BB246BFD0900591DEF /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF33BA246BFD0900591DEF /* UIView+Layout.swift */; };
+		3BCF33BB246BFD0900591DEF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF33BA246BFD0900591DEF /* UIView+Extension.swift */; };
 		3BCF33BD246BFDAD00591DEF /* TTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF33BC246BFDAD00591DEF /* TTView.swift */; };
 		3BCF33BF246CDED500591DEF /* TTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF33BE246CDED500591DEF /* TTBaseViewController.swift */; };
 		3BCF33C1246CE26500591DEF /* TTViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF33C0246CE26500591DEF /* TTViewModelType.swift */; };
@@ -272,6 +274,8 @@
 		3B38DA102542C35A0035F981 /* TTRepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTRepositoryCell.xib; sourceTree = "<group>"; };
 		3B38DA162542C6810035F981 /* TTUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTUserCell.swift; sourceTree = "<group>"; };
 		3B38DA172542C6810035F981 /* TTUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTUserCell.xib; sourceTree = "<group>"; };
+		3B3F281625E5E62900DF759A /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		3B3F281B25E5E8AA00DF759A /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		3B46937D24932A8C00D64E73 /* TTLanguagesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLanguagesCellViewModel.swift; sourceTree = "<group>"; };
 		3B46937F24932C1400D64E73 /* Foundation+SwiftHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+SwiftHub.swift"; sourceTree = "<group>"; };
 		3B46938224935C6800D64E73 /* TTIssuesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTIssuesViewModel.swift; sourceTree = "<group>"; };
@@ -422,7 +426,7 @@
 		3BCF33AE246BE36900591DEF /* TTTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTableViewController.swift; sourceTree = "<group>"; };
 		3BCF33B4246BEC4E00591DEF /* TTTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTableView.swift; sourceTree = "<group>"; };
 		3BCF33B7246BF19800591DEF /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
-		3BCF33BA246BFD0900591DEF /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		3BCF33BA246BFD0900591DEF /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3BCF33BC246BFDAD00591DEF /* TTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTView.swift; sourceTree = "<group>"; };
 		3BCF33BE246CDED500591DEF /* TTBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBaseViewController.swift; sourceTree = "<group>"; };
 		3BCF33C0246CE26500591DEF /* TTViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTViewModelType.swift; sourceTree = "<group>"; };
@@ -891,9 +895,11 @@
 		3BCF33B9246BFCC800591DEF /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3BCF33BA246BFD0900591DEF /* UIView+Layout.swift */,
+				3BCF33BA246BFD0900591DEF /* UIView+Extension.swift */,
 				3B67554B247B9E82009973B6 /* UIColor+SwiftHub.swift */,
 				3B46937F24932C1400D64E73 /* Foundation+SwiftHub.swift */,
+				3B3F281625E5E62900DF759A /* UIFont+Extension.swift */,
+				3B3F281B25E5E8AA00DF759A /* UIImage+Extension.swift */,
 				3BCF3437246E606600591DEF /* RxSwift */,
 			);
 			path = Extension;
@@ -1579,13 +1585,15 @@
 				3B0D0D1C248F92520092EB54 /* TTUsersViewModel.swift in Sources */,
 				3BA56BB12546C85700BA600B /* TTSwitch.swift in Sources */,
 				3BCF3414246E28B200591DEF /* TTMainViewController.swift in Sources */,
+				3B3F281725E5E62900DF759A /* UIFont+Extension.swift in Sources */,
 				3BCF3422246E2CA300591DEF /* TTSettingsViewController.swift in Sources */,
 				3BCF342C246E3A8100591DEF /* TTUser.swift in Sources */,
 				3B0D0D342491D0E40092EB54 /* TTComment.swift in Sources */,
 				3B92CB422541315800A475FE /* TTReleasesViewController.swift in Sources */,
 				3BCF33D2246CEA7300591DEF /* TTNetworking.swift in Sources */,
-				3BCF33BB246BFD0900591DEF /* UIView+Layout.swift in Sources */,
+				3BCF33BB246BFD0900591DEF /* UIView+Extension.swift in Sources */,
 				3B4693B02497795600D64E73 /* TTImageView.swift in Sources */,
+				3B3F281C25E5E8AA00DF759A /* UIImage+Extension.swift in Sources */,
 				3BCF33D7246CFC5200591DEF /* TTLogManager.swift in Sources */,
 				3BCF342E246E3BDE00591DEF /* TTRepository.swift in Sources */,
 				3B92CA4F253ED24500A475FE /* TTNotificationCellViewModel.swift in Sources */,
