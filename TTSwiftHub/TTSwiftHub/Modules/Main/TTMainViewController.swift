@@ -148,6 +148,7 @@ class TTMainViewController: RAMAnimatedTabBarController, Navigatable {
         let output = vm.transform(input: input)
         
         output.tabBarItems
+            .delay(.milliseconds(50))
             .drive(onNext: { [weak self] tabBarItems in
                 guard let self = self else { return }
                 let vcs = tabBarItems.map {
