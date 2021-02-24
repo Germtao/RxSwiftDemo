@@ -64,20 +64,7 @@ class TTTableViewController: TTBaseViewController, UIScrollViewDelegate {
             .bind(to: tableView.footRefreshControl.rx.isAnimating)
             .disposed(by: rx.disposeBag)
         
-//        tableView.footRefreshControl.autoRefreshOnFoot = true
-        
-        // 更新空数据
-        let updateEmptyDataSet =
-            Observable.of(
-                isLoading.mapToVoid().asObservable(),
-                emptyDataSetImageTintColor.mapToVoid(),
-                languageChanged.asObservable()
-            ).merge()
-        updateEmptyDataSet
-            .subscribe(onNext: { [weak self] in
-                self?.tableView.reloadEmptyDataSet()
-            })
-            .disposed(by: rx.disposeBag)
+        tableView.footRefreshControl.autoRefreshOnFoot = true
         
         // 错误监听
         error
@@ -98,6 +85,33 @@ class TTTableViewController: TTBaseViewController, UIScrollViewDelegate {
     override func updateUI() {
         super.updateUI()
     }
+    
+    override func bindViewModel() {
+        super.bindViewModel()
+        
+        viewModel?.headerLoading
+            .asObservable()
+            .bind(to: isHeaderLoading)
+            .disposed(by: rx.disposeBag)
+        
+        viewModel?.footerLoading
+            .asObservable()
+            .bind(to: isFooterLoading)
+            .disposed(by: rx.disposeBag)
+        
+        // 更新空数据
+        let updateEmptyDataSet =
+            Observable.of(
+                isLoading.mapToVoid().asObservable(),
+                emptyDataSetImageTintColor.mapToVoid(),
+                languageChanged.asObservable()
+            ).merge()
+        updateEmptyDataSet
+            .subscribe(onNext: { [weak self] in
+                self?.tableView.reloadEmptyDataSet()
+            })
+            .disposed(by: rx.disposeBag)
+    }
 }
 
 extension TTTableViewController {
@@ -112,10 +126,10 @@ extension TTTableViewController {
 
 extension TTTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        if let header = view as? UITableViewHeaderFooterView {
-            header.textLabel?.font = UIFont(name: ".SFUIText-Bold", size: 15.0)
+        if let header = view as? UITableViewHeaderFooterView, let textLabel = header.textLabel {
+            textLabel.font = UIFont.systemFont(ofSize: 15.0)
             themeService.rx
-                .bind({ $0.text }, to: header.textLabel!.rx.textColor)
+                .bind({ $0.text }, to: textLabel.rx.textColor)
                 .bind({ $0.primaryDark }, to: header.contentView.rx.backgroundColor)
                 .disposed(by: rx.disposeBag)
         }
