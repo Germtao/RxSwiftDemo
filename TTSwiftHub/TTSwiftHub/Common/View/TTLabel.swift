@@ -10,14 +10,21 @@ import UIKit
 
 class TTLabel: UILabel {
 
-    var textInsets = UIEdgeInsets.zero
+    var textInsets = UIEdgeInsets.zero {
+        didSet {
+            // 使视图的固有内容大小无效
+            invalidateIntrinsicContentSize()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        makeUI()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        makeUI()
     }
     
     func makeUI() {
