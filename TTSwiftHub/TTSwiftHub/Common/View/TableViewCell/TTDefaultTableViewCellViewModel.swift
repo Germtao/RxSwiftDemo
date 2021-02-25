@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class TTDefaultTableViewCellViewModel: NSObject {
+class TTDefaultTableViewCellViewModel: TTTableViewCellViewModel {
     let title = BehaviorRelay<String?>(value: nil)
     let detail = BehaviorRelay<String?>(value: nil)
     let secondDetail = BehaviorRelay<String?>(value: nil)

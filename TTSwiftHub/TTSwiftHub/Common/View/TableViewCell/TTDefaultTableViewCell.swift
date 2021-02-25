@@ -21,14 +21,18 @@ class TTDefaultTableViewCell: TTTableViewCell {
             .disposed(by: rx.disposeBag)
         
         stackView.addArrangedSubviews([leftImageView, textsStackView, rightImageView])
-        stackView.snp.makeConstraints { (make) in
+        stackView.snp.remakeConstraints { (make) in
             let inset = self.inset
             make.edges.equalToSuperview().inset(UIEdgeInsets(top: inset / 2, left: inset, bottom: inset / 2, right: inset))
             make.height.greaterThanOrEqualTo(Configs.BaseDimensions.tableRowHeight)
         }
     }
     
-    func bind(to viewModel: TTDefaultTableViewCellViewModel) {
+    override func bindViewModel(to viewModel: TTTableViewCellViewModel) {
+        super.bindViewModel(to: viewModel)
+        
+        guard let viewModel = viewModel as? TTDefaultTableViewCellViewModel else { return }
+        
         viewModel.title.asDriver().drive(titleLabel.rx.text).disposed(by: rx.disposeBag)
         viewModel.title.asDriver().replaceNilWith("").map { $0.isEmpty }.drive(titleLabel.rx.isHidden).disposed(by: rx.disposeBag)
         
@@ -63,6 +67,7 @@ class TTDefaultTableViewCell: TTTableViewCell {
     lazy var leftImageView: TTImageView = {
         let view = TTImageView(frame: CGRect())
         view.contentMode = .scaleAspectFit
+        view.cornerRadius = 25.0
         view.snp.makeConstraints({ (make) in
             make.size.equalTo(50)
         })
