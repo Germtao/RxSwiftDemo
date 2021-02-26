@@ -204,8 +204,10 @@ class TTLoginViewController: TTBaseViewController {
     // MARK: - Personal Access Token authentication
     
     lazy var personalLoginStackView: TTStackView = {
-//        let subviews: [UIView]
-        return <#value#>
+        let subviews: [UIView] = [personalLogoImageView, personalTitleLabel, personalDetailLabel, personalTokenTextField, personalLoginButton]
+        let view = TTStackView()
+        view.spacing = inset * 2
+        return view
     }()
     
     lazy var personalLogoImageView = TTImageView(image: R.image.image_no_result()?.template)
