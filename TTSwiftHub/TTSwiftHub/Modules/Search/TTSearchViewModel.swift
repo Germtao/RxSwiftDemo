@@ -197,6 +197,7 @@ class TTSearchViewModel: TTViewModel, TTViewModelType {
             .bind(to: keyword)
             .disposed(by: rx.disposeBag)
         
+        // 每当任何可观察序列产生一个元素时，将指定的可观察序列合并为一个可观察元组序列
         Observable.combineLatest(keyword, currentLanguage)
             .map { (keyword, currentLanguage) in
                 return (keyword.isEmpty && currentLanguage == nil) ? .trending : .search
@@ -208,24 +209,24 @@ class TTSearchViewModel: TTViewModel, TTViewModelType {
         input.sortRepositorySelection.bind(to: sortRepositoryItem).disposed(by: rx.disposeBag)
         input.sortUserSelection.bind(to: sortUserItem).disposed(by: rx.disposeBag)
         
-        // 监听header刷新
+        // 监听 搜索关键字输入 刷新
         Observable.combineLatest(keyword, currentLanguage, sortRepositoryItem)
             .filter { (keyword, currentLanguage, sortRepositoryItem) -> Bool in
                 return keyword.isNotEmpty || currentLanguage != nil
             }
             .flatMapLatest { [weak self] (keyword, currentLanguage, sortRepositoryItem) -> Observable<RxSwift.Event<TTRepositorySearch>> in
-                guard let _self = self else {
+                guard let self = self else {
                     return Observable.just(RxSwift.Event.next(TTRepositorySearch()))
                 }
                 
-                _self.repositoriesPage = 1
-                let query = _self.makeQuery()
+                self.repositoriesPage = 1
+                let query = self.makeQuery()
                 let sort = sortRepositoryItem.sortValue
                 let order = sortRepositoryItem.orderValue
-                return _self.provider.searchRepositories(query: query, sort: sort, order: order, page: _self.repositoriesPage, endCursor: nil)
-                    .trackActivity(_self.loading)
-                    .trackActivity(_self.headerLoading)
-                    .trackError(_self.error)
+                return self.provider.searchRepositories(query: query, sort: sort, order: order, page: self.repositoriesPage, endCursor: nil)
+                    .trackActivity(self.loading)
+                    .trackActivity(self.headerLoading)
+                    .trackError(self.error)
                     .materialize()
             }
             .subscribe(onNext: { [weak self] event in
@@ -356,7 +357,7 @@ class TTSearchViewModel: TTViewModel, TTViewModelType {
             input.trendingPeriodSegmentSelection.mapToVoid().skip(1),
             currentLanguage.mapToVoid().skip(1),
             keyword.asObservable().map { $0.isEmpty }.filter { $0 == true }.mapToVoid()
-        ).merge()
+        ).merge() // 将给定可枚举序列中所有可观察序列中的元素合并为单个可观察序列
         trendingTrigger.flatMapLatest { () -> Observable<RxSwift.Event<[TTTrendingRepository]>> in
             let language = self.currentLanguage.value?.urlParam ?? ""
             let since = trendingPeriodSegment.value.paramValue

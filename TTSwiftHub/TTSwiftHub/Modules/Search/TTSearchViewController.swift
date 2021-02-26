@@ -102,19 +102,19 @@ class TTSearchViewController: TTTableViewController {
             switch item {
             case .trendingRepositoriesItem(let cellViewModel):
                 let cell = tableView.dequeueReusableCell(withIdentifier: trendingRepositoryCellId, for: indexPath)!
-                cell.bind(to: cellViewModel)
+                cell.bindViewModel(to: cellViewModel)
                 return cell
             case .trendingUsersItem(let cellViewModel):
                 let cell = tableView.dequeueReusableCell(withIdentifier: trendingUserCellId, for: indexPath)!
-                cell.bind(to: cellViewModel)
+                cell.bindViewModel(to: cellViewModel)
                 return cell
             case .repositoriesItem(let cellViewModel):
                 let cell = tableView.dequeueReusableCell(withIdentifier: repositoryCellId, for: indexPath)!
-                cell.bind(to: cellViewModel)
+                cell.bindViewModel(to: cellViewModel)
                 return cell
             case .usersItem(let cellViewModel):
                 let cell = tableView.dequeueReusableCell(withIdentifier: userCellId, for: indexPath)!
-                cell.bind(to: cellViewModel)
+                cell.bindViewModel(to: cellViewModel)
                 return cell
             }
         }) { (dataSource, index) -> String? in
