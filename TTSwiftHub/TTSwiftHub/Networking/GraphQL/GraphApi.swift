@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import Apollo
 
-class TTGraphApi: TTSwiftHubAPI {
+class TTGraphApi/*: TTSwiftHubAPI*/ {
     
     let restApi: TTRestApi
     let token: String
@@ -57,10 +57,10 @@ extension TTGraphApi {
         return restApi.createAccessToken(clientId: clientId, clientSecret: clientSecret, code: code, redirectUri: redirectUri, state: state)
     }
     
-    func searchRepositories(query: String, sort: String, order: String, page: Int, endCursor: String?) -> Single<TTRepositorySearch> {
-        let query = query + (sort.isNotEmpty ? " sort:\(sort)-\(order)" : "")
+//    func searchRepositories(query: String, sort: String, order: String, page: Int, endCursor: String?) -> Single<TTRepositorySearch> {
+//        let query = query + (sort.isNotEmpty ? " sort:\(sort)-\(order)" : "")
 //        return apolloClient.rx.fetch(query: SearchRepositoriesQuery, cachePolicy: <#T##CachePolicy#>, queue: <#T##DispatchQueue#>)
-    }
+//    }
     
     func watchers(fullname: String, page: Int) -> Single<[TTUser]> {
         return restApi.watchers(fullname: fullname, page: page)
@@ -138,13 +138,13 @@ extension TTGraphApi {
         return restApi.repository(fullname: fullname, qualifiedName: qualifiedName)
     }
     
-    func searchUsers(query: String, sort: String, order: String, page: Int, endCursor: String?) -> Single<TTUserSearch> {
-        let query = query + (sort.isNotEmpty ? " sort:\(sort)-\(order)" : "")
-    }
+//    func searchUsers(query: String, sort: String, order: String, page: Int, endCursor: String?) -> Single<TTUserSearch> {
+//        let query = query + (sort.isNotEmpty ? " sort:\(sort)-\(order)" : "")
+//    }
     
-    func user(owner: String) -> Single<TTUser> {
+//    func user(owner: String) -> Single<TTUser> {
 //        return apolloClient.rx.fetch(query: TTUserQuery(login: owner))
-    }
+//    }
     
     func organization(owner: String) -> Single<TTUser> {
         return restApi.organization(owner: owner)
@@ -192,9 +192,9 @@ extension TTGraphApi {
     
     // MARK: - Authentication is required
     
-    func profile() -> Single<TTUser> {
-        
-    }
+//    func profile() -> Single<TTUser> {
+//        
+//    }
     
     func followUser(username: String) -> Single<Void> {
         return restApi.followUser(username: username)
