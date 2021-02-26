@@ -56,12 +56,12 @@ class TTSettingsViewController: TTTableViewController {
             switch item {
             case .profileItem(let viewModel):
                 let cell = tableView.dequeueReusableCell(withIdentifier: profileCellId, for: indexPath)!
-                cell.bind(to: viewModel)
+                cell.bindViewModel(to: viewModel)
                 return cell
             case .bannerItem(let viewModel),
                  .nightModeItem(let viewModel):
                 let cell = tableView.dequeueReusableCell(withIdentifier: settingSwitchCellId, for: indexPath)!
-                cell.bind(to: viewModel)
+                cell.bindViewModel(to: viewModel)
                 return cell
             case .themeItem(let viewModel),
                  .languageItem(let viewModel),
@@ -71,11 +71,11 @@ class TTSettingsViewController: TTTableViewController {
                  .whatsNewItem(let viewModel),
                  .logoutItem(let viewModel):
                 let cell = tableView.dequeueReusableCell(withIdentifier: settingCellId, for: indexPath)!
-                cell.bind(to: viewModel)
+                cell.bindViewModel(to: viewModel)
                 return cell
             case .repositoryItem(let viewModel):
                 let cell = tableView.dequeueReusableCell(withIdentifier: repositoryCellId, for: indexPath)!
-                cell.bind(to: viewModel)
+                cell.bindViewModel(to: viewModel)
                 return cell
             }
         } titleForHeaderInSection: { (dataSource, index) in

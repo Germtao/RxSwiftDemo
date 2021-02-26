@@ -19,8 +19,8 @@ class TTEventCell: TTDefaultTableViewCell {
         leftImageView.cornerRadius = 25
     }
     
-    override func bind(to viewModel: TTDefaultTableViewCellViewModel) {
-        super.bind(to: viewModel)
+    override func bindViewModel(to viewModel: TTTableViewCellViewModel) {
+        super.bindViewModel(to: viewModel)
         
         guard let viewModel = viewModel as? TTEventsCellViewModel else { return }
         

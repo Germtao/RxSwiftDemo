@@ -17,8 +17,8 @@ class TTRepositoryCell: TTDefaultTableViewCell {
         stackView.insertArrangedSubview(starButton, at: 2)
     }
     
-    override func bind(to viewModel: TTDefaultTableViewCellViewModel) {
-        super.bind(to: viewModel)
+    override func bindViewModel(to viewModel: TTTableViewCellViewModel) {
+        super.bindViewModel(to: viewModel)
         
         guard let viewModel = viewModel as? TTRepositoryCellViewModel else { return }
         

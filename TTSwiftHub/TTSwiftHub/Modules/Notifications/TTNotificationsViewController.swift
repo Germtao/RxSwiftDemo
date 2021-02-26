@@ -68,7 +68,7 @@ class TTNotificationsViewController: TTTableViewController {
         
         output.items.asDriver()
             .drive(tableView.rx.items(cellIdentifier: notificationCellId, cellType: TTNotificationCell.self)) { tableView, viewModel, cell in
-                cell.bind(to: viewModel)
+                cell.bindViewModel(to: viewModel)
             }
             .disposed(by: rx.disposeBag)
         

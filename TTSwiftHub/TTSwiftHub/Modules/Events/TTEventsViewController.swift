@@ -90,7 +90,7 @@ class TTEventsViewController: TTTableViewController {
         output.items
             .asDriver(onErrorJustReturn: [])
             .drive(tableView.rx.items(cellIdentifier: eventCellId, cellType: TTEventCell.self)) { tableView, viewModel, cell in
-                cell.bind(to: viewModel)
+                cell.bindViewModel(to: viewModel)
             }.disposed(by: rx.disposeBag)
         
         output.userSelected
