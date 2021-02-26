@@ -228,7 +228,8 @@ extension TTGithubAPI: TargetType, TTProductAPIType {
             switch token.type() {
             case .basic(let token):
                 return ["Authorization": "Basic \(token)"]
-            case .oAuth(let token):
+            case .personal(let token),
+                 .oAuth(let token):
                 return ["Authorization": "token \(token)"]
             case .unauthorized: break
             }
