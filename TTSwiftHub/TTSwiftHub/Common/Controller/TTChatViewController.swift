@@ -12,7 +12,11 @@ import RxSwift
 import InputBarAccessoryView
 
 class TTChatViewController: MessagesViewController {
-    var messages: [MessageType] = []
+    var messages: [MessageType] = [] {
+        didSet {
+            messagesCollectionView.reloadData()
+        }
+    }
     
     let sendPressed = PublishSubject<String>()
     
